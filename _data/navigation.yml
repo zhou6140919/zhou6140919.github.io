@@ -63,3 +63,5 @@ docs-en:
         url:    /docs/en/configuration
       - title:  Navigation
         url:    /docs/en/navigation
+sidebar:
+  nav: docs-en

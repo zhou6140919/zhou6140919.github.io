@@ -2,6 +2,8 @@
 title: My First Post on Jekyll
 tags: first markdown example
 categories: demo
+sidebar:
+  nav: paper notes
 ---
 
 This is a paragraph in my first post.

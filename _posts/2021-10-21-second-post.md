@@ -3,6 +3,8 @@ layout: page
 title: My Second Post
 tags: second markdown example
 categories: demo
+sidebar:
+  nav: paper notes
 ---
 
 This is a paragraph in my second post

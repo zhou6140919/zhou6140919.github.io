@@ -9,7 +9,8 @@ article_header:
     src: /screenshot.jpg
 ---
 
-`Attention is All You Need`{:.success}
+###### `Attention is All You Need`{:.success}
 See [Paper](https://arxiv.org/abs/1706.03762) for more details.
+See [Transformer Codes](https://github.com/zhou6140919/nlp/blob/master/transformers.ipynb) for more details.
 
 <!--more-->

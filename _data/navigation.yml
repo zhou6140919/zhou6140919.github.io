@@ -50,18 +50,12 @@ header:
     url: /about.html
 # "Paper notes,My projects,Books"    
 
-docs-en:
-  - title:      Start
+Paper notes:
+  - title:      NLP
     children:
-      - title:  Quick Start
-        url:    /docs/en/quick-start
-      - title:  Structure
-        url:    /docs/en/structure
+      - title:  Attention is All You need
+        url:    /2021/10/21/attention-is-all-you-need
+      - title:  My First Post
+        url:    /demo/2021/10/21/my-first-post.html
 
-  - title:      Customization
-    children:
-      - title:  Configuration
-        url:    /docs/en/configuration
-      - title:  Navigation
-        url:    /docs/en/navigation
         

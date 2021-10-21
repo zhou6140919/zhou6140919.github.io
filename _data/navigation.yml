@@ -50,10 +50,6 @@ header:
     url: /about.html
 # "Paper notes,My projects,Books"    
 
-sidebar:
-  nav: docs-en
-
-  
 docs-en:
   - title:      Start
     children:

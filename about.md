@@ -27,7 +27,7 @@ key: page-about
 article_header:
   type: cover
   image:
-    src: /screenshots/2_Kaine_8k.jpg
+    src: /screenshot.jpg
 ---
 
 

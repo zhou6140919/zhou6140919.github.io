@@ -49,6 +49,11 @@ header:
       # @end locale config
     url: /about.html
 # "Paper notes,My projects,Books"    
+
+sidebar:
+  nav: docs-en
+
+  
 docs-en:
   - title:      Start
     children:
@@ -64,5 +69,3 @@ docs-en:
       - title:  Navigation
         url:    /docs/en/navigation
         
-sidebar:
-  nav: docs-en

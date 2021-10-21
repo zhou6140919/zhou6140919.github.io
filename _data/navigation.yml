@@ -54,7 +54,7 @@ Paper-notes:
   - title:      NLP
     children:
       - title:  Attention is All You need
-        url:    /2021/10/21/attention-is-all-you-need
+        url:    /2021/10/21/attention-is-all-you-need.html
       - title:  My First Post
         url:    /demo/2021/10/21/my-first-post.html
 

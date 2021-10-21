@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: base
 title: My Second Post
 tags: second markdown example
 categories: demo

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My First Post on Jekyll
 tags: first markdown example
 categories: demo
@@ -8,6 +7,8 @@ categories: demo
 This is a paragraph in my first post.
 
 <!--more-->
+
+
 
 ## Heading Two
 

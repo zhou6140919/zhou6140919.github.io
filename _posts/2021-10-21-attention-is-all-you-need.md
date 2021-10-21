@@ -2,7 +2,7 @@
 title: Attention is All You Need
 tags: TeXt
 sidebar:
-  nav: paper notes
+  nav: paper-notes
 article_header:
   type: cover
   image:

@@ -50,7 +50,7 @@ header:
     url: /about.html
 # "Paper notes,My projects,Books"    
 
-Paper notes:
+Paper-notes:
   - title:      NLP
     children:
       - title:  Attention is All You need

@@ -9,8 +9,7 @@ article_header:
     src: /screenshot.jpg
 ---
 
-`Attention is All You Need`{:.Attention is All You Need}
-
- See [Page layout](https://arxiv.org/abs/1706.03762) for more details.
+`Attention is All You Need`{:.success}
+See [Paper](https://arxiv.org/abs/1706.03762) for more details.
 
 <!--more-->

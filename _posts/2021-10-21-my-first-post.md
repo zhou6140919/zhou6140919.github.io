@@ -7,6 +7,7 @@ categories: demo
 
 This is a paragraph in my first post.
 
+<!--more-->
 
 ## Heading Two
 

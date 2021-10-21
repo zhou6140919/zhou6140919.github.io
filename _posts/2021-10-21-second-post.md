@@ -1,5 +1,4 @@
 ---
-layout: page
 title: My Second Post
 tags: second markdown example
 categories: demo

@@ -30,7 +30,7 @@ h1{
 </style>
 
 <div align="center">   
-    <img alt="avatar" src="/pictures/head.jpeg" style="display:block; margin: 10px auto;/>
+    <img alt="avatar" src="/pictures/head.jpeg" style="display:block; margin: 10px auto;" />
 </div>
 
 <h1 align="center">Zhou  Zhou</h1>

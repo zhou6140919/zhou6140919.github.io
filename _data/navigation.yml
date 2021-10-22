@@ -57,8 +57,6 @@ Paper-notes:
         url:    /my-life/2000/06/14/my-info.html
   - title:      NLP
     children:
-      - title:  Welcome
-        url:    /2021/10/21/welcome.html
       - title:  Attention is All You need
         url:    /2021/10/21/attention-is-all-you-need.html
       - title:  Pre-trained Models for Natural Language Processing A Survey

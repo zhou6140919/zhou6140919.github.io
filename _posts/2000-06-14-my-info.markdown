@@ -25,15 +25,12 @@ h1{
     font-family:fantasy;
 }
 
-
-
 </style>
 
-
-
-
 <div class="mydiv">
-    <img src="/pictures/head.jpeg" />
+    <div align="center">    
+        <img src="/pictures/head.jpeg" />
+    </div>
 </div>
 
 <h1 align="center">Zhou Zhou</h1>

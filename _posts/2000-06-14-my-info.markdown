@@ -1,5 +1,5 @@
 ---
-title: My INFO
+title: MY INFO
 categories: my-life
 aside: false
 article_header:
@@ -41,10 +41,12 @@ h1{
 </div>
 </div>
 
+<!--more-->
+
 <h1 align="center">Zhou  Zhou</h1>
 
 
-<!--more-->
+
 
 ## Personal Info
 
@@ -71,8 +73,8 @@ Recently our company has developed a wonderful pre-training model mengzi-BERT-ba
 - Collecting figures　まあ、４０くらい～
 - Mystery story whodunit　白夜行とか
 - Sports　　everything!
-- Coding　　C, Python, HTML(a little), matlab, unity(a little)
-- ......
+- Coding　　C, Python, HTML(a little), matlab, unity(a little), markdown, liquid(a little)
+- . . . . . .
 
 ### My Projects
 

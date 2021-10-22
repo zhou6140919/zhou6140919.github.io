@@ -21,6 +21,7 @@ article_header:
     height:150px;
     border-radius:50%;
     overflow:hidden;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
 }
 
 h1{

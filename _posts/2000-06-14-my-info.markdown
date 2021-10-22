@@ -11,4 +11,8 @@ categories: my-life
 #     src: /pictures/2_Kaine_8k.jpg
 ---
 
-![head](/pictures/head.jpeg){:.circle.shadow}{:height="150" width="150"}
+<!-- ![head](/pictures/head.jpeg){:.circle.shadow}{:height="150" width="150"} -->
+
+<div align="center">
+<img src="/pictures/head.jpeg" width="150" height="150">
+</div>

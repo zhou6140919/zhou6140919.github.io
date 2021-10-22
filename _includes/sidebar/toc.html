@@ -2,12 +2,14 @@
   <div class="sidebar-avatar">
     {%- if page.sidebar.avatar -%}
       <style type="text/css">
-      img{position: absolute;
-      left: 64;
-      top: 16;
-      }
+      img{left: 64;top: 16}
       </style>
-      <img src="/pictures/head.jpeg" class="circleImg" width="128" height="128">
+      <img src="/pictures/head.jpeg" width="128" height="128">
+    {%- endif -%}
+  </div>
+  <div class="sidebar-bio">
+    {%- if page.sidebar.bio -%}
+    <font size="6" style='left: 10;top: 150'>page.sibebar.bio</font>
     {%- endif -%}
   </div>
   <div class="sidebar-toc">

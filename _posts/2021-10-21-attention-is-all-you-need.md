@@ -126,8 +126,9 @@ Multi-head attention allows the model to jointly attend to information from diff
 
 $$
 MultiHead(Q,K,V)=Concat(head_1,…,head_h )
-
-where  head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
+$$
+$$
+where head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
 $$
 
 

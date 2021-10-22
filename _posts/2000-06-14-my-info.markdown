@@ -24,6 +24,6 @@ categories: my-life
 
 <div align="center">
     <div class="mydiv">
-        <img src="/pictures/head.jpeg" width="150" height="150">
+        <img src="/pictures/head.jpeg" width="150" height="150" />
     </div>
 </div>

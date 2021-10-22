@@ -225,3 +225,9 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+
+
+# Sidebar settings
+sidebar: true  #添加侧边栏
+sidebar-about-description: "I am a normal person."
+sidebar-avatar: /pictures/head.jpeg

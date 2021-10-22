@@ -2,7 +2,8 @@
 title: Attention is All You Need
 tags: nlp attention
 author: 
-  profile: 
+  avatar: true
+  bio: true
 sidebar:
   nav: Paper-notes
   avatar: /pictures/head.jpeg

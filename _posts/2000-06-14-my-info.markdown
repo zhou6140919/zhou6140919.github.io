@@ -19,7 +19,6 @@ article_header:
     height:150px;
     border-radius:50%;
     overflow:hidden;
-    align:center;
 }
 
 h1{
@@ -29,12 +28,12 @@ h1{
 </style>
 
 <div class="mydiv">   
-    <img src="/pictures/head.jpeg" />
+    <img src="/pictures/head.jpeg" style="margin: 0 auto;" />
 </div>
 
-<h1 align="center">Zhou Zhou</h1>
+<h1 align="center">Zhou  Zhou</h1>
 
-
+<!--more-->
 
 ## Personal Info
 

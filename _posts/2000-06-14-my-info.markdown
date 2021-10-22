@@ -2,26 +2,27 @@
 layout: article
 title: My INFO
 categories: my-life
+aside: false
 article_header:
-  type: cover
+  type: overlay
   theme: dark
   background_color: '#203028'
   background_image:
     gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
     src: /pictures/2_Kaine_8k.jpg
-aside: false
+
 ---
 
 <!-- ![head](/pictures/head.jpeg){:.circle.shadow}{:height="150" width="150"} -->
 
 
 <style type="text/css">
-/* .mydiv{
+.mydiv{
     width:150px;
     height:150px;
     border-radius:50%;
     overflow:hidden;
-} */
+}
 
 h1{
     font-family:fantasy;
@@ -29,8 +30,10 @@ h1{
 
 </style>
 
-<div align="center">   
-    <img alt="avatar" src="/pictures/head.jpeg" style="height:150; width:150; display:block; margin: 10px auto;" />
+<div align="center">
+<div class="mydiv">   
+    <img alt="avatar" src="/pictures/head.jpeg" />
+</div>
 </div>
 
 <h1 align="center">Zhou  Zhou</h1>

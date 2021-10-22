@@ -99,7 +99,7 @@ where $$f_{enc}$$ is neural encoder.
 - sequence models
     - convolutional models: capture the meaning of a word by aggregating the local information from its neighbors.
     - recurrent models: capture the contextual representations of words with short memory, such as [LSTMs][5] and [GRUs][6]. Bidirectional operations are used to collect information from both sides of a word, but its performance is often affected by the `long-term dependency problem`{:.warning}.
-- non-sequence models: learn with a pre-difined tree or graph structure between words. `How to build a good graph structure?`{:.warning} `The structure heavily depends on expert knowledge or external NLP tools.`{:.warning}
+- non-sequence models: learn with a pre-defined tree or graph structure between words. `How to build a good graph structure?`{:.warning} `The structure heavily depends on expert knowledge or external NLP tools.`{:.warning}
     - fully-connected self-attention model: [Transformer][7]. Also need positional embeddings, layer normalization, residual connections, and position-wise feed-forward network layers, etc. `Easy to overfit on small or modestly-sized datasets.`{:.warning}
 
 The Transformer has become the mainstream architecture of PTMs due to its powerful capacity.

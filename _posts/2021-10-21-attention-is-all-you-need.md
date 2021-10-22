@@ -78,7 +78,7 @@ This is the structure of Transformer.
 
 
 
-The output of each sub-layer is LayerNorm(x + Sublayer(x)), where Sublayer(x) is the function implemented by the sub-layer itself. To facilitate these residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimension $$d_model = 512$$.
+The output of each sub-layer is LayerNorm(x + Sublayer(x)), where Sublayer(x) is the function implemented by the sub-layer itself. To facilitate these residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimension $$d(_model) = 512$$.
 
 LayerNorm: see [Layer Normalization][3]
 
@@ -95,7 +95,7 @@ We compute the attention function on a set of queries simultaneously, packed tog
 {:.success}
 
 $$
-Attention(Q,K,V)=softmax((QK^T)/√(d_k ))V
+Attention(Q,K,V)=softmax((QK^T)/√(d_k))V
 $$
 
 Dot product is much faster and more space-efficient, since it can be implemented using highly optimized matrix multiplication code.
@@ -111,8 +111,8 @@ On each of these projected versions of queries, keys and values we then perform 
 Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions.
 
 $$
-MultiHead(Q,K,V)=Concat(〖head〗_1,…,〖head〗_h ) 
-where 〖head〗_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
+MultiHead(Q,K,V)=Concat(head_1,…,head_h ) 
+where head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
 $$
 
 
@@ -145,7 +145,7 @@ The third is the path length between long-range dependencies in the network. Lea
 | Self-Attention | $$O(n^2 · d)$$ | $$O(1)$$ | $$O(1)$$ |
 | Recurrent | $$O(n · d^2)$$ | $$O(n)$$ | $$O(n)$$ |
 | Convolution | $$O(n^2 · d)$$ | $$O(1)$$ | $$O(log_k(n))$$ |
-| Self-Attention | $$O(r · n · d)$$ | $$O(1)$$ | $$O(n/r)$$ |
+| Self-Attention(Restricted) | $$O(r · n · d)$$ | $$O(1)$$ | $$O(n/r)$$ |
 
 
 ----------------------------------------------

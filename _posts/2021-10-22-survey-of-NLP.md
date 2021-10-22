@@ -28,7 +28,7 @@ See [Paper](https://arxiv.org/abs/2003.08271) for more details.
 
 ## Summary
 
-The emergence of pre-trained models(PTMs) has brought natural language processing to a new ear.
+The emergence of pre-trained models(PTMs) has brought natural language processing to a new era.
 This paper provides a comprehensive review of PTMs for NLP.
 - Language representation learning
 - Categorize existing PTMs in four perspectives
@@ -57,7 +57,7 @@ These models are no longer needed since they are usually very shallow for comput
 
 They are context-free and fail to capture higher-level concepts in context, such as polysemous disambiguation(多义词消歧), syntactic structures, semantic roles, anaphora(指代).
 
-***second generation PTMs*** focuson learning contextual word embeddings.
+***second generation PTMs*** focus on learning contextual word embeddings.
 - [CoVe][1]
 - [ELMo][2]
 - [OpenAI GPT][3]
@@ -92,14 +92,14 @@ The contextual representation depends on the whole text.
 
 $$ [h_1,h_2,...,h_T] = f_{enc}(x_1,x_2,...,x_T) $$
 
-where $$f_{enc} is neural encoder.
+where $$f_{enc}$$ is neural encoder.
 
 ### Neural Contextual Encoders
 
 - sequence models
     - convolutional models: capture the meaning of a word by aggregating the local information from its neighbors.
-    - recurrent models: capture the contextual representations of words with short memory, such as [LSTMs][5] and [GRUs][6]. Bidirectional operations are used to collect information from both sides of a word, but its performance is foten affected by the `long-term dependency problem`{:.warning}.
-- non-sequence models: learn with a pre-difined tree or graph structure between words. `How to build a good graph structure?`{:.warning} `The structure heavily depends on expert knowledge or external NLP tools`{:.warning}.
+    - recurrent models: capture the contextual representations of words with short memory, such as [LSTMs][5] and [GRUs][6]. Bidirectional operations are used to collect information from both sides of a word, but its performance is often affected by the `long-term dependency problem`{:.warning}.
+- non-sequence models: learn with a pre-difined tree or graph structure between words. `How to build a good graph structure?`{:.warning} `The structure heavily depends on expert knowledge or external NLP tools.`{:.warning}
     - fully-connected self-attention model: [Transformer][7]. Also need positional embeddings, layer normalization, residual connections, and position-wise feed-forward network layers, etc. `Easy to overfit on small or modestly-sized datasets.`{:.warning}
 
 The Transformer has become the mainstream architecture of PTMs due to its powerful capacity.

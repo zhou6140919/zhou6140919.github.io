@@ -24,9 +24,7 @@ title   : "Zhou Zhou's Blog"
 description: > # this means to ignore newlines until "Language & timezone"
   My experience
 
-sidebar: true
-sidebar-avatar: /pictures/head.jpeg
-sidebar-about-description: "My experience sharing"
+
 
 ## => Language and Timezone
 ##############################

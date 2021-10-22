@@ -20,7 +20,7 @@ text_skin: forest # "default" (default), "dark", "forest", "ocean", "chocolate",
 highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : https://zhou6140919.github.io # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : "Zhou Zhou's Blog"
+title   : "Zhou Zhou's Bizarre Blog"
 description: > # this means to ignore newlines until "Language & timezone"
   My experience
 

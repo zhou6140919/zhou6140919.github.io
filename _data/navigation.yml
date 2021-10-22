@@ -51,6 +51,10 @@ header:
 # "Paper notes,My projects,Books"    
 
 Paper-notes:
+  - title:      My Life
+    children:
+      - title:  My INFO
+        url:    /my-life/2000/06/14/my-info.html
   - title:      NLP
     children:
       - title:  Welcome

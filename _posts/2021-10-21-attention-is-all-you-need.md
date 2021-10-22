@@ -92,7 +92,7 @@ This is the structure of Transformer.
 
 
 
-The output of each sub-layer is LayerNorm(x + Sublayer(x)), where Sublayer(x) is the function implemented by the sub-layer itself. To facilitate these residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimension $$d(_model) = 512$$.
+The output of each sub-layer is LayerNorm(x + Sublayer(x)), where Sublayer(x) is the function implemented by the sub-layer itself. To facilitate these residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimension $$d<sub>model</sub> = 512$$.
 
 LayerNorm: see [Layer Normalization][3]
 
@@ -134,9 +134,6 @@ where  head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
 $$
 
 
-
-
-
 >Cross attention:
 >Queries from previous decoder layer, keys and values come from the output of the encoder.
 >This allows every position in the decoder to attend over all positions in the input sequence.
@@ -149,8 +146,7 @@ $$
 >Input embeddings add positional embeddings.
 >Using sine and cosine functions.
 
-
-
+--------------------------
 
 ## Advantages
 

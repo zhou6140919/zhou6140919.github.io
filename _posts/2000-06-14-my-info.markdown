@@ -4,22 +4,23 @@ title: My INFO
 categories: my-life
 article_header:
   type: cover
-  theme: dark
-  background_color: '#203028'
-  background_image:
-    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+#   theme: dark
+#   background_color: '#203028'
+#   background_image:
+#     gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
     src: /pictures/2_Kaine_8k.jpg
 ---
 
 <!-- ![head](/pictures/head.jpeg){:.circle.shadow}{:height="150" width="150"} -->
-<head>
+
+
 <style type="text/css">
-.mydiv{
+/* .mydiv{
     width:150px;
     height:150px;
     border-radius:50%;
     overflow:hidden;
-}
+} */
 
 h1{
     font-family:fantasy;
@@ -33,7 +34,6 @@ h1{
 
 <h1 align="center">Zhou  Zhou</h1>
 
-</head>
 
 <!--more-->
 

@@ -2,8 +2,6 @@
 title: Attention is All You Need
 tags: nlp attention
 author: Zhou Tong
-  avatar:
-  bio:
 sidebar:
   nav: Paper-notes
   avatar: /pictures/head.jpeg

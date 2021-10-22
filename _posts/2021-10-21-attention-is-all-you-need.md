@@ -141,7 +141,7 @@ $$
 
   >$$FFN(x) = max(0, xW_1 + b_1 )W_2 + b_2$$
 
-  >ReLU activation between two linear transformations.512->2048->512
+  >ReLU activation between two linear transformations. 512->2048->512
 
 >Input embeddings add positional embeddings.
 

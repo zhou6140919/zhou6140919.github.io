@@ -34,13 +34,13 @@ article_header:
 ---
 
 
-TeXt is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.
+This is Zhou Zhou's personal site. I will keep on sharing some of my notes and views about Natural Language Processing(NLP) and my life.
 
 ```python
-print('Hello, World!')
+print('Hello, my name is Zhou Zhou!')
 ```
 
-## Features
+## My hobbies
 
 - Japanese Animation
 - Mystery story whodunit

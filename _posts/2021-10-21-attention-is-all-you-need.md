@@ -2,10 +2,10 @@
 title: Attention is All You Need
 tags: nlp attention
 author: true
-  avatar: true
-  bio: true
 sidebar:
   nav: Paper-notes
+  avatar: /pictures/head.jpeg
+  bio: "My experience sharing"
 article_header:
   type: overlay
   theme: dark

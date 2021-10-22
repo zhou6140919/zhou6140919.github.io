@@ -1,4 +1,9 @@
 {%- if page.sidebar.nav -%}
+  <div class="sidebar-avatar">
+    {%- if page.sidebar.avatar -%}
+      <img src="/pictures/head.jpeg" width="32" height="32">
+    {%- endif -%}
+  </div>
   <div class="sidebar-toc">
     {%- assign _sidebar_nav = site.data.navigation[page.sidebar.nav] -%}
     {%- if _sidebar_nav -%}

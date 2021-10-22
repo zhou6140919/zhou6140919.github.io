@@ -1,6 +1,6 @@
 ---
 title: Attention is All You Need
-tags: TeXt
+tags: nlp attention
 sidebar:
   nav: Paper-notes
 article_header:
@@ -130,8 +130,11 @@ $$
 
 
 $$
-where head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
+where  head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
 $$
+
+
+
 
 
 >Cross attention:
@@ -145,6 +148,8 @@ $$
 
 >Input embeddings add positional embeddings.
 >Using sine and cosine functions.
+
+
 
 
 ## Advantages

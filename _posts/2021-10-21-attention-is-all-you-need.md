@@ -92,7 +92,7 @@ This is the structure of Transformer.
 
 
 
-The output of each sub-layer is LayerNorm(x + Sublayer(x)), where Sublayer(x) is the function implemented by the sub-layer itself. To facilitate these residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimension $$d<sub>model</sub> = 512$$.
+The output of each sub-layer is LayerNorm(x + Sublayer(x)), where Sublayer(x) is the function implemented by the sub-layer itself. To facilitate these residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimension $$d_{model} = 512$$.
 
 LayerNorm: see [Layer Normalization][3]
 
@@ -125,12 +125,12 @@ On each of these projected versions of queries, keys and values we then perform 
 Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions.
 
 $$
-MultiHead(Q,K,V)=Concat(head_1,…,head_h )
+MultiHead(Q,K,V)=Concat(head_1,…,head_h)
 $$
 
 
 $$
-where  head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
+where\ head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
 $$
 
 

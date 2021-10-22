@@ -24,6 +24,7 @@ article_header:
 
 See [Paper](https://arxiv.org/abs/2003.08271) for more details.
 
+<u>***updating***</u>
 
 ## Summary
 
@@ -41,14 +42,14 @@ This paper provides a comprehensive review of PTMs for NLP.
 - graph-based neural networks
 - attention mechanism
 
-These neural models alleviate(减轻) the *feature engineering* problem. Non-neural NLP methods rely on the discrete handcrafted features, while neural methods use low-dimensional and dense vectors(distributed representation) to implicitly(含蓄地) represent the syntactic(句法的) or semantic(语义的) features of the language.
+These neural models alleviate(减轻) the ***feature engineering*** problem. Non-neural NLP methods rely on the discrete handcrafted features, while neural methods use low-dimensional and dense vectors(distributed representation) to implicitly(含蓄地) represent the syntactic(句法的) or semantic(语义的) features of the language.
 
 Therefore, neural methods make it easy for people to dvelop various NLP systems.
 {:.success}
 
 PTMs can learn universal language representations on large corpus, avoiding training a new model from scratch.
 
-*first generation PTMs* aim to learn good word embeddings.
+***first generation PTMs*** aim to learn good word embeddings.
 
 These models are no longer needed since they are usually very shallow for computational efficiencies.
 - Skip-Gram
@@ -56,11 +57,11 @@ These models are no longer needed since they are usually very shallow for comput
 
 They are context-free and fail to capture higher-level concepts in context, such as polysemous disambiguation(多义词消歧), syntactic structures, semantic roles, anaphora(指代).
 
-*second generation PTMs* focuson learning contextual word embeddings.
-- CoVe
-- ELMo
-- OpenAI GPT
-- BERT
+***second generation PTMs*** focuson learning contextual word embeddings.
+- [CoVe][1]
+- [ELMo][2]
+- [OpenAI GPT][3]
+- [BERT][4]
 
 These learned encoders are still needed to represent words in context by downstream tasks.
 
@@ -79,7 +80,41 @@ The embedding changes according to the context it appears in.
 
 #### Non-contextual Embeddings
 
-a look up table $$E \in \mathbb{R}^{D_v \cdot V}$$
+a look up table $$E \in \mathbb{R}^{D_v \times \mathcal{V}}$$
+
+There are two limitations.
+- static embeddings. Fail to model polysemous words.
+- out-of-vocabulary problem
+
+#### Contextual Embeddings
+
+The contextual representation depends on the whole text.
+
+$$ [h_1,h_2,...,h_T] = f_{enc}(x_1,x_2,...,x_T) $$
+
+where $$f_{enc} is neural encoder.
+
+### Neural Contextual Encoders
+
+- sequence models
+    - convolutional models: capture the meaning of a word by aggregating the local information from its neighbors.
+    - recurrent models: capture the contextual representations of words with short memory, such as [LSTMs][5] and [GRUs][6]. Bidirectional operations are used to collect information from both sides of a word, but its performance is foten affected by the `long-term dependency problem`{:.warning}.
+- non-sequence models: learn with a pre-difined tree or graph structure between words. `How to build a good graph structure?`{:.warning} `The structure heavily depends on expert knowledge or external NLP tools`{:.warning}.
+    - fully-connected self-attention model: [Transformer][7]. Also need positional embeddings, layer normalization, residual connections, and position-wise feed-forward network layers, etc. `Easy to overfit on small or modestly-sized datasets.`{:.warning}
+
+The Transformer has become the mainstream architecture of PTMs due to its powerful capacity.
+{:.info}
 
 
 
+
+
+
+
+[1]: https://arxiv.org/abs/1708.00107
+[2]: https://arxiv.org/abs/1802.05365
+[3]: https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf
+[4]: https://arxiv.org/abs/1810.04805
+[5]: https://arxiv.org/abs/2105.06756
+[6]: https://arxiv.org/abs/1412.3555
+[7]: https://arxiv.org/abs/1706.03762

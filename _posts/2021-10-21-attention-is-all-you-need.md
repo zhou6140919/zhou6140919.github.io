@@ -2,6 +2,7 @@
 title: Attention is All You Need
 tags: nlp attention
 author: Zhou Tong
+mathjax: true
 sidebar:
   nav: Paper-notes
   avatar: /pictures/head.jpeg
@@ -101,7 +102,7 @@ LayerNorm: see [Layer Normalization][3]
 
 We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position i can depend only on the known outputs at positions less than i. 
 
-这种掩码与输出嵌入偏移一个位置的事实相结合，确保位置 i 的预测只能依赖于小于 i 位置的已知输出。
+>这种掩码与输出嵌入偏移一个位置的事实相结合，确保位置 i 的预测只能依赖于小于 i 位置的已知输出。
 
 ### Attention Function
 

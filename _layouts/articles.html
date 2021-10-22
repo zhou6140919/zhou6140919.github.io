@@ -1,9 +1,12 @@
 ---
 layout: page
 ---
-
-{{ content }}
-
+<style>
+  div{margin-top:300px}
+</style>
+<div>
+  {{ content }}
+</div>
 
 {%- assign _page_articles_data_source = page.articles.data_source | default: layout.articles.data_source -%}
 

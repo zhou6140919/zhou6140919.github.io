@@ -4,6 +4,7 @@ title: My INFO
 categories: my-life
 article_header:
   type: cover
+  image: 
 #   theme: dark
 #   background_color: '#203028'
 #   background_image:
@@ -28,7 +29,7 @@ h1{
 
 </style>
 
-<div align="center" style="width:150px height:150px border-radius:50% overflow:hidden">   
+<div align="center" style="width:150 height:150 border-radius:50% overflow:hidden">   
     <img src="/pictures/head.jpeg" />
 </div>
 

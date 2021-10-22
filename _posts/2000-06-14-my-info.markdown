@@ -50,7 +50,7 @@ h1{
 
 Hello and welcome!
 
-My name is Zhou Tong.My name is Zhou Tong.
+My name is Zhou Tong.
 
 You can call me `Zhou Zhou`{:.warning} as the same pronunciation from the マンガ JoJo's Bizarre Adventure.
 

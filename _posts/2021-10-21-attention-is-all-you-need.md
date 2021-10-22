@@ -54,7 +54,7 @@ Gated recurrent neural networks: see [Empirical evaluation of gated recurrent ne
 **Reached the boundaries of recurrent language models and encoder-decoder architectures.**
 
 RNN: Factor computation along the symbol positions of the input and output sequences. 
-`Parallelization precluded.`
+`Parallelization precluded.`{:.warning}
 {:.warning}
 Recent works has been achieved significant improvements in computational efficiency through factorization(因数分解) tricks and conditional computation. The fundamental constraint of sequential computation however remains.
 
@@ -62,9 +62,8 @@ Recent works has been achieved significant improvements in computational efficie
 Attention mechanism used before transformer are used in conjunction(结合) with a recurrent network.
 
 The number of operations required to relate signals from two arbitrary input or output position grows in the distance between positions. Linearly for ConvS2S and logarithmically for ByteNet. 
-`This makes it more difficult to learn dependencies between distant positions.`
+`This makes it more difficult to learn dependencies between distant positions.`{:.warning}
 {:.warning}
-
 
 In Transformer this is reduced to a constant number of operations, albeit(尽管) at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract(抵消) with Multi-Head Attention.
 {:.succuss}
@@ -116,7 +115,8 @@ Dot product is much faster and more space-efficient, since it can be implemented
 {:.info}
 
 We suspect that for large values of $$d_k$$, the dot products grow large in magnitude, pushing the softmax function into regions where it has extremely small gradients. To counteract this effect, we scale the dot products by $$1/√(d_k )$$.
-(the variance grows from 1 to dk when q and k dot product
+
+(the variance grows from 1 to dk when q and k dot product.
 
 ### Multi-Head Attention
 
@@ -128,11 +128,9 @@ $$
 MultiHead(Q,K,V)=Concat(head_1,…,head_h)
 $$
 
-
 $$
 where\ head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
 $$
-
 
 >Cross attention:
 >Queries from previous decoder layer, keys and values come from the output of the encoder.

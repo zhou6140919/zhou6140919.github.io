@@ -12,7 +12,7 @@ article_header:
 ---
 
 <!-- ![head](/pictures/head.jpeg){:.circle.shadow}{:height="150" width="150"} -->
-
+<head>
 <style type="text/css">
 .mydiv{
     width:150px;
@@ -28,11 +28,13 @@ h1{
 
 </style>
 
-<div class="mydiv">   
-    <img src="/pictures/head.jpeg" style="margin: 0 auto;" />
+<div class="mydiv" align="center">   
+    <img src="/pictures/head.jpeg" />
 </div>
 
 <h1 align="center">Zhou  Zhou</h1>
+
+</head>
 
 <!--more-->
 

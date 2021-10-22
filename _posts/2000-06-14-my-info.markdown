@@ -13,8 +13,17 @@ categories: my-life
 
 <!-- ![head](/pictures/head.jpeg){:.circle.shadow}{:height="150" width="150"} -->
 
+<style type="text/css">
+.mydiv{
+    width:150;
+    height:150;
+    border-radius:100%;
+    overflow:hidden;
+}
+</style>
+
 <div align="center">
-<div style="border-radius:100%; overflow:hidden">
-<img src="/pictures/head.jpeg" width="150" height="150">
-</div>
+    <div class="mydiv">
+        <img src="/pictures/head.jpeg" width="150" height="150">
+    </div>
 </div>

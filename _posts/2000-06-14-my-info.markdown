@@ -2,13 +2,13 @@
 layout: article
 title: My INFO
 categories: my-life
-# article_header:
-#   type: overlay
-#   theme: dark
-#   background_color: '#203028'
-#   background_image:
-#     gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
-#     src: /pictures/2_Kaine_8k.jpg
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: /pictures/2_Kaine_8k.jpg
 ---
 
 <!-- ![head](/pictures/head.jpeg){:.circle.shadow}{:height="150" width="150"} -->
@@ -19,6 +19,7 @@ categories: my-life
     height:150px;
     border-radius:50%;
     overflow:hidden;
+    align:center;
 }
 
 h1{
@@ -27,10 +28,8 @@ h1{
 
 </style>
 
-<div class="mydiv">
-    <div align="center">    
-        <img src="/pictures/head.jpeg" />
-    </div>
+<div class="mydiv">   
+    <img src="/pictures/head.jpeg" />
 </div>
 
 <h1 align="center">Zhou Zhou</h1>
@@ -60,9 +59,9 @@ Recently our company has developed a wonderful pre-training model mengzi-BERT-ba
 
 - Japanese Animation　進撃の巨人！！最高です！！
 - Collecting figures　まあ、４０くらい～
-- Mystery story whodunit 白夜行とか
-- Sports everything!
-- Coding C, Python, HTML(a little), matlab, unity(a little)
+- Mystery story whodunit　白夜行とか
+- Sports　　everything!
+- Coding　　C, Python, HTML(a little), matlab, unity(a little)
 - ......
 
 ### My Projects

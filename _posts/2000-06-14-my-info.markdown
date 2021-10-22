@@ -15,8 +15,8 @@ categories: my-life
 
 <style type="text/css">
 .mydiv{
-    width:150;
-    height:150;
+    width:150px;
+    height:150px;
     border-radius:50%;
     overflow:hidden;
 }

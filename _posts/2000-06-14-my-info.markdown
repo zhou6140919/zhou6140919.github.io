@@ -5,11 +5,13 @@ categories: my-life
 article_header:
   type: cover
   image: 
-#   theme: dark
-#   background_color: '#203028'
-#   background_image:
-#     gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+  theme: dark
+  background_color: '#203028'
+
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
     src: /pictures/2_Kaine_8k.jpg
+aside: false
 ---
 
 <!-- ![head](/pictures/head.jpeg){:.circle.shadow}{:height="150" width="150"} -->
@@ -29,8 +31,8 @@ h1{
 
 </style>
 
-<div align="center" style="width:150 height:150 border-radius:50% overflow:hidden">   
-    <img src="/pictures/head.jpeg" />
+<div align="center">   
+    <img alt="avatar" src="/pictures/head.jpeg" style="display:block; margin: 10px auto;/>
 </div>
 
 <h1 align="center">Zhou  Zhou</h1>

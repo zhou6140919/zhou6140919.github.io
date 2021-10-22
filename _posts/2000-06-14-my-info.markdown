@@ -1,5 +1,4 @@
 ---
-layout: article
 title: My INFO
 categories: my-life
 aside: false

@@ -1,26 +1,26 @@
 locale: "en-US"
-title: Strata # Title of your site
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+title: Zhou Zhou's Blog # Title of your site
+url: "https://zhou6140919.github.io/" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
 google_analytics_key: ""
 
 # Default description in social shares for the jekyll-seo-tag gem
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  I am a Human.
+  My name is Zhou Tong.
+  You can call me Zhou Zhou as the same pronunciation from the マンガ JoJo's Bizarre Adventure.
 
 # Author details for the jekyll-seo-tag gem
 author:
-  name: Your Name
-  email: your-email@domain.com
+  name: Zhou Tong
+  email: zhoutong614@emails.bjut.edu.cn
   twitter: # twitter username without the @ symbol
 
 # Social details for the jekyll-seo-tag gem
 social:
-  name: Strata Reloaded Template
+  name: Zhou Tong
   links:
-    - https://github.com/comfusion/strata-reloaded-jekyll-template
+    - https://github.com/zhou6140919
 
 permalink: pretty
 

@@ -3,7 +3,7 @@ layout: article
 title: My INFO
 categories: my-life
 article_header:
-  type: overlay
+  type: cover
   theme: dark
   background_color: '#203028'
   background_image:
@@ -19,7 +19,6 @@ article_header:
     height:150px;
     border-radius:50%;
     overflow:hidden;
-    text-align:center;
 }
 
 h1{
@@ -28,7 +27,7 @@ h1{
 
 </style>
 
-<div class="mydiv" align="center">   
+<div align="center" style="width:150px height:150px border-radius:50% overflow:hidden">   
     <img src="/pictures/head.jpeg" />
 </div>
 

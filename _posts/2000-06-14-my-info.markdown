@@ -29,7 +29,7 @@ h1{
 </style>
 
 <div class="mydiv">   
-    <img src="/pictures/head.jpeg" />
+    <img src="/pictures/head.jpeg" style="margin: 0 auto;" />
 </div>
 
 <h1 align="center">Zhou  Zhou</h1>

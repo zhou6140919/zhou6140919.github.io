@@ -43,13 +43,17 @@ Gated recurrent neural networks: see [Empirical evaluation of gated recurrent ne
 
 **Reached the boundaries of recurrent language models and encoder-decoder architectures.**
 
-RNN: Factor computation along the symbol positions of the input and output sequences. `Parallelization precluded.`{:.warning}
+RNN: Factor computation along the symbol positions of the input and output sequences. 
+`Parallelization precluded.`
+{:.warning}
 Recent works has been achieved significant improvements in computational efficiency through factorization(因数分解) tricks and conditional computation. The fundamental constraint of sequential computation however remains.
 
 
 Attention mechanism used before transformer are used in conjunction(结合) with a recurrent network.
 
-The number of operations required to relate signals from two arbitrary input or output position grows in the distance between positions. Linearly for ConvS2S and logarithmically for ByteNet. `This makes it more difficult to learn dependencies between distant positions.`{:.warning}
+The number of operations required to relate signals from two arbitrary input or output position grows in the distance between positions. Linearly for ConvS2S and logarithmically for ByteNet. 
+`This makes it more difficult to learn dependencies between distant positions.`
+{:.warning}
 
 
 In Transformer this is reduced to a constant number of operations, albeit(尽管) at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract(抵消) with Multi-Head Attention.
@@ -111,8 +115,9 @@ On each of these projected versions of queries, keys and values we then perform 
 Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions.
 
 $$
-MultiHead(Q,K,V)=Concat(head_1,…,head_h ) 
-where head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
+MultiHead(Q,K,V)=Concat(head_1,…,head_h )
+
+where  head_i=Attention(QW_i^Q,KW_i^K,VW_i^V)
 $$
 
 
@@ -154,9 +159,8 @@ The third is the path length between long-range dependencies in the network. Lea
   [2]: https://arxiv.org/abs/1412.3555
   [3]: https://arxiv.org/abs/1607.06450
 
-----------------------------------------------
 
 ## References
-- The Illustrated Transformer - Jay Alammar
-- The Annotated Transformer - Alexander M. Rush
+- [The Illustrated Transformer - Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
+- [The Annotated Transformer - Alexander M. Rush](https://jalammar.github.io/illustrated-transformer/)
 

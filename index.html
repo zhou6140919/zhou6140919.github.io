@@ -1,5 +1,12 @@
 ---
 layout: home
+article_header:
+    type: overlay
+    theme: dark
+    background_color: '#203028'
+    background_image:
+        gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+        src: /pictures/21_Piano3_8k.jpg
 sidebar:
     nav: Paper-notes
     avatar: true
@@ -19,9 +26,10 @@ sidebar:
         {% if post.title == "Welcome" %}
             
             <header>
-                <div class="cuowei">
+                <!-- <div class="cuowei">
                     <h1>{{ post.title }}</h1>
-                </div>
+                </div> -->
+                <h1>{{ post.title }}</h1>
                 <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif
                     %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
             </header>

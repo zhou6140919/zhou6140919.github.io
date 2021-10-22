@@ -30,7 +30,7 @@ article_header:
   background_color: '#203028'
   background_image:
     gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
-    src: /pictures/2_Kaine_8k.jpg
+    src: /pictures/2_OceanDream2_8k.jpg
 ---
 
 

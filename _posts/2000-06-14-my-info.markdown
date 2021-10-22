@@ -20,13 +20,12 @@ article_header:
     width:150px;
     height:150px;
     border-radius:50%;
-    margin-top:16px;
+    margin-top:32px;
     border:solid 2px rgb(58,167,149);
     overflow:hidden;
     box-shadow: 10px 10px 10px rgba(0,0,0,.5);
 }
 .mydiv img{
-    margin-top: 16px;
     height: 128px;
     width: 128px;
 }

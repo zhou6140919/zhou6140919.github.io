@@ -22,8 +22,7 @@ categories: my-life
 }
 </style>
 
-<div align="center">
-    <div class="mydiv">
-        <img src="/pictures/head.jpeg" width="150" height="150" />
-    </div>
+
+<div class="mydiv">
+    <img src="/pictures/head.jpeg" width="150" height="150" />
 </div>

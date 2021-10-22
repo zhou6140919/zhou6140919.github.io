@@ -40,9 +40,4 @@ This is Zhou Zhou's personal site. I will keep on sharing some of my notes and v
 print('Hello, my name is Zhou Zhou!')
 ```
 
-## My hobbies
-
-- Japanese Animation
-- Mystery story whodunit
-- Sports
 

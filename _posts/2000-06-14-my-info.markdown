@@ -20,9 +20,53 @@ categories: my-life
     border-radius:50%;
     overflow:hidden;
 }
+
+h1{
+    font-family:fantasy;
+}
+
+
+
 </style>
+
+
 
 
 <div class="mydiv">
     <img src="/pictures/head.jpeg" />
 </div>
+
+<h1 align="center">Zhou Zhou</h1>
+
+
+
+## Personal Info
+
+Hello and welcome!
+
+My name is Zhou Tong.My name is Zhou Tong.
+
+You can call me `Zhou Zhou`{:.warning} as the same pronunciation from the マンガ JoJo's Bizarre Adventure.
+
+ジョジョと呼んでください〜 :ghost: :ghost: :ghost:
+
+Now I am a senior at Beijing University of Technology, and will be graduate in June, 2022.
+
+The field I am currently focusing on is natural language processing.
+I am learning the relevant knowledge of the pre-training models. I hope we can have discussions about it.
+
+I am currently doing an internship in [Langboat Technology](https://www.langboat.com/) and working in the pre-training group.
+Recently our company has developed a wonderful pre-training model mengzi-BERT-base and it was open source on both [github](https://github.com/Langboat/Mengzi) and [hugging-face](https://huggingface.co/Langboat).
+
+
+### My Hobbies
+
+- Japanese Animation　進撃の巨人！！最高です！！
+- Collecting figures　まあ、４０くらい～
+- Mystery story whodunit 白夜行とか
+- Sports everything!
+- Coding C, Python, HTML(a little), matlab, unity(a little)
+- ......
+
+### My Projects
+

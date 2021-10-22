@@ -12,14 +12,16 @@ sidebar:
         margin-top: 300px
     }
 </style>
-<div>
 <font size=5>
 <div id="main">
     <section>
         {% for post in site.posts %}
         {% if post.title == "Welcome" %}
+            
             <header>
-                <h1>{{ post.title }}</h1>
+                <div>
+                    <h1>{{ post.title }}</h1>
+                </div>
                 <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif
                     %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
             </header>
@@ -33,4 +35,3 @@ sidebar:
     </section>
 </div>
 </font>
-</div>

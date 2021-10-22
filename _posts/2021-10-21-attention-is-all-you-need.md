@@ -1,6 +1,7 @@
 ---
 title: Attention is All You Need
 tags: nlp attention
+author: true
 sidebar:
   nav: Paper-notes
 article_header:

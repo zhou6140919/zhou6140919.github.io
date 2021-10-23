@@ -72,10 +72,10 @@ Electronic Information Engineering
 and will graduate in June, 2022.
 
 The field I am currently focusing on is natural language processing.
-I am learning the relevant knowledge of the pre-training models. I hope we can have discussions about it.
+I am learning the relevant knowledge of the pre-trained models. I hope we can have discussions about it.
 
 I am currently doing an internship in [Langboat Technology](https://www.langboat.com/) and working in the pre-training group.
-Recently our company has developed a wonderful pre-training model mengzi-BERT-base and it was open source on both [github](https://github.com/Langboat/Mengzi) and [hugging-face](https://huggingface.co/Langboat).
+Recently our company has developed a wonderful pre-trained model mengzi-BERT-base and it was open source on both [github](https://github.com/Langboat/Mengzi) and [hugging-face](https://huggingface.co/Langboat).
 
 
 ### My Hobbies

@@ -72,7 +72,7 @@ Electronic Information Engineering
 and will graduate in June, 2022.
 
 The field I am currently focusing on is natural language processing.
-I am learning the relevant knowledge of the pre-trained models. I hope we can have discussions about it.
+I am learning the relevant knowledge of pre-trained models. I hope we can have discussions about it.
 
 I am currently doing an internship in [Langboat Technology](https://www.langboat.com/) and working in the pre-training group.
 Recently our company has developed a wonderful pre-trained model mengzi-BERT-base and it was open source on both [github](https://github.com/Langboat/Mengzi) and [hugging-face](https://huggingface.co/Langboat).
@@ -90,12 +90,12 @@ Recently our company has developed a wonderful pre-trained model mengzi-BERT-bas
 
 ## My Awards
 
-- (COMAD) Mathematical Contest in Modeling: Successful Participant (global)**2020.03**
-- [IEEEXtreme 14.0 programming competition](https://ieeextreme.org/ieeextreme-14-0-ranking/): Ranked 78/2155) (team:BJUTnijigen, new rank: 76, global) **2020.10**
-- Student Scholarship for Study Abroad (BJUT) **2021.04**
-- Innovation and Entrepreneurship Award (BJUT) **2021.10**
-- Academic Excellence Award (FGH College) **2021.10**
-- International Exchange Scholarship (FGH College) **2021.10**
+- (COMAD) Mathematical Contest in Modeling: Successful Participant (global)  **2020.03**
+- [IEEEXtreme 14.0 programming competition](https://ieeextreme.org/ieeextreme-14-0-ranking/): ranked 78/2155) (team:BJUTnijigen, new rank: 76, global)  **2020.10**
+- Student Scholarship for Study Abroad (BJUT)  **2021.04**
+- Innovation and Entrepreneurship Award (BJUT)  **2021.10**
+- Academic Excellence Award (FGH College)  **2021.10**
+- International Exchange Scholarship (FGH College)  **2021.10**
 
 
 ## Skills
@@ -103,7 +103,7 @@ Recently our company has developed a wonderful pre-trained model mengzi-BERT-bas
 - Coding: C, Python, HTML(a little), Matlab, Unity(a little), Markdown, Liquid(a little), Assembly Language
     - Frameworks: Pytorch
     - Toolkits: Numpy, Matplotlib, SpaCy, Jieba, Torchvision...
-- Language: English(CET-6: 612, preparing for TOEIC), 日本語（N2の準備中），Chinese of course
+- Language: English (CET-6: 612, preparing for TOEIC) , 日本語 (N2の準備中) , Chinese of course
 - Learned by myself: Image processing, Data processing
 
 

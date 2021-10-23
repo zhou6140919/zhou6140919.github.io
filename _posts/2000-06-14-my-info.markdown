@@ -58,7 +58,16 @@ You can call me `Zhou Zhou`{:.warning} as the same pronunciation from the マン
 
 ジョジョと呼んでください〜 :ghost: :ghost: :ghost:
 
-Now I am a senior at Beijing University of Technology, and will be graduate in June, 2022.
+
+### Education
+
+**Beijing University of Technology(BJUT)** Beijing, China (2018-present)
+
+Fan Gongxiu Honors College
+
+Electronic Information Engineering
+
+and will graduate in June, 2022.
 
 The field I am currently focusing on is natural language processing.
 I am learning the relevant knowledge of the pre-training models. I hope we can have discussions about it.
@@ -69,12 +78,30 @@ Recently our company has developed a wonderful pre-training model mengzi-BERT-ba
 
 ### My Hobbies
 
-- Japanese Animation　進撃の巨人！！最高です！！
-- Collecting figures　まあ、４０くらい～
-- Mystery story whodunit　白夜行とか
-- Sports　　everything!
-- Coding　　C, Python, HTML(a little), matlab, unity(a little), markdown, liquid(a little)
+- Japanese Animation
+- Collecting figures
+- Mystery story whodunit
+- Sports
+- Coding
 - . . . . . .
 
-### My Projects
+
+## My Awards
+
+- (COMAD) Mathematical Contest in Modeling: Successful Participant (global)**2020.03**
+- [IEEEXtreme 14.0 programming competition](https://ieeextreme.org/ieeextreme-14-0-ranking/): Ranked 78/2155) (team:BJUTnijigen, new rank: 76, global) **2020.10**
+- Student Scholarship for Study Abroad (BJUT) **2021.04**
+- Innovation and Entrepreneurship Award (BJUT) **2021.10**
+- Academic Excellence Award (FGH College) **2021.10**
+- International Exchange Scholarship (FGH College) **2021.10**
+
+
+## Skills
+
+- Coding: C, Python, HTML(a little), Matlab, Unity(a little), Markdown, Liquid(a little), Assembly Language
+    - Frameworks: Pytorch
+    - Toolkits: Numpy, Matplotlib, SpaCy, Jieba, Torchvision...
+- Language: English(CET-6: 612, preparing for TOEIC), 日本語（N2の準備中），Chinese of course
+- Learned by myself: Image processing, Data processing
+
 

@@ -63,7 +63,7 @@ You can call me `Zhou Zhou`{:.warning} as the same pronunciation from the マン
 
 ### Education
 
-**Beijing University of Technology(BJUT)** Beijing, China (2018-present)
+**Beijing University of Technology (BJUT)** Beijing, China (2018 - )
 
 Fan Gongxiu Honors College
 
@@ -74,7 +74,9 @@ and will graduate in June, 2022.
 The field I am currently focusing on is natural language processing.
 I am learning the relevant knowledge of pre-trained models. I hope we can have discussions about it.
 
-I am currently doing an internship in [Langboat Technology](https://www.langboat.com/) and working in the pre-training group.
+### Working Experience
+
+I am currently doing an internship in [Langboat Technology](https://www.langboat.com/) and working in the pre-training group. (2021.09 - )
 Recently our company has developed a wonderful pre-trained model mengzi-BERT-base and it was open source on both [github](https://github.com/Langboat/Mengzi) and [hugging-face](https://huggingface.co/Langboat).
 
 

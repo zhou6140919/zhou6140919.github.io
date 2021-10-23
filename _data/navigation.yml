@@ -65,6 +65,11 @@ Paper-notes:
       #   url:    /demo/2021/10/21/my-first-post.html
       # - title:  My Second Post
       #   url:    /demo/2021/10/21/second-post.html
-      
+
+Titles:
+  - title: My Life
+    url:   /my-life.html
+  - title: NLP
+    url:   /nlp.html
 
         

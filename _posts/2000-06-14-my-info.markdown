@@ -3,7 +3,7 @@ title: MY INFO
 categories: my-life
 aside: false
 sidebar:
-  nav: Titles
+  nav: Paper-notes
 article_header:
   type: overlay
   theme: dark

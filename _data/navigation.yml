@@ -66,14 +66,5 @@ Paper-notes:
       # - title:  My Second Post
       #   url:    /demo/2021/10/21/second-post.html
 
-Titles:
-  - title: 
-    children:
-      - title:  My Life
-        url:    /my-life.html
-  - title:
-    children:
-      - title:  NLP
-        url:    /nlp.html
 
         

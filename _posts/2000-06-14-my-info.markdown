@@ -72,10 +72,11 @@ and will graduate in June, 2022.
 
 **Nagoya University** (Exchange program, 2021.04 - 2021.08) School of Engineering
 
+-----------------------------------
 
 *Research fields: Math modeling, Image processing, NLP...*
 
-I am learning the relevant knowledge of pre-trained models. If you are also interested in it, then I hope we can have a heated discussion.
+I am learning the relevant knowledge of NLP. If you are also interested in it, then I hope we can have a heated discussion.
 
 ### Working Experience
 
@@ -83,7 +84,7 @@ I am currently doing an internship in [Langboat Technology](https://www.langboat
 Recently our company has developed a wonderful pre-trained model mengzi-BERT-base and it was open source on both [github](https://github.com/Langboat/Mengzi) and [hugging-face](https://huggingface.co/Langboat).
 
 
-### My Hobbies
+### Hobbies
 
 - Japanese Animation :tv:
 - Collecting figures :dancer:
@@ -94,7 +95,7 @@ Recently our company has developed a wonderful pre-trained model mengzi-BERT-bas
 - . . . . . .
 
 
-## My Awards
+## Awards
 
 - (COMAD) Mathematical Contest in Modeling: Successful Participant (global)  **2020.03**
 - [IEEEXtreme 14.0 programming competition](https://ieeextreme.org/ieeextreme-14-0-ranking/): ranked 78/2155) (team:BJUTnijigen, new rank: 76, global)  **2020.10**
@@ -113,7 +114,7 @@ Recently our company has developed a wonderful pre-trained model mengzi-BERT-bas
 
 
 
-## Tips
+## Some Tips
 
 The most important thing for multiple developments is time management. Good time management requires a good mindset.
 

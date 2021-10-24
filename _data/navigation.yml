@@ -70,7 +70,7 @@ Titles:
   - title: 
     children:
       - title:  My Life
-        url:    /2021/10/20/my-life.html
+        url:    /my-life.html
   - title:
     children:
       - title:  NLP

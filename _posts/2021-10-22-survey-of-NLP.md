@@ -106,7 +106,55 @@ The Transformer has become the mainstream architecture of PTMs due to its powerf
 {:.info}
 
 
+### Why Pre-training?
 
+The number of model parameters :arrow_up: , 
+much larger dataset is needed to prevent overfitting during training parameters. And it is extremely expensive to build large-scale labeled NLP dataset.
+
+Models can first learn a good representation from the huge unlabeled corpus and then use them for other tasks.
+
+**Advantages:**
+1. Learn universal language representations that can help with downstream tasks.
+2. Provide a better model initialization, lead to a better generalization performance and speed up convergence(收敛) on the target task.
+3. Pre-training can be regarded as a kind of regularization to avoid overfitting on small datasets.
+
+### A Brief History
+
+1. pre-trained word embeddings: Continuous Bags-of-Words(CBOW) and Skip-Gram
+  - They are simple but still can learn high quality word embeddings to capture the latent syntactic and semantic similarities among words.
+  - word2vec, GloVe
+  - **Context Independent** and mostly trained by shallow models, the rest of the model still needs to be learned from scratch.
+2. pre-trained contextual encoders
+  - LSTM, Seq2Seq
+  - Transformer
+  - ULMFiT, BERT (fine-tuning)
+
+Fine-tuning has become the mainstream approach to adapt PTMs for downstream tasks.
+
+## Overview of PTMs
+
+### Pre-training Tasks
+
+challenging & substantial(大量) training data
+
+- supervised learning: to learn a function that maps input to output
+- unsupervised learning: to find intrinsic knowledge from unlabeled data (clusters, densities, latent representations)
+- self-supervised learning: a blend(混合) of the above two (MLM: Masked Language Model)
+  1. Language Modeling (LM)
+    A classic probabilistic density estimation problem.
+    $$ p(X_{1:T} = \prod_{t=1}^{T} p(x_t | X_{0:t-1})) $$
+    $$ x_0$$ is the beginning token of the sequence.
+    Train with maximum likelihood estimation (MLE).
+
+    *problem: can only encode the leftward context tokens and itself.* -> bidirectional LM (BiLM)
+  2. Masked Language Modeling (MLM)
+  3. Permuted Language Modeling (PLM)
+  4. Denoising Autoencoder (DAE)
+  5. Contrastive Learning (CTL)
+  6. Others
+
+This is the graph of loss functions of all these tasks.
+![graph](/images/loss_function.jpg)
 
 
 

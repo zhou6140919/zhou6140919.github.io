@@ -85,12 +85,12 @@ Recently our company has developed a wonderful pre-trained model mengzi-BERT-bas
 
 ### My Hobbies
 
-- Japanese Animation :television:
-- Collecting figures :man dancing:
-- Mystery story whodunit :notebook:
-- Archery :bow and arrow:
-- Coding :desktop computer:
-- Rap music :musical note:
+- Japanese Animation :tv:
+- Collecting figures :dancer:
+- Mystery story whodunit :book:
+- Archery :dart:
+- Coding :computer:
+- Rap music :musical_note:
 - . . . . . .
 
 

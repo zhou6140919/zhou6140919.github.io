@@ -115,8 +115,11 @@ Models can first learn a good representation from the huge unlabeled corpus and 
 
 **Advantages:**
 1. Learn universal language representations that can help with downstream tasks.
+{:.info}
 2. Provide a better model initialization, lead to a better generalization performance and speed up convergence(收敛) on the target task.
+{:.info}
 3. Pre-training can be regarded as a kind of regularization to avoid overfitting on small datasets.
+{:.info}
 
 ### A Brief History
 
@@ -142,11 +145,14 @@ challenging & substantial(大量) training data
 - self-supervised learning: a blend(混合) of the above two (MLM: Masked Language Model)
   1. Language Modeling (LM)
     A classic probabilistic density estimation problem.
+
     $$ p(X_{1:T} = \prod_{t=1}^{T} p(x_t | X_{0:t-1})) $$
-    $$ x_0$$ is the beginning token of the sequence.
+
+    $$ where\ x_0$$ is the beginning token of the sequence.
     Train with maximum likelihood estimation (MLE).
 
     *problem: can only encode the leftward context tokens and itself.* -> bidirectional LM (BiLM)
+    
   2. Masked Language Modeling (MLM)
   3. Permuted Language Modeling (PLM)
   4. Denoising Autoencoder (DAE)

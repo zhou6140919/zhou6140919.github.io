@@ -17,20 +17,15 @@ article_header:
     src: /screenshot.jpg
 ---
 
-
-
-
-###### `Attention is All You Need`{:.success}
-
-
 <!--more-->
 
 
 See [Original Paper](https://arxiv.org/abs/1706.03762) for more details.
+
 See [Transformer Codes by Harvard NLP](http://nlp.seas.harvard.edu/2018/04/03/attention.html) for more details.
 
 
-## Notes on Attention is All You Need
+# Notes on Attention is All You Need
 
 `Problems:`{:.warning}
 Sequence models are based on complex recurrent or convolutional neural networks. RNN aligns the positions to steps in computation time. The inherently(内在地) sequential nature precludes(杜绝) parallelization within training examples, which becomes critical at longer sequence lengths, as memory constraints limit batching across examples.

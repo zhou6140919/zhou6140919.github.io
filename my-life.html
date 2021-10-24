@@ -1,5 +1,6 @@
 ---
 layout: home
+title: MY LIFE
 article_header:
     type: overlay
     theme: dark
@@ -10,4 +11,9 @@ article_header:
 # articles:
 #   excerpt_type: html
 ---
+
+{% for post in site.categories[page.category] %}
+    * [{{ post.title }}]({{ post.url | absolute_url }})
+        <small>{{ post.excerpt }}</small>
+{% endfor %}
 

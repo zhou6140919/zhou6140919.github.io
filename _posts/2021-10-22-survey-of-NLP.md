@@ -144,7 +144,6 @@ challenging & substantial(大量) training data
 - unsupervised learning: to find intrinsic knowledge from unlabeled data (clusters, densities, latent representations)
 - self-supervised learning: a blend(混合) of the above two (MLM: Masked Language Model)
   1. Language Modeling (LM)
-  
     - A classic probabilistic density estimation problem.
 
       $$ p(X_{1:T}) = \prod_{t=1}^{T} p(x_t | X_{0:t-1}) $$

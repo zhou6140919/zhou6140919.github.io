@@ -143,22 +143,24 @@ challenging & substantial(大量) training data
 - supervised learning: to learn a function that maps input to output
 - unsupervised learning: to find intrinsic knowledge from unlabeled data (clusters, densities, latent representations)
 - self-supervised learning: a blend(混合) of the above two (MLM: Masked Language Model)
-  - Language Modeling (LM)
+  1. Language Modeling (LM)
   
     - A classic probabilistic density estimation problem.
 
       $$ p(X_{1:T}) = \prod_{t=1}^{T} p(x_t | X_{0:t-1}) $$
 
-      $$ where\ x_0$$ is the beginning token of the sequence.
+      where $$x_0$$ is the beginning token of the sequence.
       Train with maximum likelihood estimation (MLE).
 
-      *problem: can only encode the leftward context tokens and itself.* -> bidirectional LM (BiLM)
+      *problem: It can only encode the leftward context tokens and itself.* -> bidirectional LM (BiLM)
 
-  - Masked Language Modeling (MLM)
-  - Permuted Language Modeling (PLM)
-  - Denoising Autoencoder (DAE)
-  - Contrastive Learning (CTL)
-  - Others
+  2. Masked Language Modeling (MLM)
+    - The mask \[MASK] does not appear in the fine-tuning phase.
+      *problem: This will create a mismatch between the pre-training phase and the fine-tuning phase.
+  3. Permuted Language Modeling (PLM)
+  4. Denoising Autoencoder (DAE)
+  5. Contrastive Learning (CTL)
+  6. Others
 
 This is the graph of loss functions of all these tasks.
 ![graph](/images/loss_function.jpg)

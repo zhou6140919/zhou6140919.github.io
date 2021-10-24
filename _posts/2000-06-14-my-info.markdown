@@ -71,7 +71,8 @@ Electronic Information Engineering
 
 and will graduate in June, 2022.
 
-The field I am currently focusing on is natural language processing.
+Fields: Math modeling, Image processing, NLP...
+
 I am learning the relevant knowledge of pre-trained models. I hope we can have discussions about it.
 
 ### Working Experience
@@ -85,8 +86,9 @@ Recently our company has developed a wonderful pre-trained model mengzi-BERT-bas
 - Japanese Animation
 - Collecting figures
 - Mystery story whodunit
-- Sports
+- Archery
 - Coding
+- Rap music
 - . . . . . .
 
 
@@ -104,8 +106,18 @@ Recently our company has developed a wonderful pre-trained model mengzi-BERT-bas
 
 - Coding: C, Python, HTML(a little), Matlab, Unity(a little), Markdown, Liquid(a little), Assembly Language
     - Frameworks: Pytorch
-    - Toolkits: Numpy, Matplotlib, SpaCy, Jieba, Torchvision...
+    - Toolkits: Numpy, Matplotlib, SpaCy, Torchvision...
 - Language: English (CET-6: 612, preparing for TOEIC) , 日本語 (N2の準備中) , Chinese of course
-- Learned by myself: Image processing, Data processing
+
+
+
+## Tips
+
+The most important thing for multiple developments is time management. Good time management requires a good mindset.
+
+1. **Efficiency always comes first.** Work hard and play hard. Once you have to work, you must devote 100 percent of your energy. Concentration needs to be deliberately gradually cultivated, such as staying away from mobile phones and reasonable time allocation.
+2. **Refuse to procrastinate.** Don't be a deadline fighter. Only by completing tasks ahead of schedule can you have a better state, more free time/energy, and more initiative.
+3. **Facing school and career, it is essential to have a strong desire to win and curiosity.** This kind of mentality guarantees that you can make progress every day. You will give yourself a reason to give up after getting over it, which will affect your mentality.
+4. **Motivation matters.** The interest in development needs to be what you are interested in, not the burden of your own life. How to find love for this matter requires extensive experimentation and being open-minded.
 
 

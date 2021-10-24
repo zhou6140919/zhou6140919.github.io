@@ -145,9 +145,9 @@ challenging & substantial(大量) training data
 - self-supervised learning: a blend(混合) of the above two (MLM: Masked Language Model)
   - Language Modeling (LM)
   
-      A classic probabilistic density estimation problem.
+    - A classic probabilistic density estimation problem.
 
-      $$ p(X_{1:T} = \prod_{t=1}^{T} p(x_t | X_{0:t-1})) $$
+      $$ p(X_{1:T}) = \prod_{t=1}^{T} p(x_t | X_{0:t-1}) $$
 
       $$ where\ x_0$$ is the beginning token of the sequence.
       Train with maximum likelihood estimation (MLE).

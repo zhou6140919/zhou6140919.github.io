@@ -22,7 +22,7 @@ article_header:
 
 <!--more-->
 
-See [Paper](https://arxiv.org/abs/2003.08271) for more details.
+See [Original Paper](https://arxiv.org/abs/2003.08271) for more details.
 
 <u>***updating***</u>
 
@@ -142,7 +142,7 @@ challenging & substantial(大量) training data
 
 - supervised learning: to learn a function that maps input to output
 - unsupervised learning: to find intrinsic knowledge from unlabeled data (clusters, densities, latent representations)
-- self-supervised learning: a blend(混合) of the above two (MLM: Masked Language Model)
+- self-supervised learning: a blend(混合) of the above two
   1. Language Modeling (LM)
     - A classic probabilistic density estimation problem.
 
@@ -155,7 +155,8 @@ challenging & substantial(大量) training data
 
   2. Masked Language Modeling (MLM)
     - The mask \[MASK] does not appear in the fine-tuning phase.
-      *problem: This will create a mismatch between the pre-training phase and the fine-tuning phase.
+
+      *problem: This will create a mismatch between the pre-training phase and the fine-tuning phase.*
   3. Permuted Language Modeling (PLM)
   4. Denoising Autoencoder (DAE)
   5. Contrastive Learning (CTL)

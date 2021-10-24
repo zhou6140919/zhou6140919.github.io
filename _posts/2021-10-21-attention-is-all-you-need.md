@@ -26,8 +26,8 @@ article_header:
 <!--more-->
 
 
-See [Paper](https://arxiv.org/abs/1706.03762) for more details.
-See [Transformer Codes](http://nlp.seas.harvard.edu/2018/04/03/attention.html) for more details.
+See [Original Paper](https://arxiv.org/abs/1706.03762) for more details.
+See [Transformer Codes by Harvard NLP](http://nlp.seas.harvard.edu/2018/04/03/attention.html) for more details.
 
 
 ## Notes on Attention is All You Need
@@ -181,6 +181,7 @@ The third is the path length between long-range dependencies in the network. Lea
 
 
 ## References
+- [Attention is All You Need - Ashish Vaswani, et al.](https://arxiv.org/abs/1706.03762)
 - [The Illustrated Transformer - Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 - [The Annotated Transformer - Alexander M. Rush](https://jalammar.github.io/illustrated-transformer/)
 

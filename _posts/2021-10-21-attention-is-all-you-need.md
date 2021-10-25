@@ -10,7 +10,6 @@ author: Zhou Tong
 sidebar:
   nav: Paper-notes
   avatar: true
-  bio: "My experience sharing"
 article_header:
   type: overlay
   theme: dark

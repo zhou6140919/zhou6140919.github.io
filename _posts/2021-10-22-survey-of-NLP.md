@@ -1,6 +1,8 @@
 ---
 title: Pre-trained Models for Natural Language Processing A Survey
-categories: nlp
+categories:
+    - nlp
+    - papers
 tags: 
     - nlp
     - survey

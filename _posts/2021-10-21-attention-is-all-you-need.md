@@ -1,5 +1,8 @@
 ---
 title: Attention is All You Need
+categories:
+    - nlp
+    - papers
 tags: 
     - nlp
     - attention

@@ -1,0 +1,8 @@
+---
+layout: articles
+title: MY LIFE
+articles:
+  data_source: site.categories.my-life
+  show_excerpt: true
+  show_readmore: true
+---

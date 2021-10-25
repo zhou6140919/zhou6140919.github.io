@@ -1,9 +1,8 @@
 ---
 layout: articles
-title: Articles - Item (Cover + Excerpt + Read More)
+title: NLP
 articles:
   data_source: site.categories.nlp
-  show_cover: true
   show_excerpt: true
   show_readmore: true
 ---

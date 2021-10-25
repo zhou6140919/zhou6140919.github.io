@@ -193,7 +193,6 @@ This is the graph of loss functions of all these tasks.
 ### Taxonomy(分类) of PTMs
 
 1. Representation Type
-
   + non-contextual
 
     - CBOW/Skip-Gram
@@ -206,7 +205,6 @@ This is the graph of loss functions of all these tasks.
     - BERT
 
 2. Architectures
-
   + LSTM
 
     - ELMo
@@ -234,11 +232,9 @@ This is the graph of loss functions of all these tasks.
     - mBART
 
 3. Pre-Training Task Types
-
   + see the graph below
 
 4. Extensions
-
   + knowledge-enriched PTMs
 
     - KnowBERT
@@ -269,7 +265,6 @@ This is the graph of loss functions of all these tasks.
     - Model Replacing: BERT-of-Theseus
 
 5. Tuning Strategies
-
   + Fine-Tuning:
 
     - Two-Stage FT

@@ -213,8 +213,8 @@ This is the graph of loss functions of all these tasks.
 
   + non-contextual
 
-    CBOW/Skip-Gram
-    GloVe
+    - CBOW/Skip-Gram
+    - GloVe
 
   + contextual
 

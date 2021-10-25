@@ -36,7 +36,9 @@
     {%- if _sidebar_nav -%}
     <ul class="toc toc--navigator">
       {%- for _item in _sidebar_nav -%}
-        <li class="toc-h1">{{ _item.title }}</li>
+        {%- include snippets/get-nav-url.html path=_item.url -%}
+        {%- assign _title_url = __return -%}
+        <li class="toc-h1 active"><a href="{{ _title_url }}">{{ _item.title }}</a></li>
         {%- if _item.children -%}
           {%- for _child in _item.children -%}
             {%- include snippets/get-nav-url.html path=_child.url -%}

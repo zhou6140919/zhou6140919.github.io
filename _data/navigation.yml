@@ -52,19 +52,17 @@ header:
 
 Paper-notes:
   - title:      My Life
+    url:        /2021/10/20/my-life.html
     children:
       - title:  My INFO
         url:    /my-life/2000/06/14/my-info.html
   - title:      NLP
+    url:        /2021/10/20/nlp.html
     children:
       - title:  Attention is All You need
         url:    /2021/10/21/attention-is-all-you-need.html
       - title:  Pre-trained Models for Natural Language Processing A Survey
         url:    /2021/10/22/survey-of-NLP.html
-      # - title:  My First Post
-      #   url:    /demo/2021/10/21/my-first-post.html
-      # - title:  My Second Post
-      #   url:    /demo/2021/10/21/second-post.html
 
 
         

@@ -2,7 +2,7 @@
 layout: articles
 title: Articles - Item (Cover + Excerpt + Read More)
 articles:
-  data_source: site.posts
+  data_source: site.categories == "nlp"
   show_cover: true
   show_excerpt: true
   show_readmore: true

@@ -1,5 +1,6 @@
 ---
 title: Pre-trained Models for Natural Language Processing A Survey
+categories: nlp
 tags: 
     - nlp
     - survey
@@ -207,7 +208,8 @@ This is the graph of loss functions of all these tasks.
 
 ### Taxonomy(分类) of PTMs
 
-1. Representation Type
+**Representation Type**
+
   + non-contextual
 
     CBOW/Skip-Gram
@@ -221,7 +223,7 @@ This is the graph of loss functions of all these tasks.
 
     BERT
 
-2. Architectures
+**Architectures**
 
   + LSTM
 
@@ -259,11 +261,11 @@ This is the graph of loss functions of all these tasks.
 
     mBART
 
-3. Pre-Training Task Types
+**Pre-Training Task Types**
 
   + see the graph below
 
-4. Extensions
+**Extensions**
 
   + knowledge-enriched PTMs
 
@@ -305,7 +307,7 @@ This is the graph of loss functions of all these tasks.
 
     Model Replacing: BERT-of-Theseus
 
-5. Tuning Strategies
+**Tuning Strategies**
 
   + Fine-Tuning:
 

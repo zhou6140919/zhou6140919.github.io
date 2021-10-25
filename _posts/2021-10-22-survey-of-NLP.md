@@ -193,61 +193,91 @@ This is the graph of loss functions of all these tasks.
 ### Taxonomy(分类) of PTMs
 
 1. Representation Type
+
   + non-contextual
+
     - CBOW/Skip-Gram
     - GloVe
+
   + contextual
+
     - ELMo
     - GPT
     - BERT
+
 2. Architectures
+
   + LSTM
+
     - ELMo
     - CoVe
+
   + Transformer Encoder
+
     - BERT
     - SpanBERT
     - XLNet
     - RoBERTa
+
   + Transformer Decoder (masked self-attention which prevents tokens from attending their futer positions)
+
     - GPT
     - GPT-2
     - GPT-3
+
   + full Transformer
+
     - MASS
     - BART
     - T5
     - XNLG
     - mBART
+
 3. Pre-Training Task Types
+
   + see the graph below
+
 4. Extensions
+
   + knowledge-enriched PTMs
+
     - KnowBERT
+
   + multilingual or language-specific PTMs
+
     - XLU: mBERT, Unicoder, XLM, MultiFit
     - XLG: MASS, mBART, XNLG
+
   + multi-modal PTMs *(In the original paper, there is a spelling mistake)*
+
     - Image: ViLBERT, LXMERT, VisualBERT, B2T2, VL-BERT
     - Video: VideoBERT, CBT
     - Speech: SpeechBERT
   + domain-specific PTMs
+
     - SentiLR
     - BioBERT
     - SciBERT
     - PatentBERT
+
   + compressed PTMs
+
     - Model Pruning: CompressingBERT
     - Quantization: Q-BERT, Q8BERT
     - Parameter Sharing: ALBERT
     - Distillation(蒸馏): DistilBERT, TinyBERT, MiniLM
-    = Model Replacing: BERT-of-Theseus
+    - Model Replacing: BERT-of-Theseus
+
 5. Tuning Strategies
+
   + Fine-Tuning:
+
     - Two-Stage FT
     - Multi-task FT
     - Extra Adaptor
+
   + Prompt-Tuning:
+
     - Discrete: PET, AutoPrompt, LM-BFF
     - Continuous: WARP, Prefix-Tuning, P-Tuning
 

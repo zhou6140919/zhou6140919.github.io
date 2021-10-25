@@ -118,8 +118,10 @@ Models can first learn a good representation from the huge unlabeled corpus and 
 **Advantages:**
 1. Learn universal language representations that can help with downstream tasks.
 {:.info}
+
 2. Provide a better model initialization, lead to a better generalization performance and speed up convergence(收敛) on the target task.
 {:.info}
+
 3. Pre-training can be regarded as a kind of regularization to avoid overfitting on small datasets.
 {:.info}
 
@@ -145,43 +147,56 @@ challenging & substantial(大量) training data
 - supervised learning: to learn a function that maps input to output
 - unsupervised learning: to find intrinsic knowledge from unlabeled data (clusters, densities, latent representations)
 - self-supervised learning: a blend(混合) of the above two
-  1. Language Modeling (LM)
-    - A classic probabilistic density estimation problem.
 
-      $$ p(X_{1:T}) = \prod_{t=1}^{T} p(x_t | X_{0:t-1}) $$
+**Language Modeling (LM)**
+- A classic probabilistic density estimation problem.
 
-      where $$x_0$$ is the beginning token of the sequence.
-      Train with maximum likelihood estimation (MLE).
+  $$ p(X_{1:T}) = \prod_{t=1}^{T} p(x_t | X_{0:t-1}) $$
 
-      *problem: It can only encode the leftward context tokens and itself.* -> bidirectional LM (BiLM)
+  where $$x_0$$ is the beginning token of the sequence.
+  Train with maximum likelihood estimation (MLE).
 
-  2. Masked Language Modeling (MLM)
-    - The mask \[MASK] does not appear in the fine-tuning phase.
+  *problem: It can only encode the leftward context tokens and itself.* -> bidirectional LM (BiLM)
 
-      *problem: This will create a mismatch between the pre-training phase and the fine-tuning phase.*
-    - Seq2Seq MLM: MASS & [T5][8]
-      benefit QA, summarization, MT (Seq2Seq tasks)
-    - Enhanced MLM: BERT -> [RoBERTa][9]) (improved by dynamic masking)
-      UniLM, XLM, SpanBERT, StructBERT
-      Another way to enrich MLM is to incorporate external knowledge.
-  3. Permuted(置换) Language Modeling (PLM)
-    - PLM is to overcome the above issue of MLM. A permutation is randomly sampled from all possible permutations.
+**Masked Language Modeling (MLM)**
+  - The mask \[MASK] does not appear in the fine-tuning phase.
+
+    *problem: This will create a mismatch between the pre-training phase and the fine-tuning phase.*
+
+  - Seq2Seq MLM: MASS & [T5][8]
+
+    benefit QA, summarization, MT (Seq2Seq tasks)
+
+  - Enhanced MLM: BERT -> [RoBERTa][9]) (improved by dynamic masking)
+
+    UniLM, XLM, SpanBERT, StructBERT
+
+    Another way to enrich MLM is to incorporate external knowledge.
+
+**Permuted(置换) Language Modeling (PLM)**
+
+  - PLM is to overcome the above issue of MLM. A permutation is randomly sampled from all possible permutations.
 
       *How do the permutation not affect the natural positions of sequences?*
-  4. Denoising(去噪) Autoencoder (DAE)
-    - To recover the original undistorted input from a partially corrupted input.
+
+**Denoising(去噪) Autoencoder (DAE)**
+
+  - To recover the original undistorted input from a partially corrupted input.
 
     token masking, token deletion, text infilling, sentence permutation, document rotation
-  5. Contrastive(对比的) Learning (CTL)
-    - A score function s(x, y) for text pair (x, y) is learned to minimize the objective function:
 
-    $$ \mathcal{L}_{CTL} = \mathbb{E}_{x,y^+,y^-}[-log\frac{exp(s(x,y^+))}{exp(s(x,y^+)+exp(s(x,y^-)}] $$
+**Contrastive(对比的) Learning (CTL)**
+  - A score function s(x, y) for text pair (x, y) is learned to minimize the objective function:
+
+      $$ \mathcal{L}_{CTL} = \mathbb{E}_{x,y^+,y^-}[-log\frac{exp(s(x,y^+))}{exp(s(x,y^+)+exp(s(x,y^-)}] $$
     
 
     - Has less computational complexity compared to LM.
 
     - Deep InfoMax(DIM), Replaced Token Detection(RTD), Next Sentence Prediction(NSP), Sentence Order Prediction(SOP): ALBERT & StructBERT & BERTje
-  6. Others
+
+**Others**
+
     - incorporate factual knowledge
     - improve cross-lingual tasks
     - multi-modal applications

@@ -216,50 +216,33 @@ This is the graph of loss functions of all these tasks.
     - GloVe
 
   + contextual
-
-    ELMo
-
-    GPT
-
-    BERT
+    - ELMo
+    - GPT
+    - BERT
 
 **Architectures**
 
   + LSTM
-
-     ELMo
-
-     CoVe
+    - ELMo
+    - CoVe
 
   + Transformer Encoder
-
-    BERT
-
-    SpanBERT
-
-    XLNet
-
-    RoBERTa
+    - BERT
+    - SpanBERT
+    - XLNet
+    - RoBERTa
 
   + Transformer Decoder (masked self-attention which prevents tokens from attending their futer positions)
-
-    GPT
-
-    GPT-2
-
-    GPT-3
+    - GPT
+    - GPT-2
+    - GPT-3
 
   + full Transformer
-
-    MASS
-
-    BART
-
-    T5
-
-    XNLG
-
-    mBART
+    - MASS
+    - BART
+    - T5
+    - XNLG
+    - mBART
 
 **Pre-Training Task Types**
 
@@ -268,60 +251,40 @@ This is the graph of loss functions of all these tasks.
 **Extensions**
 
   + knowledge-enriched PTMs
-
-    KnowBERT
+    - KnowBERT
 
   + multilingual or language-specific PTMs
-
-    XLU: mBERT, Unicoder, XLM, MultiFit
-
-    XLG: MASS, mBART, XNLG
+    - XLU: mBERT, Unicoder, XLM, MultiFit
+    - XLG: MASS, mBART, XNLG
 
   + multi-modal PTMs *(In the original paper, there is a spelling mistake)*
-
-    Image: ViLBERT, LXMERT, VisualBERT, B2T2, VL-BERT
-
-    Video: VideoBERT, CBT
-
-    Speech: SpeechBERT
+    - Image: ViLBERT, LXMERT, VisualBERT, B2T2, VL-BERT
+    - Video: VideoBERT, CBT
+    - Speech: SpeechBERT
 
   + domain-specific PTMs
-
-    SentiLR
-
-    BioBERT
-
-    SciBERT
-
-    PatentBERT
+    - SentiLR
+    - BioBERT
+    - SciBERT
+    - PatentBERT
 
   + compressed PTMs
-
-    Model Pruning: CompressingBERT
-
-    Quantization: Q-BERT, Q8BERT
-
-    Parameter Sharing: ALBERT
-
-    Distillation(蒸馏): DistilBERT, TinyBERT, MiniLM
-
-    Model Replacing: BERT-of-Theseus
+    - Model Pruning: CompressingBERT
+    - Quantization: Q-BERT, Q8BERT
+    - Parameter Sharing: ALBERT
+    - Distillation(蒸馏): DistilBERT, TinyBERT, MiniLM
+    - Model Replacing: BERT-of-Theseus
 
 **Tuning Strategies**
 
   + Fine-Tuning:
-
-    Two-Stage FT
-
-    Multi-task FT
-
-    Extra Adaptor
+    - Two-Stage FT
+    - Multi-task FT
+    - Extra Adaptor
 
   + Prompt-Tuning:
-
-    Discrete: PET, AutoPrompt, LM-BFF
-
-    Continuous: WARP, Prefix-Tuning, P-Tuning
+    - Discrete: PET, AutoPrompt, LM-BFF
+    - Continuous: WARP, Prefix-Tuning, P-Tuning
 
 
 

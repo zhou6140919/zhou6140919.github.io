@@ -298,6 +298,12 @@ This is the graph of loss functions of all these tasks.
 
 
 
+## Reference
+
+- [Pre-trained Models for Natural Language Processing: A Survey - Xipeng Qiu, et al.](https://arxiv.org/abs/2003.08271)
+
+
+
 [1]: https://arxiv.org/abs/1708.00107
 [2]: https://arxiv.org/abs/1802.05365
 [3]: https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf

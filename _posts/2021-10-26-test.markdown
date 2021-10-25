@@ -3,6 +3,5 @@ layout: articles
 title: Articles - Item (Cover + Excerpt + Read More)
 articles:
   data_source: site.posts
-  show_excerpt: true
-  show_readmore: true
+  type: grid
 ---

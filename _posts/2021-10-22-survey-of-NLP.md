@@ -193,16 +193,14 @@ This is the graph of loss functions of all these tasks.
 ### Taxonomy(分类) of PTMs
 
 1. Representation Type
-  + non-contextual
+    + non-contextual
+      - CBOW/Skip-Gram
+      - GloVe
 
-    - CBOW/Skip-Gram
-    - GloVe
-
-  + contextual
-
-    - ELMo
-    - GPT
-    - BERT
+    + contextual
+      - ELMo
+      - GPT
+      - BERT
 
 2. Architectures
   + LSTM

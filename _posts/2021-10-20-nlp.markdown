@@ -1,6 +1,9 @@
 ---
 layout: articles
 title: NLP
+sidebar:
+    nav: Paper-notes
+    avatar: true
 articles:
   data_source: site.categories.nlp
   show_excerpt: true

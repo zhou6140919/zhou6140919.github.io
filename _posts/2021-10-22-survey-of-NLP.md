@@ -1,13 +1,12 @@
 ---
 title: Pre-trained Models for Natural Language Processing A Survey
-categories:
-    - nlp
-    - papers
+categories: nlp
 tags: 
     - nlp
     - survey
     - PTM
     - distributed representation
+    - papers
 author: Zhou Tong
 sidebar:
   nav: Paper-notes

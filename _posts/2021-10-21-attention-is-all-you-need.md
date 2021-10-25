@@ -1,12 +1,11 @@
 ---
 title: Attention is All You Need
-categories:
-    - nlp
-    - papers
+categories: nlp
 tags: 
     - nlp
     - attention
     - transformer
+    - papers
 author: Zhou Tong
 sidebar:
   nav: Paper-notes

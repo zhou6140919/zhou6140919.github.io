@@ -5,7 +5,7 @@ aside: false
 sidebar:
   nav: Paper-notes
   avatar: true
-  bio: "My experience sharing"
+  bio: "I think,therefore I am"
 article_header:
   type: overlay
   theme: dark

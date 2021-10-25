@@ -60,9 +60,9 @@ Paper-notes:
     url:        /2021/10/20/nlp.html
     children:
       - title:  Attention is All You need
-        url:    /2021/10/21/attention-is-all-you-need.html
+        url:    /nlp/2021/10/21/attention-is-all-you-need.html
       - title:  Pre-trained Models for Natural Language Processing A Survey
-        url:    /2021/10/22/survey-of-NLP.html
+        url:    /nlp/2021/10/22/survey-of-NLP.html
 
 
         

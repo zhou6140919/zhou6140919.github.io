@@ -54,7 +54,7 @@ Paper-notes:
   - title:      My Life
     url:        /2021/10/20/my-life.html
     children:
-      - title:  My INFO
+      - title:  My Info
         url:    /my-life/2000/06/14/my-info.html
   - title:      NLP
     url:        /2021/10/20/nlp.html

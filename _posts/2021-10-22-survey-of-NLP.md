@@ -212,7 +212,6 @@ This is the graph of loss functions of all these tasks.
 **Representation Type**
 
   + non-contextual
-
     - CBOW/Skip-Gram
     - GloVe
 

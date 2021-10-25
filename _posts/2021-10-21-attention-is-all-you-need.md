@@ -3,6 +3,7 @@ title: Attention is All You Need
 tags: 
     - nlp
     - attention
+    - transformer
 author: Zhou Tong
 sidebar:
   nav: Paper-notes

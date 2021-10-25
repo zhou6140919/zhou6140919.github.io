@@ -166,16 +166,20 @@ challenging & substantial(大量) training data
       Another way to enrich MLM is to incorporate external knowledge.
   3. Permuted(置换) Language Modeling (PLM)
     - PLM is to overcome the above issue of MLM. A permutation is randomly sampled from all possible permutations.
-    *How do the permutation not affect the natural positions of sequences?*
+
+      *How do the permutation not affect the natural positions of sequences?*
   4. Denoising(去噪) Autoencoder (DAE)
     - To recover the original undistorted input from a partially corrupted input.
+
     token masking, token deletion, text infilling, sentence permutation, document rotation
   5. Contrastive(对比的) Learning (CTL)
     - A score function s(x, y) for text pair (x, y) is learned to minimize the objective function:
 
     $$ \mathcal{L}_{CTL} = \mathbb{E}_{x,y^+,y^-}[-log\frac{exp(s(x,y^+))}{exp(s(x,y^+)+exp(s(x,y^-)}] $$
+    
 
     - Has less computational complexity compared to LM.
+
     - Deep InfoMax(DIM), Replaced Token Detection(RTD), Next Sentence Prediction(NSP), Sentence Order Prediction(SOP): ALBERT & StructBERT & BERTje
   6. Others
     - incorporate factual knowledge
@@ -189,61 +193,61 @@ This is the graph of loss functions of all these tasks.
 ### Taxonomy(分类) of PTMs
 
 1. Representation Type
-  - non-contextual
+  + non-contextual
     - CBOW/Skip-Gram
     - GloVe
-  - contextual
+  + contextual
     - ELMo
     - GPT
     - BERT
 2. Architectures
-  - LSTM
+  + LSTM
     - ELMo
     - CoVe
-  - Transformer Encoder
+  + Transformer Encoder
     - BERT
     - SpanBERT
     - XLNet
     - RoBERTa
-  - Transformer Decoder (masked self-attention which prevents tokens from attending their futer positions)
+  + Transformer Decoder (masked self-attention which prevents tokens from attending their futer positions)
     - GPT
     - GPT-2
     - GPT-3
-  - full Transformer
+  + full Transformer
     - MASS
     - BART
     - T5
     - XNLG
     - mBART
 3. Pre-Training Task Types
-  - see the graph below
+  + see the graph below
 4. Extensions
-  - knowledge-enriched PTMs
+  + knowledge-enriched PTMs
     - KnowBERT
-  - multilingual or language-specific PTMs
+  + multilingual or language-specific PTMs
     - XLU: mBERT, Unicoder, XLM, MultiFit
     - XLG: MASS, mBART, XNLG
-  - multi-modal PTMs *(In the original paper, there is a spelling mistake)*
+  + multi-modal PTMs *(In the original paper, there is a spelling mistake)*
     - Image: ViLBERT, LXMERT, VisualBERT, B2T2, VL-BERT
     - Video: VideoBERT, CBT
     - Speech: SpeechBERT
-  - domain-specific PTMs
+  + domain-specific PTMs
     - SentiLR
     - BioBERT
     - SciBERT
     - PatentBERT
-  - compressed PTMs
+  + compressed PTMs
     - Model Pruning: CompressingBERT
     - Quantization: Q-BERT, Q8BERT
     - Parameter Sharing: ALBERT
     - Distillation(蒸馏): DistilBERT, TinyBERT, MiniLM
     = Model Replacing: BERT-of-Theseus
 5. Tuning Strategies
-  - Fine-Tuning:
+  + Fine-Tuning:
     - Two-Stage FT
     - Multi-task FT
     - Extra Adaptor
-  - Prompt-Tuning:
+  + Prompt-Tuning:
     - Discrete: PET, AutoPrompt, LM-BFF
     - Continuous: WARP, Prefix-Tuning, P-Tuning
 

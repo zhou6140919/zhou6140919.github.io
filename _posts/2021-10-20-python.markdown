@@ -1,0 +1,11 @@
+---
+layout: articles
+title: MY LIFE
+sidebar:
+    nav: Paper-notes
+    avatar: true
+articles:
+  data_source: site.categories.python
+  show_excerpt: true
+  show_readmore: true
+---

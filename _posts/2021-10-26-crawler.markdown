@@ -20,6 +20,8 @@ sidebar:
 
 # Introduction
 
+<!--more-->
+
 ## What is crawler?
 
 - By coding programs, simulating the process of a browser surfing the Internet, then let it fetch data.

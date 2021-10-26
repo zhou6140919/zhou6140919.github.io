@@ -63,6 +63,11 @@ Paper-notes:
         url:    /nlp/2021/10/21/attention-is-all-you-need.html
       - title:  Pre-trained Models for Natural Language Processing A Survey
         url:    /nlp/2021/10/22/survey-of-NLP.html
+  - title:      Python
+    url:        /2021/10/20/python.html
+    children:
+      - title:  Crawler
+        url:    /python/2021/10/26/crawler.html
 
 
         

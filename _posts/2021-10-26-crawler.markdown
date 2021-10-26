@@ -40,7 +40,7 @@ sidebar:
 # Requests Package
 
 
-'''python
+```python
 import pandas as pd
 import time
 import requests
@@ -74,5 +74,5 @@ df = pd.DataFrame(download_num, index=[
 
 df.to_csv("download_num.csv", mode='a', header=False)
 print("Wrote successful!")
-'''
+```
 

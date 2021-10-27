@@ -5,6 +5,7 @@ tags:
     - nlp
     - transformer
     - encoder
+    - bert
     - papers
 author: Zhou Tong
 sidebar:

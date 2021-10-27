@@ -63,8 +63,12 @@ Paper-notes:
         url:    /nlp/2021/10/21/attention-is-all-you-need.html
       - title:  Pre-trained Models for Natural Language Processing A Survey
         url:    /nlp/2021/10/22/survey-of-NLP.html
+      - title:  HanLP
+        url:    /nlp/2021/10/26/hanlp.html
       - title:  BERT
         url:    /nlp/2021/10/27/bert.html
+      - title:  HuggingFace
+        url:    /nlp/2021/10/27/huggingface.html
 
   
   - title:      Python

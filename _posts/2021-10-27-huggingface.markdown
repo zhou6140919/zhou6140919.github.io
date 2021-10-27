@@ -4,8 +4,10 @@ categories: nlp
 tags: 
     - nlp
     - transformer
-    - pre-train
+    - PTM
     - tutorial
+    - encoder
+    - decoder
 author: Zhou Tong
 sidebar:
   nav: Paper-notes
@@ -18,3 +20,5 @@ article_header:
     gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
     src: /pictures/bg1.jpg
 ---
+
+<!--more-->

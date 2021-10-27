@@ -19,4 +19,16 @@ article_header:
     src: /pictures/bg1.jpg
 ---
 
+BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+
 <!--more-->
+
+See [original paper](https://arxiv.org/abs/1810.04805) for more details.
+
+## Abstract
+
+BERT = Bidirectional Encoder Representations from Transformers
+
+BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.
+
+BERT can be finetuned with just one additional ouput layer for a wide range of tasks.

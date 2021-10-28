@@ -104,7 +104,7 @@ In order to train a model that understands sentence relationships, we pre-train 
 - BooksCorpus 800M words
 - Wikipedia 2,500M words
 
-### Fine-tining
+### Fine-tuning
 
 
 

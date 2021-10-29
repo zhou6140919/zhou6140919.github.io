@@ -106,5 +106,36 @@ In order to train a model that understands sentence relationships, we pre-train 
 
 ### Fine-tuning
 
+end-to-end training.
+
+**Input:**
++ single sentence
++ text pairs
+  - sentence pairs in paraphrasing
+  - hypothesis-premise pairs in entailment
+  - question-passage pairs in question answering
+  - a degenerate text-∅ pair in text classification or sequence tagging
+
+**Output:**
+  - token representations are fed into an ouput layer for token-level tasks, such as sequence tagging or question answering.
+  - [CLS] representation is fed into an output layer for classification, such as entailment or sentiment analysis.
+
+## Experiments
+
+### GULE: The General Language Understanding Evaluation benchmark
+
+The only new parameters introduced during fine-tuning are classification layer weights $$W \in \mathbb{R} ^{K \times H}$$ 
+K is the number of labels.
+We use the final hidden vector $$C \in \mathbb{R} ^H$$ corresponding to the first input token ([CLS]) as the aggregate representation.
+We compute a standard classification loss with C and W.
+
+$$log(softmax(CW^T))$$
+
+ps: Log Softmax is advantageous over softmax for numerical stability, optimisation and heavy penalisation for highly incorrect class.
+  - Penalises Larger error: More heavy peanlty for being more wrong.
+  - Cheaper Model Training Cost: We can extrapolate it over all weight W and we can easily see that the log-softmax is simpler and faster.
+
+
+
 
 

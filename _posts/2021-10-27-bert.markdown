@@ -99,6 +99,8 @@ Many downstream tasks are based on relationships between two sentences, which is
 
 In order to train a model that understands sentence relationships, we pre-train for a binarized next sentence prediction task that can be trivially generated from any monolingual corpus. 50% -- 50% IsNext
 
+There is a better SOP task right now.
+
 #### Data
 
 - BooksCorpus 800M words
@@ -135,7 +137,37 @@ ps: Log Softmax is advantageous over softmax for numerical stability, optimisati
   - Penalises Larger error: More heavy peanlty for being more wrong.
   - Cheaper Model Training Cost: We can extrapolate it over all weight W and we can easily see that the log-softmax is simpler and faster.
 
+### SQuAD v1.1
 
+The Stanford Wuestion Answering Dataset is a collection of 100k crowd-sourced question/answer pairs.
 
+Given a question and a passage from Wikipedia containing the answer, the task is to predict the answer text span in the passage.
 
+Start vector $$S \in \mathbb{R} ^H$$ and end vector $$E \in \mathbb{R} ^H$$.
 
+The probability of word i being the start of the answer span is computed as a dot product between $$T_i$$ and $$S$$ followed by a softmax over all of the words in the paragraph:
+
+$$
+P_i = \frac{e^{S \cdot T_i}}{\sum e^{S \cdot T_j}} 
+$$
+
+For the end of the answer span, the same formula is used.
+
+### SQuAD v2.0
+
+We treat questions that do not have ana answer as having an answer span with start and end at the [CLS\ token.]
+
+### SWAG
+
+The Situations With Adversarial Generations dataset contains 113k sentence-pair completion examples that evaluate grounded common-sense inference.
+
+Given a sentence, the task is to choose the most plausible continuation among four choices.
+
+## Conclusion
+
+Recent empirical improvements due to transfer learning with language models have demonstrated that rich, unsupervised pre-training is an integral part of many language understanding systems. In particular, these results enable even low-resource tasks to benefit from deep unidirectional architectures. Our major contribution is further generalizing these findings to deepbidirectionalarchitectures, allowing the same pre-trained model to successfully tackle a broad set of NLP tasks.
+
+## Reference
+
+- [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding - Jacob Devlin, et al.](https://arxiv.org/abs/1810.04805)
+- [The Illustrated BERT, ELMo, and co. - Jay Alammar](https://jalammar.github.io/illustrated-bert/)

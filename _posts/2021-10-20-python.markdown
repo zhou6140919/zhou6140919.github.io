@@ -1,6 +1,6 @@
 ---
 layout: articles
-title: MY LIFE
+title: PYTHON
 sidebar:
     nav: Paper-notes
     avatar: true

@@ -51,7 +51,7 @@ two sentences input: [CLS] Question [SEP] Passage [SEP] plus two linear output l
 
 POS + NE + MLM + NSP + [SOP](https://arxiv.org/abs/1909.11942)
 
-QA input: [CLS] Question || Answer [SEP] Passage [SEP], then predict the probability of each answer on the representations from [CLS] token.
+QA input: "[CLS] Question || Answer [SEP] Passage [SEP]", then predict the probability of each answer on the representations from [CLS] token.
 
 2. Implementation
 

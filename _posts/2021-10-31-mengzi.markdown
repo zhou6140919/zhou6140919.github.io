@@ -43,25 +43,25 @@ Methods like knoledge distillation and model compression techniques are still no
 
 1. Tasks
 
-Chinese Language Understanding Evaluation (CLUE) benchmark.
+    Chinese Language Understanding Evaluation (CLUE) benchmark.
 
-one sentence input: Adding a linear classifier on top of the [CLS] token to predict label proabilities.
+    one sentence input: Adding a linear classifier on top of the [CLS] token to predict label proabilities.
 
-two sentences input: [CLS] Question [SEP] Passage [SEP] plus two linear output layers to predict the probability of each token being the start and end positions of the answer span like BERT.
+    two sentences input: [CLS] Question [SEP] Passage [SEP] plus two linear output layers to predict the probability of each token being the start and end positions of the answer span like BERT.
 
-POS + NE + MLM + NSP + [SOP](https://arxiv.org/abs/1909.11942)
+    POS + NE + MLM + NSP + [SOP](https://arxiv.org/abs/1909.11942)
 
-QA input: "[CLS] Question || Answer [SEP] Passage [SEP]", then predict the probability of each answer on the representations from [CLS] token.
+    QA input: "[CLS] Question || Answer [SEP] Passage [SEP]", then predict the probability of each answer on the representations from [CLS] token.
 
 2. Implementation
 
-Optimizer: Adam (learning rate in {8e-6, 1e-5, 2e-5, 3e-5}) with a warm-up rate of 0.1 and L2 weight decay of 0.01.
+    Optimizer: Adam (learning rate in {8e-6, 1e-5, 2e-5, 3e-5}) with a warm-up rate of 0.1 and L2 weight decay of 0.01.
 
-The batch size is selected in {16, 24, 32}. The epochs is set in [2, 5] depending on tasks.
+    The batch size is selected in {16, 24, 32}. The epochs is set in [2, 5] depending on tasks.
 
-POS and NE tags are annotated by SpaCy.
+    POS and NE tags are annotated by SpaCy.
 
-Dynamic Gradient Correction: to solve the problem of MLM causing the disturbance of original sentence structure, which leads to the loss of semantics and improve the difficulty off prediction. More details will be provided in latter version.
+    Dynamic Gradient Correction: to solve the problem of MLM causing the disturbance of original sentence structure, which leads to the loss of semantics and improve the difficulty off prediction. More details will be provided in latter version.
 
 3. Fine-tuning Strategies
     - **Knowledge Distillation** Calculate Kullback-Leibler divergence of the contextualized hidden states from teacher and student models respectively for the same input sequence, which is minimized during fine-tuning.

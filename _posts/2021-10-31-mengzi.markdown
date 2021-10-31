@@ -20,6 +20,8 @@ article_header:
     src: /pictures/bg1.jpg
 ---
 
+<!--more-->
+
 ## Problems
 
 Methods like knoledge distillation and model compression techniques are still not solutions to avoid massive computing resources or  training steps.

@@ -68,6 +68,19 @@ Methods like knoledge distillation and model compression techniques are still no
     - **Transfer Learning** Leverage the parameters from the trained model on the CMNLI dataset to initialize the model training for related datasets like $$C^3$$.
     - **Choice Smoothing** For multi-choice or classification tasks, combining different kinds of training objectives would lead to better performance. Combining the cross-entropy loss and binary cross-entropy loss to help the model larn features from different granularity.
     - **Adversarial Traning** To help the model generalize to unseen data, we apply a smoothness-inducing adversarial regularization technique following [Jiang et al](https://arxiv.org/abs/1911.03437). (2020) to encourage the output of the model not to change much when injecting a small perturbation to the input.
+    - **Data Augmentation** It is beneficial for training models on small-scale datasets.
+
+## How To Use
+
+```python
+from transformers import BertTokenizer, BertModel
+tokenizer = BertTokenizer.from_pretrained("Langboat/mengzi-bert-base")
+model = BertModel.from_pretrained("Langboat/mengzi-bert-base")
+```
+
+## Conclusion
+
+This technical report presents our exploration of training lightweight language model called Mengzi, which shows remarkable performance improvements compared with the same-sized or even largerscale models. A series of pre-training and fine-tuning strategies have been verified to be effective for improving model benchmark results. Experimental results show that Mengzi achieves state-of-theart performance with carefully designed training strategies. Without the modification of the model architecture, Mengzi is easy to be deployed as a powerful alternative to existing PLMs.
 
 
 

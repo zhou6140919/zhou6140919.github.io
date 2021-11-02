@@ -1,0 +1,48 @@
+---
+title: RoBERTa
+categories: nlp
+tags: 
+    - nlp
+    - transformer
+    - RoBERTa
+    - bert
+    - papers
+author: Zhou Tong
+sidebar:
+  nav: Paper-notes
+  avatar: true
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: /pictures/bg1.jpg
+---
+
+A Robustly Optimized BERT Pretraining Approach
+
+See [original paper](https://arxiv.org/abs/1907.11692) for more details.
+
+<!--more-->
+
+## Problem
+
+Self-training methods such as ELMo, GPT, BERT, XLM, XLNet have brought significant performance gains, but it can be challenging to determine which aspects of the methods contribute the most. Training is computationally expensive, limiting the amount of tuning that can be done, and is often done with private training data of varying sizes, limiting our ability to measure the effects of the modeling advances.
+
+## Solution
+
+A replication study of BERT pre-training, which includes a careful evaluation of the effects of hyperparameter tuning and training set size.
+
+We find that BERT was **significantly undertrained** and propose an improved recipe for training BERT models, which we call RoBERTa, that can match or exceed the performance of all of the post-BERT methods.
+
+Modifications:
+1. training the model longer, with bigger batches, over more data'
+2. removing the NSP task;
+3. training on longer sequences;
+4. dynamically changing the masking pattern applied to the training data;
+5. collected a new large dataset CC-NEWS.
+
+
+
+

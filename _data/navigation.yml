@@ -71,6 +71,8 @@ Paper-notes:
         url:    /nlp/2021/10/27/huggingface.html
       - title:  Mengzi
         url:    /nlp/2021/10/31/mengzi.html
+      - title:  RoBERTa
+        url:    /nlp/2021/11/02/roberta.html
 
   
   - title:      Python

@@ -43,6 +43,52 @@ Modifications:
 4. dynamically changing the masking pattern applied to the training data;
 5. collected a new large dataset CC-NEWS.
 
+## Background
+
+### Setup
+
+BERT: takes a concatenation of two segments. $$[CLS], x_1, . . . , x_N,[SEP], y_1, . . . , y_M,[EOS]$$
+
+where M + N < T
+
+tasks: MLM & NSP
+
+### Optimization
+
+Adam using the following parameters: $$β_1 = 0.9, β_2 = 0.999, \epsilon = 1e-6 and L2 weight decay of 0.01$$
+
+warmup: 10,000 steps to a peak value of 1e-4 then linearly decayed.
+
+pre-trained for 1M steps with mini-batches 256 sequences of maximum length 512 tokens. 16GB data.
+
+## Experiment
+
+1. Setting $$β_2 = 0.98$$ helps to improve stability when training with large batch sizes.
+2. Mix precision floating point arithmetic training.
+3. Larger datasets 160GB
+  - BOOKCORPUS plus English WIKIPEDIA
+  - CC-NEWS
+  - OPENWEBTEXT
+  - STORIES
+
+### Evaluation
+
+**GLUE**
+
+**SQuAD**
+
+**RACE**
+
+## Training Procedure Analysis
+
+### Static vs. Dynamic Masking
+
+**Static Masking** The original BERT implementation performed masking once during data preprocessing, resulting in a single static mask. To avoid using the same mask for each training instance in every epoch, training data was duplicated 10 times so that each sequence is masked in 10 different ways over the 40 epochs of training. Thus, each training sequence was seen with the same mask four times during training.
+
+**Dynamic Masking** We generate the masking pattern every time we feed a sequence to the model. This becomes crucial when pretraining for more steps or with larger datasets.
+![dynamic-masking](/images/dynamic-masking.jpg)
+
+Result: slightly better than static masking.
 
 
 

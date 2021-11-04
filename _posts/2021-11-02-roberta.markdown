@@ -55,7 +55,7 @@ tasks: MLM & NSP
 
 ### Optimization
 
-Adam using the following parameters: $$β_1 = 0.9, β_2 = 0.999, \epsilon = 1e-6 and L2 weight decay of 0.01$$
+Adam using the following parameters: $$β_1 = 0.9, β_2 = 0.999, \epsilon = 1e-6\ and\ L2\ weight\ decay\ of\ 0.01$$
 
 warmup: 10,000 steps to a peak value of 1e-4 then linearly decayed.
 

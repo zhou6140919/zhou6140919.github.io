@@ -73,7 +73,7 @@ A "sequence" refers to the input token sequence to BERT, which may be a single s
 
 ### Embedding
 
-WordPiece embeddings with a 30,000 token vocabulary.
+[WordPiece](https://arxiv.org/abs/1609.08144) embeddings with a 30,522 token vocabulary.
 The first token of every sequence is always a special classification token [CLS].
 
 Separate sentences with a special token [SEP], and add a learned embedding to every token indicating whether it belongs to sentence A or sentence B.

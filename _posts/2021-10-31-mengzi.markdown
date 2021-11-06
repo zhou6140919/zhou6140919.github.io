@@ -24,7 +24,7 @@ article_header:
 
 ## Problems
 
-Methods like knoledge distillation and model compression techniques are still not solutions to avoid massive computing resources or  training steps.
+Methods like knoledge distillation and model compression techniques are still not solutions to avoid massive computing resources or training steps.
 
 ## Solutions
 

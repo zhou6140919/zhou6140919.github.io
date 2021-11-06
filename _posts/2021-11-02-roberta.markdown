@@ -118,5 +118,23 @@ BPE: [Byte-Pair Encoding](https://arxiv.org/abs/1508.07909)
 
 [GPT-2](https://arxiv.org/abs/1609.08144) introduced a clever implementation of BPE that uses bytes instead of unicode characters as the base subword units. Using bytes makes it possible to learn a subword vocabulary of a modest size (50K units) that can still encode any input text without introducing any "unknown" tokens.
 
+Training BERT with a larger byte-level BPE vocabulary containing 50K subword units, without any additional preprocessing or tokenization of the input.
+
+
+## RoBERTa
+
+**R**obustly **o**ptimized **BERT** **a**pproach
+
+Configuration:
+- dynamic masking
+- FULL-SENTENCES without NSP loss
+- large mini-batches
+- a larger byte-level BPE
+
+![pretrain comparison](/images/pretrain-comparison.jpg)
+
+We begin by training RoBERTa following the $$BERT_{LARGE}$$ architecture (L = 24, H = 1024, A = 16, 355M parameters).
+
+
 
 

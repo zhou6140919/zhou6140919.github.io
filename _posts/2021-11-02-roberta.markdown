@@ -37,7 +37,7 @@ A replication study of BERT pre-training, which includes a careful evaluation of
 We find that BERT was **significantly undertrained** and propose an improved recipe for training BERT models, which we call RoBERTa, that can match or exceed the performance of all of the post-BERT methods.
 
 Modifications:
-1. training the model longer, with bigger batches, over more data'
+1. training the model longer, with bigger batches, over more data
 2. removing the NSP task;
 3. training on longer sequences;
 4. dynamically changing the masking pattern applied to the training data;
@@ -134,6 +134,11 @@ Configuration:
 ![pretrain comparison](/images/pretrain-comparison.jpg)
 
 We begin by training RoBERTa following the $$BERT_{LARGE}$$ architecture (L = 24, H = 1024, A = 16, 355M parameters).
+
+Even the longest-trained model does not appear to overfit the data and would likely benefit from additional training.
+
+Crucially, RoBERTa uses the same masked language modeling pretraining objective and architecture as $$BERT_{LARGE}$$, yet consistently outperforms both $$BERT_{LARGE}$$ and $$XLNet_{LARGE}$$. This raises questions about the relative importance of model architecture and pretraining objective, compared to more mundane details like dataset size and training time that we explore in this work.
+{:.warning}
 
 
 

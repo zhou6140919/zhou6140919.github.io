@@ -59,9 +59,9 @@ Paper-notes:
   - title:      NLP
     url:        /2021/10/20/nlp.html
     children:
-      - title:  Attention is All You need
+      - title:  Transformer
         url:    /nlp/2021/10/21/attention-is-all-you-need.html
-      - title:  Pre-trained Models for Natural Language Processing A Survey
+      - title:  PTMs Survey
         url:    /nlp/2021/10/22/survey-of-NLP.html
       - title:  HanLP
         url:    /nlp/2021/10/26/hanlp.html

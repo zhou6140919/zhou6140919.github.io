@@ -1,0 +1,50 @@
+---
+title: LAMB
+categories: nlp
+tags: 
+    - nlp
+    - optimizer
+    - papers
+author: Zhou Tong
+sidebar:
+  nav: Paper-notes
+  avatar: true
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: /pictures/bg1.jpg
+---
+
+Large Batch Optimization for Deep Learning: Training BERT in 76 Minutes
+
+<!--more-->
+
+See [original paper](http://arxiv.org/abs/1904.00962) for more details.
+
+## Introduction
+
+**Problem** Training large deep neural networks on massive datasets is computationally very challenging. Using large batch stochastic optimization methods to tackle this issue. The most prominent algorithm in this line of research is LARS, which by employing layerwise adaptive learning rates trains RESNET on ImageNet in a few minutes. However, LARS performs poorly for attention models like BERT, indicating that its performance gains are not consistent across tasks.
+{:.warning}
+
+**Solution** In this paper, we first study a principled layerwise adaptation strategy to accelerate training of deep neural networks using large mini-batches. Using this strategy, we develop a new layerwise adaptive large batch optimization technique called LAMB.
+{:.success}
+
+**Results** Our empirical results demonstrate the superior performance of LAMB across various tasks such as BERT and RESNET-50 training with very little hyperparameter tuning. In particular, for BERT training, our optimizer enables use of very large batch sizes of 32868 without any degradation of performance. By increasing the batch size to the memory limit of a TPUv3 Pod, BERT training time can be reduced from 3 days to just 76 minutes.
+{:.error}
+
+
+
+
+
+
+
+
+
+
+## References
+
+- [Large Batch Optimization for Deep Learning: Training BERT in 76 Minutes - You et al., 2019](http://arxiv.org/abs/1904.00962)
+

@@ -169,5 +169,5 @@ Recent empirical improvements due to transfer learning with language models have
 
 ## Reference
 
-- [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding - Jacob Devlin, et al.](https://arxiv.org/abs/1810.04805)
+- [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding - Jacob Devlin et al., 2019](https://arxiv.org/abs/1810.04805)
 - [The Illustrated BERT, ELMo, and co. - Jay Alammar](https://jalammar.github.io/illustrated-bert/)

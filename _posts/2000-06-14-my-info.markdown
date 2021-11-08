@@ -112,7 +112,7 @@ Recently our company has developed a wonderful pre-trained model mengzi-BERT-bas
 - Coding: C, Python, HTML(a little), Matlab, Unity(a little), Markdown, Liquid(a little), Assembly Language
     - Frameworks: Pytorch
     - Toolkits: Numpy, Matplotlib, SpaCy, Torchvision...
-- Language: English (CET-6: 612, preparing for TOEIC) , 日本語 (N2の準備中) , Chinese of course
+- Language: English (CET-6: 612/710, TOEIC: 930/990) , 日本語 (N2の準備中) , Chinese of course
 
 
 

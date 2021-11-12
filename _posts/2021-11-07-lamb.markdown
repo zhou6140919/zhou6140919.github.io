@@ -35,7 +35,11 @@ See [original paper](http://arxiv.org/abs/1904.00962) for more details.
 **Results** Our empirical results demonstrate the superior performance of LAMB across various tasks such as BERT and RESNET-50 training with very little hyperparameter tuning. In particular, for BERT training, our optimizer enables use of very large batch sizes of 32868 without any degradation of performance. By increasing the batch size to the memory limit of a TPUv3 Pod, BERT training time can be reduced from 3 days to just 76 minutes.
 {:.error}
 
+The goal of this paper is to investigate and develop optimization techniques to accelerate training large deep neural networks, mostly focusing on approaches based on variants of SGD.
 
+Traditional method to improve SGD largely resort to distributed asynchronous setup. But this often leads to degraded performance.
+Using synchronous SGD with large minibatches naively results in degradation of generalization performance and reduces computational benefits.
+{:.warning}
 
 
 

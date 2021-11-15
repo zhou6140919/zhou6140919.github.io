@@ -75,6 +75,8 @@ Paper-notes:
         url:    /nlp/2021/11/02/roberta.html
       - title:  LAMB
         url:    /nlp/2021/11/07/lamb.html
+      - title:  ERNIE(Baidu)
+        url:    /nlp/2021/11/15/ernie(baidu).html
 
   
   - title:      Python

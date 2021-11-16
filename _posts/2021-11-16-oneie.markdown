@@ -109,7 +109,7 @@ Given an input sentence of L words, we obtain the contextualized representation 
     log\ p(z|X) = s(X,z) - log\sum_{\hat{z}\in Z}^{} e^{s(X,\hat{z})}
     $$
 
-    where $$Z$$ is the set of all possible tag paths for a given sentence. Thus, we define the identification loss as $$\mathcal{L} ^I = - log\ p(z|X)$$.
+    where $$Z$$ is the set of all possible tag paths for a given sentence. Thus, we define the identification loss as $$\mathcal{L} ^I = - log\ p(z\|X)$$.
 
 Note that we do not use types predicted by the taggers. Instead, we make a joint decision for all knowledge elements at the decoding stage to prevent error propagation and utilize their interactions to improve the prediction of node type.
 {:.info}

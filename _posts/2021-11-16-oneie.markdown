@@ -79,3 +79,23 @@ This is the task of assigning a relation type to an ordered pair of entity menti
 This task entails identifying event triggers (the words or phrases that most clearly express event occurrences) and their arguments (the words or phrases for participants in those events) in unstructured texts and classifying these phrases, respectively, for their types and roles. For example, the word “injured” triggers an INJURE event and “300” is the VICTIM argument.
 
 Given an input sentence, our goal is to predict a graph G = (V, E), where V and E are the node and edge sets respectively. Each node $$v_i = 〈a_i, b_i, l_i〉 ∈ V$$ represents an entity mention or event trigger, where a and b are the start and end word indices, and l is the node type label. Each edge $$e_ij = 〈i, j, l_ij〉 ∈ E$$ is represented similarly, whereas i and j denote the indices of involved nodes. For example, in Figure 2, the trigger “injured” is represented as 〈7, 7, INJURE〉, the entity mention “Kashmir region” is represented as 〈10, 11, LOC〉, and the event-argument edge between them is 〈2, 3, PLACE〉.
+
+## Approach
+
+There are four steps to extract the information network from a given sentence: encoding, indentification, classification, decoding.
+
+We encode the input sentence using a pre-trained BERT encoder and identify entity mentions and event triggers in the sentence. After that, we compute the type label scores for all nodes and pairwise edges among them. During decoding, we explore possible information networks for the input sentence using beam search and return the one with the highest global score.
+
+### Encoding
+
+Given an input sentence of L words, we obtain the contextualized representation $$x_i$$ for each word using a pre-trained BERT encoder. If a word is split into multiple word pieces (e.g., Mondrian → Mon, ##dr, ##ian), we use the average of all piece vectors as its word representation. While previous methods typically use the output of the last layer of BERT, our preliminary(初步的) study shows that enriching word representations using the output of the third last layer of BERT can substantially improve the performance on most subtasks.
+
+## Identification
+
+1. We use a feedforward network FFN to compute a score vector $$\hat{y}_i = FFN(x_i)$$ for each word, where each value in $$\hat{y}_i$$ represents the score for a tag in a target tag set. We use the BIO tag scheme, in which the prefix B- marks the beginning of a mention, and I- means inside of a mention. A token not belonging to any mention is tagged with O.
+2. we use a conditional random fields (CRFs) layer to capture the dependencies between predicted tags (e.g., an I-PER tag should not follow a B-GPE tag)
+3. Similar to [Named Entity Recognition with Bidirectional LSTM-CNNs](https://arxiv.org/abs/1511.08308), we calculate the score of a tag path $$\hat{z} = {\hat{z}_1,...,\hat{z}_L}$$ as
+$$
+s(X,\hat{z}) = \sum_{i=1}^{L} \hat{y}_{i,\hat{z}_i} + \sum_{i=1}^{L+1} A_{\hat{z}_{i-1},\hat{z}_i}
+$$
+

@@ -102,7 +102,7 @@ Given an input sentence of L words, we obtain the contextualized representation 
 
     where $$X = {x_1,...,x_L}$$ is the contextualized representations of the input sequence, $$\hat{y}_{i,\hat{z}_i}$$ is the $$\hat{z}_i$$-th component of the score vector $$\hat{y}_i$$, and $$A_{\hat{z}_{i-1},\hat{z}_i}$$ is the $$(\hat{z}_{i-1},\hat{z}_i)$$ entry in matrix $$A$$ that indicates the transition score from tag $$\hat{z}_{i-1}$$ to $$\hat{z}_i$$.
     The weights in A are learned during training.
-4. We append two special tags <start> and <end> to the tag path as $$\hat{z}_0$$ and $$\hat{z}_L+1$$ to denote the start and end of the sequence.
+4. We append two special tags start and end to the tag path as $$\hat{z}_0$$ and $$\hat{z}_L+1$$ to denote the start and end of the sequence.
 5. At the training stage, we maximize the log-likelihood of the gold-standard tag path as 
 
     $$

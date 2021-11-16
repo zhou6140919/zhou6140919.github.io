@@ -123,3 +123,23 @@ To obtain the label score vector for the edge between the i-th and j-th nodes, w
 For each task, the training objective is to minimize the cross-entropy loss.
 
 ### Global Features
+
+- Cross-subtask interactions.
+    “A civilian aid worker from San Francisco was killed in an attack in Afghanistan.” A local classifier may predict “San Francisco” as a VICTIM argument because an entity mention preceding “was killed” is usually the victim despite the fact that a GPE is unlikely to be a VICTIM. To impose such constraints, we design a global feature as shown in the figure to evaluate whether the structure DIE-VICTIM-GPE exists in a candidate graph.
+    ![cross-subtask interactions](/images/cross-subtask-interactions.jpg)
+- Cross-instance interactions.
+    “South Carolina boy, 9, dies during hunting trip after his father accidentally shot him on Thanksgiving Day.” It can be challenging for a local classifier to predict “boy” as the VICTIM of the ATTACK event triggered by “shot” due to the long distance between these two words. However, as shown in the figure, if an entity is the VICTIM of a DIE event, it is also likely to be the VICTIM of an ATTACK event in the same sentence.
+    ![cross-instance interactions](/images/cross-instance-interactions.jpg)
+
+![global feature categories](/images/global-feature-categories.jpg)
+
+Given a graph G, we represent its global feature vector as $$f_G = {f_1(G), ..., f_M (G)}$$, where M is the number of global features and fi(·) is a function that evaluates a certain feature and returns a scalar. For example, 
+
+$$
+fi(G) = \left\{  
+             \begin{array}{**lr**}  
+             1, & G\ has\ multiple\ ATTACK\ events, \\  
+             0, & otherwise.   
+             \end{array}  
+\right.
+$$

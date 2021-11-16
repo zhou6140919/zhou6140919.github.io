@@ -1,0 +1,51 @@
+---
+title: ONEIE
+categories: nlp
+tags: 
+    - nlp
+    - knowledge graph
+    - information extraction
+    - papers
+author: Zhou Tong
+sidebar:
+  nav: Paper-notes
+  avatar: true
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: /pictures/bg1.jpg
+---
+
+A Joint Neural Model for Information Extraction with Global Features
+
+<!--more-->
+
+See [Original Paper](https://aclanthology.org/2020.acl-main.713) for more details.
+
+## Introduction
+
+**Problem** Most existing joint neural models for Information Extraction (IE) use local task-specific classifiers to predict labels for individual instances (e.g., trigger, relation) regardless of their interactions. Early efforts typically perform IE in a pipelined fashion, which leads to the error propagation problem and disallows interactions among components in the pipeline.
+{:.warning}
+
+![error_made_by_local_classifier](/images/error_made_by_local_classifier.jpg)
+
+The model should be able to avoid such mistakes if it is capable of learning and leveraging the fact that it is unusual for an ELECT event to have two PERSON arguments.
+
+**Solution** ONEIE aims to extract the globally optimal IE result as a graph from an input sentence. ONEIE performs end-to-end IE in four stages:
+1. Encoding a given sentence as contextualized word representations;
+2. Identifying entity mentions and event triggers as nodes;
+3. Computing label scores for all nodes and their pairwise links using local classifiers;
+4. Searching for the globally optimal graph with a beam decoder. We incorporate(纳入) global features to capture the cross-subtask and cross-instance interactions.
+{:.success}
+
+IE is a complex task comprised of(由……构成) a wide range of subtasks:
+- named, nominal(名词), pronominal(代词) mention extraction
+- entity linking
+- entity coreference(共指) resolution
+- relation extraction
+- event extraction
+- event coreference resolution
+

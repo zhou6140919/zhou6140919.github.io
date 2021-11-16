@@ -133,13 +133,67 @@ For each task, the training objective is to minimize the cross-entropy loss.
 
 ![global feature categories](/images/global-feature-categories.jpg)
 
-Given a graph G, we represent its global feature vector as $$f_G = {f_1(G), ..., f_M (G)}$$, where M is the number of global features and fi(·) is a function that evaluates a certain feature and returns a scalar. For example, 
+1. Given a graph G, we represent its global feature vector as $$f_G = {f_1(G), ..., f_M (G)}$$, where M is the number of global features and fi(·) is a function that evaluates a certain feature and returns a scalar. For example, 
 
-$$
-fi(G) = \left\{  
-             \begin{array}{**lr**}  
-             1, & G\ has\ multiple\ ATTACK\ events, \\  
-             0, & otherwise.   
-             \end{array}  
-\right.
-$$
+    $$
+    fi(G) = \left\{  
+                \begin{array}{**lr**}  
+                1, & G\ has\ multiple\ ATTACK\ events, \\  
+                0, & otherwise.   
+                \end{array}  
+    \right.
+    $$
+
+2. ONEIE learns a weight vector $$u ∈ \mathbb{R}_M$$ and calculates the global feature score of G as the dot product of $$f_G$$ and $$u$$. We define the global score of G as the sum of its local score and global feature score, namely
+
+    $$
+    s(G) = s'(G) + uf_G
+    $$
+
+3. We make the assumption that the gold-standard graph for a sentence should achieve the highest global score. Therefore, we minimize the following loss function
+    
+    $$
+    \mathcal{L} ^G = s(\hat{G})- s(G)
+    $$
+
+    where $$\hat{G}$$ is the graph predicted by local classifiers and $$G$$ is the gold-standard graph.
+
+4. We optimize the follwing joint objective function during training.
+
+    $$
+    \mathcal{L}= \mathcal{L} ^I + \sum_{t\in T}^{} \mathcal{L} ^t + \mathcal{L} ^G
+    $$
+
+### Decoding
+
+**???**
+
+The basic idea is to calculate the global score for each candidate graph and select the one with the highest score. However, exhaustive search is infeasible(不可行的) in many cases as the size of search space grows exponentially(呈几何级数地) with the number of nodes. Therefore, we design a beam search-based decoder.
+
+After the last step, we return the graph with the highest global score as the information network for the input sentence.
+
+## Experiments
+
+### Data
+
+ACE2005 dataset:
+- ACE05-R includes named entity and relation annotations
+- ACE05-E includes entity, relation, and event annotations
+
+We keep 7 entity types, 6 coarse-grained(粗粒度) relation types, 33 event types, and 22 argument roles.
+
+### Setup
+
+We optimize our model with BertAdam for 80 epochs with a lr of 5e-5 and weight decay of 1e-5 for BERT, and a lr of 1e-3 and weight decay of 1e-3 for other parameters.
+
+### Remaining Challenges
+
+- Need background knowledge
+- Rare words
+- Multiple types per trigger
+- Need syntactic structure
+- Uncertain events and metaphors
+
+## References
+
+- [A Joint Neural Model for Information Extraction with Global Features, Lin et al., 2020](https://aclanthology.org/2020.acl-main.713.pdf)

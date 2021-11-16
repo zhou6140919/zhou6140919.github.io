@@ -99,3 +99,6 @@ $$
 s(X,\hat{z}) = \sum_{i=1}^{L} \hat{y}_{i,\hat{z}_i} + \sum_{i=1}^{L+1} A_{\hat{z}_{i-1},\hat{z}_i}
 $$
 
+where $$X = {x_1,...,x_L}$$ is the contextualized representations of the input sequence, $$\hat{y}_{i,\hat{z}_i}$$ is the $$\hat{z}_i$$-th component of the score vector $$\hat{y}_i$$, and $$A_{\hat{z}_{i-1},\hat{z}_i}$$ is the $$(\hat{z}_{i-1},\hat{z}_i)$$ entry in matrix $$A$$ that indicates the transition score from tag $$\hat{z}_{i-1}$$ to $$\hat{z}_i$$.
+The weights in A are learned during training.
+

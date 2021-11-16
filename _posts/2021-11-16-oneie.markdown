@@ -90,16 +90,36 @@ We encode the input sentence using a pre-trained BERT encoder and identify entit
 
 Given an input sentence of L words, we obtain the contextualized representation $$x_i$$ for each word using a pre-trained BERT encoder. If a word is split into multiple word pieces (e.g., Mondrian → Mon, ##dr, ##ian), we use the average of all piece vectors as its word representation. While previous methods typically use the output of the last layer of BERT, our preliminary(初步的) study shows that enriching word representations using the output of the third last layer of BERT can substantially improve the performance on most subtasks.
 
-## Identification
+### Identification
 
 1. We use a feedforward network FFN to compute a score vector $$\hat{y}_i = FFN(x_i)$$ for each word, where each value in $$\hat{y}_i$$ represents the score for a tag in a target tag set. We use the BIO tag scheme, in which the prefix B- marks the beginning of a mention, and I- means inside of a mention. A token not belonging to any mention is tagged with O.
 2. we use a conditional random fields (CRFs) layer to capture the dependencies between predicted tags (e.g., an I-PER tag should not follow a B-GPE tag)
 3. Similar to [Named Entity Recognition with Bidirectional LSTM-CNNs](https://arxiv.org/abs/1511.08308), we calculate the score of a tag path $$\hat{z} = {\hat{z}_1,...,\hat{z}_L}$$ as
 
-$$
-s(X,\hat{z}) = \sum_{i=1}^{L} \hat{y}_{i,\hat{z}_i} + \sum_{i=1}^{L+1} A_{\hat{z}_{i-1},\hat{z}_i}
-$$
+    $$
+    s(X,\hat{z}) = \sum_{i=1}^{L} \hat{y}_{i,\hat{z}_i} + \sum_{i=1}^{L+1} A_{\hat{z}_{i-1},\hat{z}_i}
+    $$
 
-where $$X = {x_1,...,x_L}$$ is the contextualized representations of the input sequence, $$\hat{y}_{i,\hat{z}_i}$$ is the $$\hat{z}_i$$-th component of the score vector $$\hat{y}_i$$, and $$A_{\hat{z}_{i-1},\hat{z}_i}$$ is the $$(\hat{z}_{i-1},\hat{z}_i)$$ entry in matrix $$A$$ that indicates the transition score from tag $$\hat{z}_{i-1}$$ to $$\hat{z}_i$$.
-The weights in A are learned during training.
+    where $$X = {x_1,...,x_L}$$ is the contextualized representations of the input sequence, $$\hat{y}_{i,\hat{z}_i}$$ is the $$\hat{z}_i$$-th component of the score vector $$\hat{y}_i$$, and $$A_{\hat{z}_{i-1},\hat{z}_i}$$ is the $$(\hat{z}_{i-1},\hat{z}_i)$$ entry in matrix $$A$$ that indicates the transition score from tag $$\hat{z}_{i-1}$$ to $$\hat{z}_i$$.
+    The weights in A are learned during training.
+4. We append two special tags <start> and <end> to the tag path as $$\hat{z}_0$$ and $$\hat{z}_L+1$$ to denote the start and end of the sequence.
+5. At the training stage, we maximize the log-likelihood of the gold-standard tag path as 
 
+    $$
+    log\ p(z|X) = s(X,z) - log\sum_{\hat{z}\in Z}^{} e^{s(X,\hat{z})}
+    $$
+
+    where $$Z$$ is the set of all possible tag paths for a given sentence. Thus, we define the identification loss as $$\mathcal{L} ^I = - log\ p(z|X)$$.
+
+Note that we do not use types predicted by the taggers. Instead, we make a joint decision for all knowledge elements at the decoding stage to prevent error propagation and utilize their interactions to improve the prediction of node type.
+{:.info}
+
+### Classification
+
+**???**
+
+To obtain the label score vector for the edge between the i-th and j-th nodes, we concatenate their span representations and calculate the vector.
+
+For each task, the training objective is to minimize the cross-entropy loss.
+
+### Global Features

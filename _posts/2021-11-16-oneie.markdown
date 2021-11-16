@@ -30,7 +30,7 @@ See [Original Paper](https://aclanthology.org/2020.acl-main.713) for more detail
 **Problem** Most existing joint neural models for Information Extraction (IE) use local task-specific classifiers to predict labels for individual instances (e.g., trigger, relation) regardless of their interactions. Early efforts typically perform IE in a pipelined fashion, which leads to the error propagation problem and disallows interactions among components in the pipeline.
 {:.warning}
 
-![error_made_by_local_classifier](/images/error_made_by_local_classifier.jpg)
+![error made by local classifier without global constraints](/images/error_made_by_local_classifier.jpg)
 
 The model should be able to avoid such mistakes if it is capable of learning and leveraging the fact that it is unusual for an ELECT event to have two PERSON arguments.
 
@@ -39,7 +39,6 @@ The model should be able to avoid such mistakes if it is capable of learning and
 2. Identifying entity mentions and event triggers as nodes;
 3. Computing label scores for all nodes and their pairwise links using local classifiers;
 4. Searching for the globally optimal graph with a beam decoder. We incorporate(纳入) global features to capture the cross-subtask and cross-instance interactions.
-{:.success}
 
 IE is a complex task comprised of(由……构成) a wide range of subtasks:
 - named, nominal(名词), pronominal(代词) mention extraction
@@ -49,3 +48,34 @@ IE is a complex task comprised of(由……构成) a wide range of subtasks:
 - event extraction
 - event coreference resolution
 
+Instead of predicting separate knowledge elements using local classifiers, ONEIE aims to extract a globally optimal information network for the input sentence.
+
+**Results** Experiments show that our framework achieves comparable or better results compared to the state-of-the-art end-to-end architecture [Entity, Relation, and Event Extraction with Contextualized Span Representations](https://arxiv.org/abs/1909.03546).
+{:.error}
+
+ONEIE is the first end-to-end neural IE framework that explicitly models cross-subtask and cross-instance interdependencies and predicts the result as a unified graph instead of isolated knowledge elements.
+
+ONEIE does not rely on language-specific features, it can be rapidly applied to new languages.
+
+## Task
+
+Input: sentence
+Output: information network representation, where entity mentions and event triggers are represented as nodes and relations are represented as edges.
+
+![ie illustration](/images/ie_illustration.jpg)
+
+### Entity Extraction
+
+This task aims to identify entity mentions in text and classify them into pre-defined entity types.
+
+A mention can be a name, nominal or pronoun. For example, “Kashmir region” should be recognized as a location (LOC) named entity mention
+
+### Relation Extraction
+
+This is the task of assigning a relation type to an ordered pair of entity mentions. For example, there is a PART-WHOLE relation between “Kashmir region” and “India”.
+
+### Event Extraction
+
+This task entails identifying event triggers (the words or phrases that most clearly express event occurrences) and their arguments (the words or phrases for participants in those events) in unstructured texts and classifying these phrases, respectively, for their types and roles. For example, the word “injured” triggers an INJURE event and “300” is the VICTIM argument.
+
+Given an input sentence, our goal is to predict a graph G = (V, E), where V and E are the node and edge sets respectively. Each node $$v_i = 〈a_i, b_i, l_i〉 ∈ V$$ represents an entity mention or event trigger, where a and b are the start and end word indices, and l is the node type label. Each edge $$e_ij = 〈i, j, l_ij〉 ∈ E$$ is represented similarly, whereas i and j denote the indices of involved nodes. For example, in Figure 2, the trigger “injured” is represented as 〈7, 7, INJURE〉, the entity mention “Kashmir region” is represented as 〈10, 11, LOC〉, and the event-argument edge between them is 〈2, 3, PLACE〉.

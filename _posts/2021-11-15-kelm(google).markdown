@@ -28,3 +28,20 @@ In contrast to the many architectures that have been developed to integrate thes
 It carries the further advantages of improved factual accuracy and reduced toxicity in the resulting language model. We evaluate this approach by augmenting the retrieval corpus in a retrieval language model and showing significant improvements on the knowledge intensive tasks of open domain QA and the LAMA knowledge probe.
 
 We convert the English Wikidata KG into natural language text. The generated corpus is called KELM Corpus.
+- 18M sentences spanning
+- 45 triples
+- 1500 distinct relations
+
+For training the verbalization system, we also create an English Wikidata KG-Wikipedia Text aligned corpus consisting of a variety of entities such as dates and numerical quantities.
+
+Facts may not be expressed as explicitly in text as they are in KGs, and the variability in the quality of text can eventually cause biases in the resulting models.
+
+## TEKGEN
+
+TEKGEN (Text from KG Generator): A data-to-text sequence-to-sequence model for verbalizing an entire KG.
+
+One of the challenges in converting an entire KG to text is the wide variety of entities and relations.
+
+1. KG triples are aligned with Wikipedia text using distant supervision.
+2. T5 is fine-tuned sequentially first on this corpus, followed by a small number of steps on the WebNLG corpus.
+3. BERT is fine-tuned to generate a semantic quality score for generated sentences w.r.t. triples.

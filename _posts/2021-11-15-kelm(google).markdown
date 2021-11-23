@@ -45,3 +45,8 @@ One of the challenges in converting an entire KG to text is the wide variety of 
 1. KG triples are aligned with Wikipedia text using distant supervision.
 2. T5 is fine-tuned sequentially first on this corpus, followed by a small number of steps on the WebNLG corpus.
 3. BERT is fine-tuned to generate a semantic quality score for generated sentences w.r.t. triples.
+4. To generate the KELM corpus, entity subgraphs are created using the relation pair alignment counts rom the training corpus generated in step 1. The subgraph triples are then converted into natural text using TEKGEN.
+
+![tekgen pipeline](/images/tekgen-pipeline.jpg)
+
+

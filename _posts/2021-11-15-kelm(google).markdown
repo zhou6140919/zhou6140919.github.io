@@ -49,4 +49,18 @@ One of the challenges in converting an entire KG to text is the wide variety of 
 
 ![tekgen pipeline](/images/tekgen-pipeline.jpg)
 
+### KG-Text Alignment
+
+```python
+alignment_pairs = set()
+for t in sentences:
+  # sentences are all sentences from root section of Wiki page of entity s
+  for triple in triples:
+    # triple = (s, r, o)
+    if t.contains(alias(triple[2])]):
+      if t.notcontains(alias(triple[0])]):
+        p = t.first_pronoun
+        t.replace(p, name(triple[0]))
+      alignment_pairs.add((t, triple))
+```
 

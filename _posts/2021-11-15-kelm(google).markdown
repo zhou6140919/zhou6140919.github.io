@@ -64,3 +64,7 @@ for t in sentences:
       alignment_pairs.add((t, triple))
 ```
 
+For each entity, we constrain the candidate sentences to the root section of its Wiki page because this section generally describes the relations of the subject entity with other entities.
+
+If any alias of the subject entity occurs in the given sentence, the sentence is selected as is, else the first animate third-person personal or possessive pronoun is replaced by the subject entity's canonical(权威性的) name.
+The pronoun replacement heuristic(启发性的) also works well because of the constraint. All triples aligned to a given sentence are combined together as a single example.

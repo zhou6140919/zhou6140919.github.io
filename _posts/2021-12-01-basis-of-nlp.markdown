@@ -193,9 +193,11 @@ Through the self-attention mechanism, the relationship between two distant momen
   $$
   \hat{\alpha}_{ij} = attn(q_i, k_i)
   $$
+  
   $$
   \alpha_{ij} = Softmax(\hat{\alpha}_i)_j
   $$
+
   $$
   y_i = \sum_{j=1}^{n}\alpha_{ij}v_j
   $$

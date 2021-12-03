@@ -183,6 +183,12 @@ If $$x_i$$ and $$x_j$$ are more related, the attention value they calculate is g
 
 Through the self-attention mechanism, the relationship between two distant moments can be directly calculated. In the recurrent neural network, because the information is transmitted layer by layer along the time, when two moments with greater correlation are farther apart, greater information loss will occur.
 
+But there are several questions need to be considered.
+1. When calculating self-attention, the input position information is not considered, and the sequence cannot be modeled.
+2. The input vector assumes(承担) three roles at the same time, which makes it difficult to learn.
+3. Only the relationship between two input sequence units is considered, and more complex relationships between multiple input sequence units cannot be modeled.
+4. The self-attention calculation results are mutually(互相) exclusive(排斥), and it is impossible to pay attention to multiple inputs at the same time.
+
 #### Transformer
 
 1. Incorporate position information
@@ -193,7 +199,7 @@ Through the self-attention mechanism, the relationship between two distant momen
   $$
   \hat{\alpha}_{ij} = attn(q_i, k_i)
   $$
-  
+
   $$
   \alpha_{ij} = Softmax(\hat{\alpha}_i)_j
   $$

@@ -173,3 +173,29 @@ $$
 \alpha_s = Softmax(\hat{\alpha})_s
 $$
 
+#### Self-attention
+
+$$
+y_i = \sum_{j=1}^{n}\alpha_{ij}x_j
+$$
+
+If $$x_i$$ and $$x_j$$ are more related, the attention value they calculate is greater, and then the contribution of $$x_h$$ to the new representation $$y_i$$ corresponding to $$x_i$$ is greater.
+
+Through the self-attention mechanism, the relationship between two distant moments can be directly calculated. In the recurrent neural network, because the information is transmitted layer by layer along the time, when two moments with greater correlation are farther apart, greater information loss will occur.
+
+#### Transformer
+
+1. Incorporate position information
+2. Input vector role information
+  Use three different parameter matrices to map the input vector $$x_i$$ into three new vectors $$q_i$$, $$k_i$$, and $$v_i$$ which represent Query, Key, and Value, respectively.
+  The new output formula is 
+
+  $$
+  \hat{\alpha}_{ij} = attn(q_i, k_i)
+  $$
+  $$
+  \alpha_{ij} = Softmax(\hat{\alpha}_i)_j
+  $$
+  $$
+  y_i = \sum_{j=1}^{n}\alpha_{ij}v_j
+  $$

@@ -120,3 +120,56 @@ Both multilayer perceptrons and convolutional neural networks are feed-forward n
 ### Recurrent Neural Network
 
 When actually using a recurrent neural network, it is necessary to set a limited number of cycles, which is equivalent to stacking multiple feedforward neural networks that share hidden layer parameters.
+
+#### Normal RNN
+
+```python
+from torch.nn import RNN
+
+rnn = RNN(input_size=4, hidden_size=5, batch_first=True)
+
+inputs = torch.randn(2, 3, 4)
+outputs, h_n = rnn(inputs)
+print(outputs)
+print(h_n)
+
+print(outputs.size(), h_n.size())
+# torch.Size([2, 3, 5]) torch.Size([1, 2, 5])
+# batch_size, seq_len, hidden_size; batch_size, hidden_size
+```
+
+#### LSTM (Long Short-Term Memory)
+
+In the original recurrent neural network, information is passed to the output layer layer by layer through multiple hidden layers. Intuitively, this will lead to the loss of information; more essentially, it will make it difficult to optimize network parameters. LSTM can better solve this problem.
+
+>In Recurrent Neural Networks (RNN), gradient explosion or gradient disappearance will cause the network to be unstable, making the network unable to learn well from the training data. The best result is that the network cannot learn on long input data sequences.
+
+```python
+from torch.nn import LSTM
+
+lstm = LSTM(input_size=4, hidden_size=5, batch_first=True)
+
+inputs = torch.randn(2, 3, 4)
+outputs, (h_n, c_n) = lstm(inputs)
+
+print(outputs)
+print(h_n)
+print(c_n)
+print(outputs.size(), h_n.size(), c_n.size())
+# torch.Size([2, 3, 5]) torch.Size([1, 2, 5]) torch.Size([1, 2, 5])
+```
+
+The sequence-to-sequence model based on the recurrent neural network has a basic assumption that the last hidden state of the original sequence contains all the information of the sequence. However, this assumption is clearly unreasonable. Especially when the sequence is relatively long, it is more difficult to do this.
+
+### Attention Mechanism
+
+Using the state at time s of the source sequence and the state at the previous time in the target sequence as input, calculate the attention score of the source sequence at time s, the length is the length of the source sequence L, and finally use softmax for the attention score of the entire source sequence at each moment The function is normalized to obtain the final attention weight.
+
+$$
+\hat{\alpha}_s = attn(h_s, h_{t-1})
+$$
+
+$$
+\alpha_s = Softmax(\hat{\alpha})_s
+$$
+

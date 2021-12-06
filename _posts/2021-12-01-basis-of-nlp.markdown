@@ -207,3 +207,77 @@ But there are several questions need to be considered.
   $$
   y_i = \sum_{j=1}^{n}\alpha_{ij}v_j
   $$
+3. Multi-head Self-attention
+
+##### Seq2Seq Model Based on Transformer
+
+Compared with recurrent neural networks, transformers can directly model longer-distance dependencies between input sequence units, which makes the transformer more capable of modeling long sequences. In the encoding stage, multi-core computing devices such as GPU can be used to calculate the self-attention model inside the transformer block in parallel, and the recurrent neural network needs to be calculated one by one, so the transformer has a higher training speed.
+
+However, the amount of parameters of the transformer is too large, that is, the three role mapping matrices of the input vector in the self-attention model, the multi-head mechanism leads to the multiplication of the corresponding parameters and the introduction of non-linear multilayer perceptrons. In addition, it is necessary to stack multiple layers of transformer blocks, so that the amount of parameters is multiplied. The huge amount of parameters makes the transformer model difficult to train, so the pre-training model based on large-scale data came into being.
+
+```python
+import torch
+from torch import nn
+
+# 创建一个Transformer块，每个输入向量、输出向量的维度为4，头数为2
+encoder_layer = nn.TransformerEncoderLayer(d_model=4, nhead=2)
+
+# 随机生成输入，三个参数分别为序列的长度、批次的大小和每个输入向量的维度
+src = torch.randn(2, 3, 4)
+
+out = encoder_layer(src)
+print(out)
+# tensor([[[-0.7729,  1.4483,  0.3960, -1.0714],
+#          [-0.9167,  0.8501, -1.0701,  1.1367],
+#          [0.9654,  0.7987, -1.5431, -0.2210]],
+
+#         [[-0.5101,  0.5713, -1.3366,  1.2754],
+#          [1.2021, -0.9338,  0.7733, -1.0416],
+#          [0.5644, -0.7968, -1.1125,  1.3449]]],
+#        grad_fn= < NativeLayerNormBackward >)
+
+# 然后将多个Transformer块堆叠起来构成完整的encoder
+transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=6)
+out = transformer_encoder(src)
+print(out)
+# tensor([[[0.9369, -0.0903,  0.7505, -1.5971],
+#          [-1.3297, -0.1221, -0.0367,  1.4885],
+#          [1.6117, -0.4730, -0.0544, -1.0843]],
+
+#         [[1.2730, -0.3656,  0.5040, -1.4113],
+#          [-0.8596, -0.0741, -0.7205,  1.6542],
+#          [0.7634, -0.7496,  1.1879, -1.2017]]],
+#        grad_fn= < NativeLayerNormBackward >)
+
+# 解码过程类似，先定义然后堆叠
+memory = transformer_encoder(src)
+decoder_layer = nn.TransformerDecoderLayer(d_model=4, nhead=2)
+transformer_decoder = nn.TransformerDecoder(decoder_layer, num_layers=6)
+out_part = torch.rand(2, 3, 4)
+out = transformer_decoder(out_part, memory)
+print(out)
+# tensor([[[1.4655, -1.3585, -0.0339, -0.0731],
+#          [-1.1449,  1.4500,  0.3671, -0.6722],
+#          [-1.0803,  1.5688,  0.1111, -0.5996]],
+
+#         [[-0.7258, -1.1193,  0.4137,  1.4315],
+#          [-1.3195,  1.4779,  0.0972, -0.2556],
+#          [-0.5749,  1.6023, -1.0496,  0.0222]]],
+#        grad_fn= < NativeLayerNormBackward >)
+```
+
+### Training Neural Networks
+
+#### Loss Function
+
+Use the loss function to evaluate the quality of a set of parameters. The smaller the value of the loss function, the more similar the model output is to the real output, and it can be considered that the model performs better at this time. However, if the value of the loss function is too small, the model will overfit to the training data set, which is not suitable for new data.
+
+There are many methods that can reach this goal.
+- Regularization
+- Dropout
+- Early Stopping
+
+There are two main loss functions in deep learning: Mean Squared Error (MSE) and Cross-Entropy (CE) loss.
+
+When dealing with classification problems, cross entropy loss is a more commonly used loss function. It learns faster. The cross-entropy loss only depends on the logarithm of the model's predicted probability of the correct category. Essentially, the cross-entropy loss function formula is to find the log-likelihood function in the maximum likelihood of the distribution of multiple types of output results (Bernoulli distribution).
+When the model error is larger, the gradient of the loss function is larger, so the model learns faster; when the model error is smaller, the gradient of the loss function is smaller, and the model learns more slowly.

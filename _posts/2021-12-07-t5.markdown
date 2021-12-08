@@ -22,7 +22,30 @@ Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transforme
 
 <!--more-->
 
+## Introduction
 
+Problem: The rapid rate of progress and diversity of techniques in this burgeoning field can make it difficult to compare different algorithms, tease apart the effects of new contributions, and understand the space of existing methods for transfer learning. 
+{:.warning}
+
+Solution: Motivated by a need for more rigorous understanding, we leverage a unified approach to transfer learning that allows us to systematically study different approaches and push the current limits of the field.
+{:.success}
+
+The basic idea underlying our work is to treat every text processing problem as a “text-to-text” problem, i.e. taking text as input and producing new text as output.
+This approach is inspired by previous unifying frameworks for NLP tasks, including casting all text problems as question answering ([McCann et al., 2018](https://arxiv.org/abs/1806.08730)), language modeling ([Radford et al., 2019](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)), or span extraction [Keskar et al. (2019b)](https://arxiv.org/abs/1904.09286) tasks.
+
+In order to perform experiments at this scale, we introduce the “Colossal Clean Crawled Corpus” (C4), a data set consisting of hundreds of gigabytes of clean English text scraped from the web.
+
+## Model
+
+T5: “**T**ext-**t**o-**T**ext **T**ransfer **T**ransformer”
+
+1. First, an input sequence of tokens is mapped to a sequence of embeddings, which is then passed into the encoder. 
+2. The encoder consists of a stack of “blocks”, each of which comprises two subcomponents: a self-attention layer followed by a small feed-forward network. 
+3. Layer normalization (Ba et al., 2016) is applied to the input of each subcomponent. We use a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied.
+4. After layer normalization, a residual skip connection (He et al., 2016) adds each subcomponent’s input to its output. Dropout (Srivastava et al., 2014) is applied within the feed-forward network, on the skip connection, on the attention weights, and at the input and output of the entire stack.
+5. The decoder is similar in structure to the encoder except that it includes a standard attention mechanism after each self-attention layer that attends to the output of the encoder. The self-attention mechanism in the decoder also uses a form of autoregressive or causal self-attention, which only allows the model to attend to past outputs. 
+6. The output of the final decoder block is fed into a dense layer with a softmax output, whose weights are shared with the input embedding matrix. All attention mechanisms in the Transformer are split up into independent “heads” whose outputs are concatenated before being further processed.
+:thinking:
 
 
 

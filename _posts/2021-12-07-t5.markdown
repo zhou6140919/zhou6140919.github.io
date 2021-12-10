@@ -35,7 +35,9 @@ This approach is inspired by previous unifying frameworks for NLP tasks, includi
 
 In order to perform experiments at this scale, we introduce the “Colossal Clean Crawled Corpus” (C4), a data set consisting of hundreds of gigabytes of clean English text scraped from the web.
 
-## Model
+## Setup
+
+### Model
 
 T5: “**T**ext-**t**o-**T**ext **T**ransfer **T**ransformer”
 
@@ -46,6 +48,10 @@ T5: “**T**ext-**t**o-**T**ext **T**ransfer **T**ransformer”
 5. The decoder is similar in structure to the encoder except that it includes a standard attention mechanism after each self-attention layer that attends to the output of the encoder. The self-attention mechanism in the decoder also uses a form of autoregressive or causal self-attention, which only allows the model to attend to past outputs. 
 6. The output of the final decoder block is fed into a dense layer with a softmax output, whose weights are shared with the input embedding matrix. All attention mechanisms in the Transformer are split up into independent “heads” whose outputs are concatenated before being further processed.
 :thinking:
+
+### C4 Dataset
+
+
 
 
 

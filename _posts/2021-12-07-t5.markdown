@@ -51,6 +51,44 @@ T5: “**T**ext-**t**o-**T**ext **T**ransfer **T**ransformer”
 
 ### C4 Dataset
 
+Clean Common Crawl by the following heuristics(启发式算法):
+ - Retain lines that ends in a terminal punctuation mark (i.e. a period, exclamation mark, question mark, or end quotation mark).
+ - Discard any page with fewer than 5 sentences and only retain lines that contain at least 3 words.
+ - Remove any page that contains any dirty, naughty, obscene, or otherwise bad words.
+ - Remove any line with the word Javascript.
+ - Remove any page where the placeholder phrase "lorem ipsum" appeared.
+ - Remove any page that contains curly bracket "{" to avoid programming languages.
+ - Discard all but one of any three-sentence span occurring more than once in the data set.
+ - Use langdetect to filter out any page that is not classified as English with a probability of at least 0.99.
+
+### Downstream Tasks
+
+ - GLUE and SuperGLUE text classification meta-benchmarks;
+ - CNN/Daily Mail abstractive summarization;
+ - SQuAD question answering;
+ - WMT English to German, French, and Romanian translation.
+
+For simplicity, when fine-tuning we treat all of the tasks in the GLUE benchmark (and similarly for SuperGLUE) as a single task by concatenating all of the constituent(组成的) data sets. As suggested by Kocijan et al. (2019) we also include the Definite Pronoun Resolution (DPR) data set (Rahman and Ng, 2012) in the combined SuperGLUE task.
+
+### Input and Output Format
+
+We cast all of the tasks into a "text-to-text" format--that is, a task where the model is fed some text for context or conditioning and is then asked to produce some output text. This framework provides a consistent training objective both for pre-training and fine-tuning. The model is trained with a maximum likelihood objective regardless of the task. To specify which task the model should perform, we add a task-specific prefix to the original input sequence before fedding it to the model.
+
+Note that the choice of text prefix used for a given task is essentially a hyperparameter. (We found that changing the exact wording of the prefix had limited impact.)
+
+> We mainly consider models that process an input with an encoder before generating an output with a separate decoder.
+>
+> We focus on transfer learning rather than zero-shot learning.
+
+Finally, Keskar et al. (2019b) unify many NLP tasks as “span extraction”, where text corresponding to possible output choices are appended to the input and the model is trained to extract the input span corresponding to the correct choice. In contrast, our framework also allows for generative tasks like machine translation and abstractive summarization where it is not possible to enumerate all possible output choices.
+
+Exception: STS-B, which is a regressino task where the goal is to predict a similarity score between 1 and 5.
+We found that most of these scores were annotated in increments of 0.2, so we simply rounded any score to the nearest increment of 0.2 and converted the result to a literal string representation of the number (e.g. the floating-point value 2.57 would be mapped to the string “2.6”).
+At test time, if the model outputs a string corresponding to a number between 1 and 5, we convert it to a floating-point value; otherwise, we treat the model’s prediction as incorrect.
+
+## Experiments
+
+
 
 
 

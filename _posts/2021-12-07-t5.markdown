@@ -88,8 +88,53 @@ At test time, if the model outputs a string corresponding to a number between 1 
 
 ## Experiments
 
+We systematically study the influence of new pre-training objectives, model architectures, unlabeled data sets, and more by taking a reasonable baseline and altering one aspect of the setup at a time. It would be prohibitively expensive to perform a combinatorial exploration of all the factors.
 
+### Baseline
 
+We pre-train a standard Transformer using a simple denoising objective and then separately fine-tune on each of our downstream tasks.
+
+#### Model
+
+Using a standard encoder-decoder structure achieved good results on both generative and classification tasks.
+
+Baseline model is designed so that the encoder and decoder are each similar in size and configuration to a bert-base stack. Specifically, both the encoder and decoder consist of 12 blocks. The FFN in each block consist of a dense layer with an output dimensionality of 3072 followed by a ReLU nonlinearity and another dense layer. The "key" and "value" matrices of all attention mechanisms have an inner dimensionality of 64 and all attention mechanisms have 12 heads. All other sub-layers and embeddings have a dimensionality of 768. In total, this results in a model with about 220M parameters. For regularization, we use a dropout probability of 0.1 everywhere dropout is applied in the model.
+
+#### Training
+
+All tasks are formulated as text-to-text tasks. This allows us to always train using standard maximum likelihood, i.e. using teacher forcing and a cross-entropy loss. For optimization, we use AdaFactor. At test time, we use greedy decoding (i.e. choosing the highest-probability logit at every timestep).
+
+- pre-train steps: 2^19 = 524,288
+- maximum sequence length: 512
+- batch size: 128
+- total tokens: 34B (BERT: 137B tokens; RoBERTa: 2.2T tokens)
+
+Using only 34B tokens results in a reasonable computational budget while still providing a sufficient amount of pre-training for acceptable performance. 34B tokens only covers a fraction of the entire C4 data set, so we never repeat any data during pre-training.
+
+We use an "inverse square root" learning rate schedule: $$ 1/\sqrt{max(n,k)}  $$
+where n is the current training iteration and k is the number of warm-up steps (set to 10^4 in all of our experiments). This sets a constant learning rate of 0.01 for the warm-up steps, then exponentially decays the learning rate until pre-training is over. We also experimented with using a triangular learning rate, which produced slightly better results but requires knowing the total number of training steps ahead of time. We opt more generic inverse square roote schedule.
+
+- fine-tuning steps: 2^18 = 262,144
+- maximum sequence length: 512
+- batch size: 128
+- learning rate: 0.001 constant
+
+For models fine-tuned on multiple tasks, we choose the best checkpoint for each task independently.
+
+For all of the experiments except those in Section 3.7, we report results in the validation set to avoid performing model selection on the test set.
+
+#### Vocabulary
+
+We use SentencePiece to encode text as WordPiece tokens. For all experiments, we use a vocabulary of 32,000 wordpieces.
+Then plus German, French, and Romanian wordpieces.
+
+#### Unsupervised Objective
+
+Preliminary work that applied the transfer learning paradigm of pre-training and fine-tuning all of the model’s parameters to NLP problems used a causal language modeling objective for pre-training. However, it has recently been shown that "denoising" objectives (MLM) produce better performance and as a result they have quickly become standard.
+
+We design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token.
+
+Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece.
 
 
 

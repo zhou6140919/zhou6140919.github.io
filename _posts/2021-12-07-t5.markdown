@@ -136,5 +136,21 @@ We design an objective that randomly samples and then drops out 15% of tokens in
 
 Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece.
 
+#### Baseline Performance
 
+Ideally, we would repeat every experiment in our study multiple times to get a confidence interval on our results. THis would be prohibitively expensive. As a cheaper alternative, we train our baseline model 10 times from scratch (i.e. with different random initializations and data set shuffling) and assume that the variance over these runs of the base model also applies to each experimental variant.
 
+We also measure the performance of training our model for 2^18 steps (the same number we use for fine-tuning) on all downstream tasks without pre-training. This gives us an idea of how much pre-training benefits our model in the baseline setting.
+
+![t5-score](/images/t5-score.jpg)
+
+Unsurprisingly, we find that pre-training provides significant gains across almost all benchmarks. The only exception is WMT English to French, which is a large enough data set that gains from pre-training tend to be marginal. We include this task in our experiments to test the behavior of transfer learning in the high-resource regime. Since we perform early stopping by selecting the best-performing checkpoint, the large disparity(差距) between our baseline and “no pre-training” emphasize how much pre-training improves performance on tasks with limited data.
+
+### Architectures
+
+In this section, different Transformer architectures are compared.
+
+#### Model Structures
+
+1. encoder-decoder: 
+  - The encoder uses a "fully-visible" attention mask, which allows a self-attention mechanism to attend to any entry of the input when producing each entry of its output.

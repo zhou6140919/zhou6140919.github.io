@@ -68,3 +68,47 @@ For each entity, we constrain the candidate sentences to the root section of its
 
 If any alias of the subject entity occurs in the given sentence, the sentence is selected as is, else the first animate third-person personal or possessive pronoun is replaced by the subject entity's canonical(权威性的) name.
 The pronoun replacement heuristic(启发性的) also works well because of the constraint. All triples aligned to a given sentence are combined together as a single example.
+
+### Types of Triples
+
+pass
+
+### Model
+
+A two-step sequential finetuning of the pre-trained T5-large model for converting triples to text.
+
+> Triples: (subject relation_1 object_1,....relation_n object_n) as input to T5
+
+First, T5 model is fine-tuned on the aligned corpus for 5k steps to increase the coverage of entities and relations.
+But it has a problem that when the triple is missing a certain expected input, the model will hallucinate a random one. For example, “Neff Maiava date of birth 01 May 1924, date of death, 21 April 2018.” generates “Neff Maiava (1 May 1924 - 21 April 2018) was an Albanian actor.”; hallucinating a profession.
+
+To overcome this problem, the model is further fine-tuned on WebNLG 2017 data for 500 steps. While WebNLG has low coverage, the information in the input triples matches the target sentence exactly.
+WebNLG also has a different sentence structure than Wikipedia. This reduces conformity(一致性) to Wikipedia sentence structure and hence reduces hallucination.
+
+> learning rate: 1e-3
+> batch size: 2^20 = 1048576
+> max decoding length: 256
+
+### Quality Filtering
+
+A semantic quality based filtering. It is not jointly optimized with the text generation module.
+
+A semantic quality score is assigned to each generated sentence to show whether it captures the full meaning of the triple and does not hallucinate extra information.
+The score is generated using a BERT base uncased model with input of the form [CLS] concatenated-triples [SEP] reference-or-generated sentence.
+It is fine-tuned for 1k steps on WebNLG 2017 human assessment data.
+
+## KELM Corpus
+
+Utilize the TEKGEN model and filtering mechanism to build a synthetic corpus that captures the KG in natural language format.
+
+### Entity Subgraph
+
+Using relation co-occurrence counts based on realtion-sentence alignment in the training data.
+
+### Generation
+
+For each entity subgraph, we concatenate all its triples as before. We perform top 5 sampling with a temperature of 0.5. The bottom 1% of the generated sentences are filtered out based on the semantic score.
+
+### Human Evaluation
+
+The generated text is rated for two aspects--fluency and semantics, on a scale of 1-5, where 1 means not fluent/does not capture meaning at all and 5 means completely fluent/fully captures meaning with no hallucination. For each instance, scores of the two annotators are averaged to get the final rating.

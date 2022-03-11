@@ -22,6 +22,8 @@ Stage-wise Fine-tuning for Graph-to-Text Generation
 
 <!--more-->
 
+See [original paper](http://arxiv.org/abs/2105.08021) for more details.
+
 ## Abstract
 
 ### Problem
@@ -52,4 +54,18 @@ Triple Role ID: takes 3 values for a specific triple: 1 for the subject, 2 for t
 
 Tree level ID: calculates the distance (the number of relations) from the source vertex(顶点) of the RDF graph.
 
-**Two-step Fine-tuning**
+**Two-step Fine-tuning** Following [Wang et al., 2018](https://arxiv.org/abs/1809.01797), we perform intermediate pre-training by coupling noisy English Wikipedia data with Wikidata triples. We select 15 related categories that appear in the WebNLG dataset and collect 542,192 data pairs.
+> For each Wikipedia article, we query its corresponding WikiData triples and remove sentences which contain no values in the Wikidata triples to form graph-text pairs.
+> We remove triples and description pairs that have already appeared in the WebNLG dataset.
+
+## Experiments
+
+**Results with Wikipedia fine-tuning** This helps the model handle unseen relations and combine relations with the same type together with correct order.
+
+**Results with positional embeddings** For multiple triples, additional positional embeddings help reduce the errors introduced by pronoun ambiguity. The tree-level embeddings also help the model arrange multiple triples into one sentence.
+
+## Remaining Challenges
+
+The model is not powerful enough to consider the deep connections between the subject and the object, so it might be confused with complicated relations that do not have a clear direction.
+
+For multiple triples, the generator still has a chance to miss relations or mixes the subject and the object of different relations, especially for the unseen category.

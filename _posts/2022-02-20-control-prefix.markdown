@@ -48,8 +48,12 @@ We propose the dynamic prompting method CONTROL PREFIXES, which extends prefix-t
 ## Control Prefixes
 
 This work considers seq-to-seq tasks where the objective is to model the conditional probability P(Y|X) with X and Y representing the tokenized input and output sequences respectively.
-This paper adopts T5-large and BART-large as the underlying pre-trained language model with parameters φ; and as we consider fixed-LM methods, φ always remains frozen.
-
-# Intuition
+This paper adopts T5-large and BART-large as the underlying pre-trained language model with parameters φ; and as we consider fixed-LM methods, **φ always remains frozen**.
 
 We believe having fixed PLM parameters that capture broad natural language understanding, shared task-specific parameters which specify the task itself, and attribute-level parameters which integrate input-level information has a range of benefits.
+
+The idea is to have a general task prefix $$P_θ$$ ("task-specific parameters"), as in prefix-tuning which remains static, and train at the same time $$C_θ$$ ("attribute-level parameters"): a set of prefixes that change depending on the input. This requires attribute-level information or guidance G, to indicate which control prefixes to be used while processing X.
+
+## Experiments
+
+**Data-to-text** WebNLG categories as A1 prefix.

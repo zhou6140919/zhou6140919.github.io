@@ -44,7 +44,7 @@ Goal: To generate a text faithfully describing the input graph.
 
 We augment our model with additional position embeddings to capture the structure of the KG.
 
-Input: "|S" "|P" "|O" as special tokens to indicate subjects, relations, objects, respectively.
+Input: "\|S" "\|P" "\|O" as special tokens to indicate subjects, relations, objects, respectively.
 
 **Positional Embeddings** We extend the input layer with two position-aware embeddings in addition to the original position embeddings.
 

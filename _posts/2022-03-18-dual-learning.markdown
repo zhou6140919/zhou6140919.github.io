@@ -1,5 +1,5 @@
 ---
-title: EventWiki: Dual Learning for Machine Translation
+title: Dual Learning for Machine Translation
 categories: nlp
 tags: 
     - nlp

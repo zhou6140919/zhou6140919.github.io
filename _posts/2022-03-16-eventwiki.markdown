@@ -1,5 +1,5 @@
 ---
-title: EventWiki: A Knowledge Base of Major Events
+title: EventWiki A Knowledge Base of Major Events
 categories: nlp
 tags: 
     - nlp

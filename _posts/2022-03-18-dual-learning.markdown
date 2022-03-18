@@ -57,7 +57,7 @@ Assume we already have two well-trained language models $$LM_A$$ and $$LM_B$$, e
 
 $$r_1 = LM_B(s_mid)$$ where $$s_{mid}$$ is the middle translation output
 
-$$r_2 = logP(s|s_{mid};Θ_{BA})$$ where $$Θ_{BA}$$ is the parameter of translation model B to A
+$$r_2 = logP(s\|s_{mid};Θ_{BA})$$ where $$Θ_{BA}$$ is the parameter of translation model B to A
 
 The total reward is $$r = αr_1 + (1 − α)r_2$$, where $$α$$ is a hyperparameter. The parameters in the translation models are optimized through reward maximization, as widely used in reinforcement learning.
 

@@ -55,9 +55,9 @@ Consider two monolingual corpora $$D_A$$ and $$D_B$$ which contain sentences fro
 
 Assume we already have two well-trained language models $$LM_A$$ and $$LM_B$$, each of which takes a sentence as input and outputs a real value to indicate how confident the sentence is a natural sentence in its own language. Here the language models can be trained either using other resources, or just using the monolingual data $$D_A$$ and $$D_B$$.
 
-$$r_1 = LM_B(s_mid) where s_mid is the middle translation output$$
+$$r_1 = LM_B(s_mid)$$ where $$s_{mid}$$ is the middle translation output
 
-$$r_2 = logP(s|s_mid;Θ_BA) where Θ_BA is the parameter of translation model B to A$$
+$$r_2 = logP(s|s_{mid};Θ_{BA})$$ where $$Θ_{BA}$$ is the parameter of translation model B to A
 
 The total reward is $$r = αr_1 + (1 − α)r_2$$, where $$α$$ is a hyperparameter. The parameters in the translation models are optimized through reward maximization, as widely used in reinforcement learning.
 

@@ -73,7 +73,7 @@ At the very beginning of the dual learning process, from each mini batch, we use
 ## Discussions
 
 1. The basic idea of dual learning is generally applicable: as long as two tasks are in dual form, we can apply the dual-learning mechanism to simultaneously learn both tasks from unlabeled data using reinforcement learning algorithms.
-     - speech recognition vs text tot speech
+     - speech recognition vs text to speech
      - image caption vs image generation
      - question answering vs question generation
      - search vs keyword extraction

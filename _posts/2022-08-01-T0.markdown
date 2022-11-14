@@ -69,6 +69,8 @@ Most of the prompts correspond directly to a version of the original proposed ta
 
 **Training** We assemble our multitask training mixture by combining and shuffling all examples from all training datasets. We truncate input and target sequences to 1024 and 256 tokens, respectively. Following [Raffel et al. (2020)](https://arxiv.org/abs/1910.10683), we use packing to combine multiple training examples into a single sequence to reach the maximum sequence length. We use a batch size of 1024 sequences (corresponding to 220 total input tokens per batch) and the Adafactor optimizer. Following standard practice for fine-tuning T5, we use a learning rate of 1e-3 and a dropout rate of 0.1.
 
+**Evaluation** We evaluate zero-shot generalization on 11 datasets in 4 held-out traditional NLP tasks: NLI, coreference resolution, sentence completion, and word sense disambiguation, as well as 14 novel tasks from BIG-gench. Unless specified otherwise, we report performance on the validation splits. All reported datasets use accuracy as their metric.
+
 
 ## Reference
 

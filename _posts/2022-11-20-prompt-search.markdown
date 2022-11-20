@@ -52,7 +52,7 @@ The quality of instruction can only be measured when executing these instruction
 
 **Execution accuracy** $f (\rho,Q,A) = \nvDash [M([\rho ; Q]) = A]$
 
-**Log probability** $ log P(A|[ρ;Q])$
+**Log probability** $ log P(A\|[ρ;Q])$
 
 **Efficient score estimation** Evaluate all candidates with a small subset of the training dataset. For the candidates with a score greater than a certain threshold, we sample and evaluate a new non-overlapping subset of the training dataset to update the moving average of the score.
 

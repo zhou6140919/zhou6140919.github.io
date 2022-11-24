@@ -1,7 +1,7 @@
 ---
 name: Cornerstone Project -- Design of Hydrogen-Rich Cup Based on Titanium Dioxide Nanotubes.
 tools: [Electronic, Material]
-image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ubuy.hk%2Fen%2Fproduct%2FQM5ST8W-portable-hydrogen-rich-water-glass-rechargeable-ion-water-generator-hydrogen-rich-water-cup-generato&psig=AOvVaw0DqmuUXC8dCQ6HxGJ2foUk&ust=1669388084089000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOCX47CJx_sCFQAAAAAdAAAAABAD
+image: https://m.media-amazon.com/images/I/61ZiG7GwVsL._SL1000_.jpg
 ---
 
 - A hydrogen-rich cup is designed to electrolyze water and generate hydrogen through platinum-titanium electrodes.

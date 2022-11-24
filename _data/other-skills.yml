@@ -1,7 +1,7 @@
-- name: Adobe Photoshop
-  percentage: 95
+- name: Vim/Neovim
+  percentage: 80
   color: info
 
-- name: Adobe Illustrator
-  percentage: 90
+- name: Markdown
+  percentage: 50
   color: success

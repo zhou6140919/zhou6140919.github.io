@@ -1,8 +1,6 @@
 ---
 title: Large Language Models are Human-Level Prompt Engineers
 tags: [nlp, prompt, papers]
-style: fill
-color: warning
 description: Automatic Prompt Engineer (APE) for automatic instruction generation and selection.
 ---
 

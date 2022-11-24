@@ -7,7 +7,7 @@ description: Langboat zero-shot information extraction platform can extract enti
 
 # Financial Zero-shot Information Extraction Platform
 
-<p class="text-center"> [Demo](https://langboat.com/) </p>
+{% include elements/button.html link="https://langboat.com/" text="Demo" block=true %}
 
 ## Introduction
 

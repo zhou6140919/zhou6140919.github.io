@@ -38,6 +38,6 @@ International Exchange Scholarship FGH College 2021
 
 {% capture carousel_images %}
 ../photos/me.JPG
-../photos/cat.JPG
+../photos/me2.jpg
 {% endcapture %}
 {% include elements/carousel.html %}

@@ -25,3 +25,19 @@ I'm interested in natural language processing.
 <div class="row">
 {% include about/timeline.html %}
 </div>
+
+{% capture list_items %}
+Outstanding Student Cadre 2020
+14th IEEExtreme Programming Competition ranking 76/2155
+International Exchange Scholarship BJUT 2021
+Innovation and Entrepreneurship Award BJUT 2021
+Academic Excellence Award BJUT 2021
+International Exchange Scholarship FGH College 2021
+{% endcapture %}
+{% include elements/list.html title="Honors" type="toc" %}
+
+{% capture carousel_images %}
+../photos/me.JPG
+../photos/cat.HEIC
+{% endcapture %}
+{% include elements/carousel.html %}

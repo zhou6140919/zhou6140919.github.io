@@ -1,0 +1,64 @@
+---
+title: (T0) MultiTask Prompted Training Enables Zero-Shot Task Generalization
+tags: [nlp, transformer, prompt, multi-task, papers]
+description: The model attains strong zero-shot performance on several standard datasets, often outperforming models up to 16× its size. Further, our approach attains strong performance on a subset of tasks from the BIG-bench benchmark, outperforming models up to 6× its size. 
+---
+
+MultiTask Prompted Training Enables Zero-Shot Task Generalization
+
+See [original paper](http://arxiv.org/abs/2110.08207) for more details.
+
+## Abstract
+
+**Problem: It has been hypothesized that this is a consequence of implicit multitask learning in language models’ pretraining [(Radford et al., 2019)](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf). Can zero-shot generalization instead be directly induced by explicit multitask learning?**
+
+**Solution: To test this question at scale, the authors develop a system for easily mapping any natural language tasks into a human-readable prompted form. The authors convert a large set of supervised datasets, each with multiple prompts with diverse wording. These prompted datasets allow for benchmarking the ability of a model to perform completely held-out tasks. We fine-tune a pretrained encoder-decoder model on this multitask mixture covering a wide variety of tasks.**
+
+**Results: The model attains strong zero-shot performance on several standard datasets, often outperforming models up to 16× its size. Further, our approach attains strong performance on a subset of tasks from the BIG-bench benchmark, outperforming models up to 6× its size.**
+
+## Introduction
+
+As a byproduct of learning to predict the next word, a language model is forced to learn from a mixture of implicit tasks included in their pretraining corpus. For example, by training on generic text from a web forum, a model might implicitly learn the format and structure of question answering.
+
+For example, there are many websites that simply contain lists of trivia questions and answers, which are precisely supervised training data for the task of closed-book question answering. The authors hypothesize that such multitask supervision in pretraining plays a large role in zero-shot generalization.
+
+To convert a large set of natural language tasks into prompted form, the authors use a simple templating language for structured datasets. The authors develop an interface for prompt collection from public contributors that facilitated the collection of a large multitask mixture with multiple prompts per dataset [(Bach et al., 2022)](https://aclanthology.org/2022.acl-demo.9/). We then train a variant of the T5 encoder-decoder model on a subset of the tasks (each with multiple datasets) and then evaluate tasks and prompts **that the model was not trained on**.
+
+> PromptSource is a toolkit for creating, sharing and using natural language prompts.
+
+The goals of the experiments: 
+- Does multitask prompted training improve generalization to held-out tasks? 
+- Does training on a wider range of prompts improve robustness to prompt wording?
+
+The results of the experiments:
+- multitask training enables zero-shot task generalization by showing that our model matches or exceeds the performance of GPT-3 on 9 out of 11 held-out datasets, despite being about 16× smaller. The model improves over a large baseline language model on 13 out of 14 tasks in the BIG-bench benchmark.
+- Training on more prompts per dataset consistently improves the median and decreases the variability of performance on held-out tasks. Training on prompts from a wider range of datasets also generally improves the median but does not consistently decrease the variability.
+
+## Measuring Tasks
+
+To test zero-shot generalization, the authors hold out all constituent datasets of four tasks: natural language inference (NLI), coreference resolution, sentence completion, and word sense disambiguation.
+
+Additionally, the authors do not train our main model on any datasets that [Brown et al. (2020)](https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf) used for evaluation, so that our main results will be a **fair** zero-shot comparison. The authors also verify that data for those tasks is **not leaked** through the pretraining corpus.
+
+## Prompts
+
+The main annotation guideline was that prompts needed to be grammatical and understandable by a fluent English speaker with no prior experience of the tasks. Additionally, prompts that required explicit counting or numerical indexing were removed in favor of natural language variants. For example, instead of predicting indices of a span extracting answers from a passage, the model is expected to copy the span’s text instead. With these minimal constraints, prompt writers were encouraged to use both formal and creative prompts and various orderings of the data.
+
+Most of the prompts correspond directly to a version of the original proposed task, although the authors also allow prompts that permuted the original task (for instance, generating a document from its summary). Such non-original-task prompts are included in our training mixtures for improved diversity, but they are not reported in evaluation since they deviate from the metrics and baselines reported by the original datasets.
+
+## Experimental Setup
+
+**Model** The authors fine-tune a pretrained T5 encoder-decoder model on our multi-task training mixture of natural language prompted datasets. Since T5’s pretraining objective is generating tokens and only tokens that have been removed from the input text, it is different from the natural text generation format of prompted datasets. Therefore, the authors use [Lester et al. (2021)](https://arxiv.org/abs/2104.08691)’s LM-adapted T5 model (referred to as T5+LM), produced by training T5 on 100B additional tokens from C4 on a standard language modeling objective.
+
+**Training** The authors assemble our multitask training mixture by combining and shuffling all examples from all training datasets. the authors truncate input and target sequences to 1024 and 256 tokens, respectively. Following [Raffel et al. (2020)](https://arxiv.org/abs/1910.10683), we use packing to combine multiple training examples into a single sequence to reach the maximum sequence length. We use a batch size of 1024 sequences (corresponding to 220 total input tokens per batch) and the Adafactor optimizer. Following standard practice for fine-tuning T5, we use a learning rate of 1e-3 and a dropout rate of 0.1.
+
+**Evaluation** The authors evaluate zero-shot generalization on 11 datasets in 4 held-out traditional NLP tasks: NLI, coreference resolution, sentence completion, and word sense disambiguation, as well as 14 novel tasks from BIG-gench. Unless specified otherwise, the authors report performance on the validation splits. All reported datasets use accuracy as their metric.
+
+
+## Reference
+
+- [Language Models are Unsupervised Multitask Learners - Radford et al., 2019](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
+- [PromptSource: An Integrated Development Environment and Repository for Natural Language Prompts - Bach et al., 2022](https://aclanthology.org/2022.acl-demo.9/)
+- [Language Models are Few-Shot Learners - Brown et al., 2020](https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf)
+- [The Power of Scale for Parameter-Efficient Prompt Tuning - Lester et al., 2021](https://arxiv.org/abs/2104.08691)
+- [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer - Raffel et al., 2020](https://arxiv.org/abs/1910.10683)

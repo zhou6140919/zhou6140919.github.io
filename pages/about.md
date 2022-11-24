@@ -18,5 +18,10 @@ I'm interested in natural language processing.
 </div>
 
 <div class="row">
+{% include about/skills.html title="Language Skills" source=site.data.language-skills %}
+{% include about/skills.html title="Hobbies" source=site.data.hobby %}
+</div>
+
+<div class="row">
 {% include about/timeline.html %}
 </div>

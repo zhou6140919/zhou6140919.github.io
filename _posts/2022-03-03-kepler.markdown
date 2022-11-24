@@ -1,0 +1,46 @@
+---
+title: Kepler
+categories: nlp
+tags: 
+    - nlp
+    - transformer
+    - papers
+author: Zhou Tong
+sidebar:
+  nav: Paper-notes
+  avatar: true
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: /pictures/bg1.jpg
+---
+
+KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation
+
+<!--more-->
+
+## Abstract
+
+In KEPLER, we encode textual entity descriptions with a pre-trained language model as their embeddings, and then jointly optimize the knowledge embedding and language modeling objectives.
+
+Experimental results show that KEPLER achieves state-of-the-art performances on various NLP tasks, and also works remarkably well as an inductive KE model on KG lin prediction. Furthermore, for pretraining and evaluating KEPLER, we construct Wikidata5M, a large-scale KG dataset with aligned entity descriptions, and benchmark state-of-the-art KE methods on it.
+
+The source code can be obtained from https://github.com/THU-KEG/KEPLER.
+
+## Introduction
+
+Problem: Existing PLMs learn useful inguistic knowledge from unlabeled text, but they generally cannot well capture the world facts, which are typically sparse and have complex forms in text.
+
+Solution: Knowledge graphs contain extensive structural facts, and knowledge embedding methods can effectively embed them into continuous entity and relation embeddings.
+
+We use entity descriptions to bridge the gap between KE and PLM, and align the semantic space of text to the symbol space of KGs. We encode the texts into a unified semantic space with the same PLM as the encoder, and jointly optimize the KE and the MLM objectives.
+- KE: we encode the entity descriptions as entity embeddings and then train them in the same way as conventional KE methods.
+- MLM: we follow the approach of existing PLMs.
+
+KEPLER
+1. is able to integrate factual knowledge into language representation with the supervision from KG by the KE objective.
+2. inherits the strong ability of language understanding from PLMs by the MLM objective.
+3. 's ability of extracting knowledge from text is enhanced by the KE objective since it reqquires the model to encode the entities from their corresponding descriptions.

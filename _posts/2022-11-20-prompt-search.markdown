@@ -7,7 +7,7 @@ tags:
 author: Zhou Tong
 ---
 
-Large Language Models are Human-Level Prompt Engineers
+# Large Language Models are Human-Level Prompt Engineers
 
 See [original paper](http://arxiv.org/abs/2211.01910) for more details.
 

@@ -50,6 +50,7 @@ Reformulating tasks as complete-the-sentence problems.
 **Conclusion**
 1. In-context learning performance is highly correlated with term frequencies during pretraining.
 > Reasoning: 24 appears 100x times more than 23 in data.
+    
     What is 24 times 18 ?
 
     432 :heavy_check_mark: 
@@ -70,6 +71,7 @@ Reformulating tasks as complete-the-sentence problems.
     Input and label distributions matter independently.
 
     a. Removing correct input distribution significantly drops performance.
+    
     b. Removing correct label space significantly drops performance.
 
 ### Prompt-based fintuning

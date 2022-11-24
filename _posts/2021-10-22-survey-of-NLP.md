@@ -2,7 +2,7 @@
 title: Pre-trained Models for Natural Language Processing A Survey
 tags: [nlp, survey, papers]
 style: fill
-description: The emergence of pre-trained models (PTMs) has brought natural language processing to a new era.
+description: The emergence of pre-trained models has brought natural language processing to a new era.
 ---
 # Notes
 

@@ -1,7 +1,7 @@
 ---
 title: KELM
 tags: [nlp, knowledge enhancement, papers]
-description: TEKGEN (Text from KG Generator): A data-to-text sequence-to-sequence model for verbalizing an entire KG.
+description: A data-to-text sequence-to-sequence model for verbalizing an entire KG.
 ---
 
 See [Original Paper](http://arxiv.org/abs/2010.12688) for more details.

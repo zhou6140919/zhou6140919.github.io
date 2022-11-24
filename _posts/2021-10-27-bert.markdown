@@ -1,8 +1,6 @@
 ---
 title: BERT
-categories: nlp
 tags: [nlp, encoder, papers]
-style: fill
 description: BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.
 ---
 

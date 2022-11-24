@@ -1,5 +1,5 @@
 ---
-title: KELM (Google)
+title: KELM
 tags: [nlp, knowledge enhancement, papers]
 description: TEKGEN (Text from KG Generator): A data-to-text sequence-to-sequence model for verbalizing an entire KG.
 ---

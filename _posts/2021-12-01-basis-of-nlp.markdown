@@ -10,8 +10,6 @@ Author: 车万翔
 
 Keep updating...
 
-<!--more-->
-
 ## Basic Neural Network in NLP
 
 ### Multi-layer Perceptron

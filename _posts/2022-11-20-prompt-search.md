@@ -1,26 +1,13 @@
 ---
 title: Large Language Models are Human-Level Prompt Engineers
-categories: nlp
 tags: 
     - nlp
     - prompt
     - papers
 author: Zhou Tong
-sidebar:
-  nav: Paper-notes
-  avatar: true
-article_header:
-  type: overlay
-  theme: dark
-  background_color: '#203028'
-  background_image:
-    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
-    src: /pictures/bg1.jpg
 ---
 
 Large Language Models are Human-Level Prompt Engineers
-
-<!--more-->
 
 See [original paper](http://arxiv.org/abs/2211.01910) for more details.
 

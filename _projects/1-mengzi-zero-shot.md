@@ -9,52 +9,51 @@ description: All interface capabilities provided in this project are based on Me
 
 <p class="text-center"> {% include elements/button.html link="https://github.com/Langboat/mengzi-zero-shot" text="Repo" %} </p>
 
-# 导航
-* [快速上手](#快速上手)
-* [接口能力](#接口能力)
-* [接口说明](#接口说明)
-* [贡献代码](#贡献代码)
-* [联系方式](#联系方式)
-* [免责声明](#免责声明)
+All interface capabilities provided in this project are based on Mengzi-T5-base-MT. This model is a multi task model, which is based on Mengzi-T5-base and trained by using 27 additional datasets and 301 prompts. This project provides the capabilities of entity extraction, semantic similarity, financial relationship extraction, advertisement generation, intention classification in medical field, emotion classification, comment object extraction, news classification, etc.
 
-# 快速上手
-## 新建环境
+# Navigation
+* [Quick Start](#Quich Start)
+* [Interface Capabilities](#Interface Capabilities)
+* [Interface Description](#Interface Description)
+
+# Quick Start
+## Create a new environment
 ```
 conda create -n mengzi_env python=3.7 -y
 conda activate mengzi_env
 ```
 
-## pip安装
+## pip install
 ```bash
 pip install mengzi-zero-shot
 ```
 
-## 测试样例
+## test examples
 ```
 python test.py
 ```
 
-# 接口能力
+# Interface Capabilities
 
-| 接口能力                 | 简要描述                                             |
+| Interface Capabilities                 | Brief Description                                             |
 | ---------------- | ------------------------------------------------------------ |
-| [实体抽取](#实体抽取) | 抽取文本中的命名实体，并提供对应实体的类别，如地址、书名、公司、游戏、政府、电影、姓名、组织、职位、景点等等。 |
-| [语义相似度](#语义相似度)       | 衡量两个文本之间的语义相似性。                                       |
-| [金融关系抽取](#金融关系抽取)   | 判断文本中的两个实体属于哪种关系，如发行、被发行、注资、增持等等。                           |
-| [广告文案生成](#广告文案生成)      | 给定商品的关键词信息，生成合理的广告文案。                     |
-| [医学领域意图分类](#医学领域意图分类)  | 根据输入的医疗领域文本，识别用户查询意图，如指标解读、病情诊断、就医建议、治疗方案等等。                         |
-| [情感分类](#情感分类)          | 对文本进行情感极性类别分类（积极、消极）。 |
-| [评论对象抽取](#评论对象抽取)          | 对于给定的评论文本，自动抽取其中包含的评价对象。                 |
-| [新闻分类](#新闻分类)          | 对输入的新闻文本进行分类，如农业、文化、电竞、体育、财经、娱乐、旅游、教育、金融、军事、房产、汽车、股票、国际等等。 |
-| [人名抽取](#人名抽取) | 抽取文本中的人名。 |
-| [公司名抽取](#公司名抽取) | 抽取文本中的公司名。 |
+| [Entity Extraction](#Entity Extraction) | Extract the named entities in the text and provide the categories of the corresponding entities, such as addresses, book titles, companies, games, governments, movies, names, organizations, positions, attractions, etc. |
+| [Semantic Similarity](#Semantic Similarity)       | Measures the semantic similarity between two texts. |
+| [Financial Relationship Extraction](#Financial Relationship Extraction)   | Determine which relationship two entities in the text belong to, such as issuing, being issued, capital injection, increase in holdings, etc.            |
+| [Advertisement Generation](#Advertisement Generation)      | Given the keyword information of the product, generate a reasonable advertisement.                    |
+| [Medical Field Intent Classification](#Medical Field Intent Classification)  | According to the input text in the medical field, identify user query intentions, such as index interpretation, disease diagnosis, medical advice, treatment plan, etc. |
+| [Sentiment Classification](#Sentiment Classification)          | Classify text into sentiment polarity categories (positive, negative). |
+| [Comment Object Extraction](#Comment Object Extraction)          | For a given comment text, automatically extract the evaluation objects contained in it.                |
+| [News Classification](#News Classification)          | Classify the input news text, such as agriculture, culture, e-sports, sports, finance, entertainment, tourism, education, finance, military, real estate, automobile, stock, international, etc. |
+| [Name Extraction](#Name Extraction) | Extract the name of the person in the text. |
+| [Company Name Extraction](#Company Name Extraction) | Extract the company name in the text. |
 
 
-# 接口说明
+# Interface Description
 
-## 实体抽取
+## Entity Extraction
 
-输入一段文本，抽取文中的实体，并判定其所属类别，如地址、书名、公司、游戏、政府、电影、姓名、组织、职位、景点等等。
+Extract the named entities in the text and provide the categories of the corresponding entities, such as addresses, book titles, companies, games, governments, movies, names, organizations, positions, attractions, etc.
 
 ```python
 from mengzi_zs import MengziZeroShot
@@ -71,9 +70,9 @@ Output:
 "泗水：地址，泗水县文化市场综合执法局：政府，颜鲲：姓名"
 ```
 
-## 语义相似度
+## Semantic Similarity
 
-输入两段文本，判断其语义是否相同。
+Measures the semantic similarity between two texts.
 
 ```python
 from mengzi_zs import MengziZeroShot
@@ -90,10 +89,9 @@ Output:
 "是"
 ```
 
-## 金融关系抽取
+## Financial Relationship Extraction
 
-
-输入一段文本，以及文本中蕴含的两个实体，判断文本中的两个实体属于哪种关系。
+Enter a piece of text and two entities contained in the text, and determine which relationship the two entities in the text belong to.
 
 ```python
 from mengzi_zs import MengziZeroShot
@@ -111,9 +109,9 @@ Output:
  "被持股"
 ```
 
-## 广告文案生成
+## Advertisement Generation
 
-输入一段商品的描述信息文本，自动生成有效的广告文案。
+Input a description text of a product to automatically generate an effective advertisement.
 
 ```python
  from mengzi_zs import MengziZeroShot
@@ -129,9 +127,9 @@ Output:
  "小宽松版型与随性的风格颇具人气，高腰的设计，毛边裤脚，增添潮流气息。考究的做旧质感，洋溢着复古的气息，一款风格随性却不失复古文艺的直筒牛仔裤。,宽松的直筒版型，对身材的包容度较大，穿着舒适无束缚感。高腰的设计，提升腰线，拉长身材比例，打造大长腿的既视感"
 ```
 
-## 医学领域意图分类
+## Medical Field Intent Classification
 
-输入一段医疗查询文本，识别出文本中用户的查询意图。
+Input a piece of medical query text, and identify the user's query intent in the text.
 
 ```python
 from mengzi_zs import MengziZeroShot
@@ -147,9 +145,9 @@ Output:
  "指标解读"
 ```
 
-## 情感分类
+## Sentiment Classification
 
-输入一段文本，对包含主观观点信息的文本进行情感极性类别分类（积极、消极）。
+Input a piece of text, and classify the text containing subjective opinion information into emotional polarity categories (positive, negative).
 
 ```python
 from mengzi_zs import MengziZeroShot
@@ -164,9 +162,9 @@ Output:
  "消极"
 ```
 
-## 评论对象抽取
+## Comment Object Extraction
 
-输入一段文本，自动抽取其中包含的评价对象。
+Input a piece of text and automatically extract the evaluation objects contained in it.
 
 ```python
 from mengzi_zs import MengziZeroShot
@@ -182,9 +180,9 @@ Output:
  "灵水"
 ```
 
-## 新闻分类
+## News Classification
 
-输入一段新闻，识别其所属类别，如农业、文化、电竞、体育、财经、娱乐、旅游、教育、金融、军事、房产、汽车、股票、国际等等。
+Input a piece of news and identify its category, such as agriculture, culture, e-sports, sports, finance, entertainment, tourism, education, finance, military, real estate, automobiles, stocks, international, etc.
 
 ```python
 from mengzi_zs import MengziZeroShot
@@ -199,9 +197,9 @@ Output:
  "农业"
 ```
 
-## 人名抽取
+## Name Extraction
 
-输入一段文本，识别其中出现的人名。
+Input a piece of text and identify the names of people that appear in it.
 
 ```python
 from mengzi_zs import MengziZeroShot
@@ -216,9 +214,9 @@ Output:
 "张三"
 ```
 
-## 公司名抽取
+## Company Name Extraction
 
-输入一段文本，识别其中出现的公司名。
+Input a text identifying the company name as it appears.
 
 ```python
 from mengzi_zs import MengziZeroShot

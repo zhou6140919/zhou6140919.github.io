@@ -1,9 +1,10 @@
 ---
 title: My Notes for Stanford Algorithms on Coursera
 tags: [algorithm, lecture]
+description: My steps to learn web development
 ---
 
-# This repo below is my code implementation for the course
+**Code Implementation Repo**
 
 {% include elements/button.html link="https://github.com/zhou6140919/algorithm" text="Code" %}
 

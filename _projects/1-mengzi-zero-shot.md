@@ -5,6 +5,8 @@ image: http://files.langboat.com/images/mengzicover.png
 description: All interface capabilities provided in this project are based on Mengzi-T5-base-MT. This model is a multi task model, which is based on Mengzi-T5-base and trained by using 27 additional datasets and 301 prompts. This project provides the capabilities of entity extraction, semantic similarity, financial relationship extraction, advertisement generation, intention classification in medical field, emotion classification, comment object extraction, news classification, etc.
 ---
 
+# Mengzi-zero-shot
+
 <p class="text-center"> {% include elements/button.html link="https://huggingface.co/Langboat/mengzi-t5-base-mt" text="Model" %} </p>
 
 <p class="text-center"> {% include elements/button.html link="https://github.com/Langboat/mengzi-zero-shot" text="Repo" %} </p>

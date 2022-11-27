@@ -1,7 +1,7 @@
 ---
 title: My Notes for Stanford Algorithms on Coursera
 tags: [algorithm, lecture]
-description: My steps to learn web development
+description: My notes for Stanford Algorithms on Coursera
 ---
 
 **Code Implementation Repo**

@@ -13,7 +13,7 @@
 <div class="py-3">
   <h4 id="{{ tag | slugify }}">{{ tag }}</h4>
   <ol>
-  {% for post in site.posts %}
+  {% for post in site.articles %}
     {%- if post.tags contains tag -%}
       {%- if post.external_url -%}
         {%- assign url = post.external_url -%}

@@ -1,8 +1,0 @@
- ---
- layout: default
- title: Articles
- permalink: /articles/
- weight: 5
- ---
-
-{% include articles/index.html %}

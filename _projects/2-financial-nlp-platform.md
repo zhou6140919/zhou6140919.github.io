@@ -7,7 +7,7 @@ description: Langboat zero-shot information extraction platform can extract enti
 
 # Financial Zero-shot Information Extraction Platform
 
-{% include elements/button.html link="https://langboat.com/" text="Demo" block=true %}
+{% include elements/button.html link="https://cognitive.langboat.com/product/finance-extraction" text="Product Trial" block=true %}
 
 ## Introduction
 
@@ -41,3 +41,111 @@ you can enter the model prompt "What is the time mentioned above?"
 
 For different schemas, different model prompts also have different extraction effects.
 You can choose the most appropriate model prompt for each schema to ensure the accuracy of the model.
+
+## Example Code in Python
+
+1. Press the "Product Trail" button and register in the product control panel
+2. Replace your API key in the code below
+
+```python
+import base64
+import datetime
+import hashlib
+import hmac
+import json
+import random
+import requests
+
+
+class LangboatOpenClient:
+    """澜舟开放平台客户端"""
+
+    def __init__(self,
+                 access_key: str,
+                 access_secret: str,
+                 url: str = "https://open.langboat.com"):
+        self.access_key = access_key
+        self.access_secret = access_secret
+        self.url = url
+
+    def _build_header(self, query: dict, data: dict) -> dict:
+        accept = "application/json"
+        # 1. body MD5 加密
+        content_md5 = base64.b64encode(
+            hashlib.md5(
+                json.dumps(data).encode("utf-8")
+            ).digest()
+        ).decode()
+        content_type = "application/json"
+        gmt_format = '%a, %d %b %Y %H:%M:%S GMT'
+        date = datetime.datetime.utcnow().strftime(gmt_format)
+        signature_method = "HMAC-SHA256"
+        signature_nonce = str(random.randint(0, 65535))
+        header_string = f"POST\n{accept}\n{content_md5}\n{content_type}\n" \
+                        f"{date}\n{signature_method}\n{signature_nonce}\n"
+
+        # 2. 计算 queryToSign
+        queries_str = []
+        for k, v in sorted(query.items(), key=lambda item: item[0]):
+            if isinstance(v, list):
+                for i in v:
+                    queries_str.append(f"{k}={i}")
+            else:
+                queries_str.append(f"{k}={v}")
+        queries_string = '&'.join(queries_str)
+        # 3.计算 stringToSign
+        sign_string = header_string + queries_string
+        # 4.计算 HMAC-SHA256 + Base64
+        secret_bytes = self.access_secret.encode("utf-8")
+        # 5.计算签名
+        signature = base64.b64encode(
+            hmac.new(secret_bytes, sign_string.encode(
+                "utf-8"), hashlib.sha256).digest()
+        ).decode()
+        res = {
+            "Content-Type": content_type,
+            "Content-MD5": content_md5,
+            "Date": date,
+            "Accept": accept,
+            "X-Langboat-Signature-Method": signature_method,
+            "X-Langboat-Signature-Nonce": signature_nonce,
+            "Authorization": f"{self.access_key}:{signature}"
+        }
+        return res
+
+    def inference(self, queries: dict, data: dict) -> (int, dict):
+        """
+        调用
+        :param queries: query 参数
+        :param data: request body 数据
+        :return: response status, response body to json
+        """
+        headers = self._build_header(queries, data)
+        response = requests.post(
+            url=self.url, headers=headers, params=queries, json=data)
+        return response.status_code, response.json()
+
+
+if __name__ == '__main__':
+    _access_key = '<your-access-key>'
+    _access_secret = '<your-access-secret>'
+
+    client = LangboatOpenClient(
+        access_key=_access_key,
+        access_secret=_access_secret
+    )
+
+    _queries = {
+        "action": "zeroShotTask",
+        "task_id": "39",
+    }
+
+    _data = {
+        "sample": "当地时间周二(9月10日)美国国家安全顾问约翰.博尔顿辞职，博尔顿是白宫内部主要的外交鹰派人物，此前，博尔顿与总统特朗普曾在伊朗问题上有很大分歧，博尔顿的辞职对黄金形成了一定的支撑，周二美盘时段时段，黄金曾一度反弹至千五关口。"}
+
+    status_code, result = client.inference(_queries, _data)
+    print("response status:", status_code)
+    print("response json:", json.dumps(result, ensure_ascii=False, indent=2))
+```
+
+3. `python example.py`

@@ -1,16 +1,9 @@
  ---
- layout: default
+ layout: page
  title: Articles
  permalink: /articles/
  weight: 5
  ---
 
-# Articles
-
-<div class="card-group mt-2">
-
-  {% for post in site.posts %}
-    {% include articles/post-card.html %}
-  {% endfor %}
-  
-</div>
+ 
+{% include articles/index.html %}

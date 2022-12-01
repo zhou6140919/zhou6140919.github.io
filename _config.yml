@@ -21,6 +21,9 @@ nav_exclude:                                            # The following paths ar
   - pages/404.html
   - pages/index.md
 
+nav_include:
+  - articles.html
+
 
 
 ### Author Info ###
@@ -109,3 +112,6 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+
+include:
+  - articles.html

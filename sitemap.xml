@@ -4,7 +4,7 @@
   <url>
     <loc>https://blog.zhoutong.website/post/unsupervised-NLU-NLG-dual/</loc>
     
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -157,7 +157,7 @@
 
   <url>
     <loc>https://blog.zhoutong.website/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -165,49 +165,49 @@
   
   <url>
     <loc>https://blog.zhoutong.website/tags/nlp/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.zhoutong.website/tags/papers/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.zhoutong.website/tags/hexo/</loc>
-    <lastmod>2022-12-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.zhoutong.website/tags/projects/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.zhoutong.website/tags/circuit/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhoutong.website/tags/projects/</loc>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.zhoutong.website/tags/3d-printing/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.zhoutong.website/tags/sdk/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -216,28 +216,28 @@
   
   <url>
     <loc>https://blog.zhoutong.website/categories/nlp/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.zhoutong.website/categories/frontend/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.zhoutong.website/categories/hardware/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.zhoutong.website/categories/hardware/materials/</loc>
-    <lastmod>2022-12-09</lastmod>
+    <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

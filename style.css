@@ -113,7 +113,6 @@ ul {
     content: " 📄";  /* Paper icon */
     font-size: 0.8em;
 }
-
 .edu-list {
     list-style-type: none;
     padding: 0;
@@ -131,13 +130,22 @@ ul {
 
 .edu-content {
     flex: 1;
+    /* Ensure text content takes up space and logos are pushed to the right */
 }
 
 .uni-logo {
-    width: 50px; /* Adjust based on your preference */
-    height: auto;
-    margin-left: 20px; /* Space between the text and the image */
+    width: 50px; /* Adjust the width to your preference */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 20px; /* Adds space between text and image */
 }
+
+/* Optional: media query to adjust logo size on different screen sizes */
+@media (max-width: 768px) {
+    .uni-logo {
+        width: 30px; /* Smaller logos on smaller screens */
+    }
+}
+
 
 .degree {
     font-weight: bold;

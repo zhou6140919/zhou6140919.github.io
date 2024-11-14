@@ -145,6 +145,7 @@ ul {
 @media (max-width: 768px) {
     .uni-logo {
         height: 30px;
+        margin-right: 20px;
     }
     .edu-content {
         margin-right: 20px; /* Less spacing on smaller screens */

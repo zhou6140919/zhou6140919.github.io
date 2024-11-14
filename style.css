@@ -81,9 +81,37 @@ ul {
     font-weight: bold;
 }
 
-.pub-authors, .pub-venue {
+.pub-authors {
     color: #666;
     font-size: 0.9rem;
+}
+
+.pub-venue {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.paper-link {
+    color: #2474bb;  /* Professional blue color */
+    text-decoration: none;  /* Removes default underline */
+    border-bottom: 1px solid transparent;  /* Prepare for hover effect */
+    transition: color 0.2s ease, border-bottom 0.2s ease;  /* Smooth transition */
+}
+
+.paper-link:hover {
+    color: #1756a9;  /* Darker blue on hover */
+    border-bottom: 1px solid #1756a9;  /* Underline effect on hover */
+}
+
+.paper-link:visited {
+    color: #6b40a8;  /* Purple for visited links */
+}
+
+/* Optional: Add an icon for external links */
+.paper-link[target="_blank"]::after {
+    content: " 📄";  /* Paper icon */
+    font-size: 0.8em;
 }
 
 .degree {

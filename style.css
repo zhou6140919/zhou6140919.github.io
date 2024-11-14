@@ -121,8 +121,8 @@ ul {
 
 .edu-list li {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Changed back to center to vertically align items */
+    gap: 20px; /* Adds consistent spacing between logo and content */
     margin-bottom: 1rem;
     padding-left: 1rem;
     border-left: 3px solid #007bff;
@@ -130,26 +130,31 @@ ul {
 
 .edu-content {
     flex: 1;
-    /* Ensure text content takes up space and logos are pushed to the right */
 }
 
 .uni-logo {
-    width: 50px; /* Adjust the width to your preference */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: 20px; /* Adds space between text and image */
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    /* Removed margin-left since we're using gap */
 }
 
-/* Optional: media query to adjust logo size on different screen sizes */
+/* Optional: media query for smaller screens */
 @media (max-width: 768px) {
     .uni-logo {
-        width: 30px; /* Smaller logos on smaller screens */
+        height: 30px;
     }
 }
 
-
 .degree {
     font-weight: bold;
+    margin: 0;
 }
+
+.edu-content p {
+    margin: 0.2rem 0;
+}
+
 
 
 .award-title {

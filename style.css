@@ -113,6 +113,7 @@ ul {
     content: " 📄";  /* Paper icon */
     font-size: 0.8em;
 }
+
 .edu-list {
     list-style-type: none;
     padding: 0;
@@ -121,8 +122,8 @@ ul {
 
 .edu-list li {
     display: flex;
-    align-items: center; /* Changed back to center to vertically align items */
-    gap: 20px; /* Adds consistent spacing between logo and content */
+    align-items: center;
+    justify-content: space-between; /* This will push the logo to the right */
     margin-bottom: 1rem;
     padding-left: 1rem;
     border-left: 3px solid #007bff;
@@ -130,20 +131,23 @@ ul {
 
 .edu-content {
     flex: 1;
-    padding-left: 20px;
+    margin-right: 40px; /* Add more space between text and logo */
 }
 
 .uni-logo {
     height: 40px;
     width: auto;
     object-fit: contain;
-    /* Removed margin-left since we're using gap */
+    margin-right: 20px; /* Add some space from the right edge */
 }
 
 /* Optional: media query for smaller screens */
 @media (max-width: 768px) {
     .uni-logo {
         height: 30px;
+    }
+    .edu-content {
+        margin-right: 20px; /* Less spacing on smaller screens */
     }
 }
 

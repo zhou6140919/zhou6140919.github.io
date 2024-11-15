@@ -135,7 +135,7 @@ ul {
 }
 
 .uni-logo, .company-logo {
-    height: 40px;
+    height: 80px;
     width: auto;
     object-fit: contain;
     margin-right: 20px; /* Add some space from the right edge */
@@ -144,7 +144,7 @@ ul {
 /* Optional: media query for smaller screens */
 @media (max-width: 768px) {
     .uni-logo, .company-logo {
-        height: 30px;
+        height: 60px;
         margin-right: 20px;
     }
     .edu-content, .job-content {

@@ -114,13 +114,13 @@ ul {
     font-size: 0.8em;
 }
 
-.edu-list {
+.edu-list, .job-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.edu-list li {
+.edu-list li, .job-list li {
     display: flex;
     align-items: center;
     justify-content: space-between; /* This will push the logo to the right */
@@ -129,12 +129,12 @@ ul {
     border-left: 3px solid #007bff;
 }
 
-.edu-content {
+.edu-content, .job-content {
     flex: 1;
     margin-right: 40px; /* Add more space between text and logo */
 }
 
-.uni-logo {
+.uni-logo, .company-logo {
     height: 40px;
     width: auto;
     object-fit: contain;
@@ -143,21 +143,21 @@ ul {
 
 /* Optional: media query for smaller screens */
 @media (max-width: 768px) {
-    .uni-logo {
+    .uni-logo, .company-logo {
         height: 30px;
         margin-right: 20px;
     }
-    .edu-content {
+    .edu-content, .job-content {
         margin-right: 20px; /* Less spacing on smaller screens */
     }
 }
 
-.degree {
+.degree, .job-title {
     font-weight: bold;
     margin: 0;
 }
 
-.edu-content p {
+.edu-content p, .job-content p {
     margin: 0.2rem 0;
 }
 
